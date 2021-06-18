@@ -14,14 +14,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "183
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
 [v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
-"25 ./stopwatch.h
-[; ;./stopwatch.h: 25: void reset_stopwatch(void);
+"13 ./stopwatch.h
+[; ;./stopwatch.h: 13: void reset_stopwatch(void);
 [v _reset_stopwatch `(v ~T0 @X0 0 ef ]
-"26
-[; ;./stopwatch.h: 26: void stop_stopwatch(void);
+"14
+[; ;./stopwatch.h: 14: void stop_stopwatch(void);
 [v _stop_stopwatch `(v ~T0 @X0 0 ef ]
-"27
-[; ;./stopwatch.h: 27: void start_stopwatch(void);
+"15
+[; ;./stopwatch.h: 15: void start_stopwatch(void);
 [v _start_stopwatch `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 54: __asm("INDF equ 00h");
@@ -156,23 +156,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _i -> 0 `i ]
 "11
 [; ;buttons.c: 11:     while(i < 400 && btn == 0)
-[e $U 52  ]
-[e :U 53 ]
+[e $U 53  ]
+[e :U 54 ]
 "12
 [; ;buttons.c: 12:         i++;
 [e ++ _i -> 1 `i ]
-[e :U 52 ]
+[e :U 53 ]
 "11
 [; ;buttons.c: 11:     while(i < 400 && btn == 0)
-[e $ && < _i -> 400 `i == -> _btn `i -> 0 `i 53  ]
-[e :U 54 ]
+[e $ && < _i -> 400 `i == -> _btn `i -> 0 `i 54  ]
+[e :U 55 ]
 "14
 [; ;buttons.c: 14:     return i == 400 ? 0 : 1;
 [e ) -> ? == _i -> 400 `i : -> 0 `i -> 1 `i `uc ]
-[e $UE 51  ]
+[e $UE 52  ]
 "15
 [; ;buttons.c: 15: }
-[e :UE 51 ]
+[e :UE 52 ]
 }
 "18
 [; ;buttons.c: 18: enum Button get_btn_pressed(void)
@@ -188,36 +188,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _btn . `E469 0 ]
 "22
 [; ;buttons.c: 22:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(PORTAbits.RA7))
-[e $ ! && == -> . . _PORTAbits 0 7 `i -> 0 `i ! != -> ( _is_btn_bounce (1 -> . . _PORTAbits 0 7 `uc `i -> 0 `i 56  ]
+[e $ ! && == -> . . _PORTAbits 0 7 `i -> 0 `i ! != -> ( _is_btn_bounce (1 -> . . _PORTAbits 0 7 `uc `i -> 0 `i 57  ]
 "23
 [; ;buttons.c: 23:         btn = RESET;
 [e = _btn . `E469 1 ]
-[e $U 57  ]
+[e $U 58  ]
 "24
 [; ;buttons.c: 24:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(PORTAbits.RA6))
-[e :U 56 ]
-[e $ ! && == -> . . _PORTAbits 0 6 `i -> 0 `i ! != -> ( _is_btn_bounce (1 -> . . _PORTAbits 0 6 `uc `i -> 0 `i 58  ]
+[e :U 57 ]
+[e $ ! && == -> . . _PORTAbits 0 6 `i -> 0 `i ! != -> ( _is_btn_bounce (1 -> . . _PORTAbits 0 6 `uc `i -> 0 `i 59  ]
 "25
 [; ;buttons.c: 25:         btn = STOP;
 [e = _btn . `E469 2 ]
-[e $U 59  ]
+[e $U 60  ]
 "26
 [; ;buttons.c: 26:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(PORTAbits.RA5))
-[e :U 58 ]
-[e $ ! && == -> . . _PORTAbits 0 5 `i -> 0 `i ! != -> ( _is_btn_bounce (1 -> . . _PORTAbits 0 5 `uc `i -> 0 `i 60  ]
+[e :U 59 ]
+[e $ ! && == -> . . _PORTAbits 0 5 `i -> 0 `i ! != -> ( _is_btn_bounce (1 -> . . _PORTAbits 0 5 `uc `i -> 0 `i 61  ]
 "27
 [; ;buttons.c: 27:         btn = START;
 [e = _btn . `E469 3 ]
+[e :U 61 ]
 [e :U 60 ]
-[e :U 59 ]
-[e :U 57 ]
+[e :U 58 ]
 "29
 [; ;buttons.c: 29:     return btn;
 [e ) _btn ]
-[e $UE 55  ]
+[e $UE 56  ]
 "30
 [; ;buttons.c: 30: }
-[e :UE 55 ]
+[e :UE 56 ]
 }
 "33
 [; ;buttons.c: 33: void handle_btn_pressing(enum Button btn)
@@ -234,54 +234,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "35
 [; ;buttons.c: 35:     switch(btn)
-[e $U 63  ]
+[e $U 64  ]
 "36
 [; ;buttons.c: 36:     {
 {
 "37
 [; ;buttons.c: 37:         case RESET:
-[e :U 64 ]
+[e :U 65 ]
 "38
 [; ;buttons.c: 38:             reset_stopwatch();
 [e ( _reset_stopwatch ..  ]
 "39
 [; ;buttons.c: 39:             break;
-[e $U 62  ]
+[e $U 63  ]
 "40
 [; ;buttons.c: 40:         case STOP:
-[e :U 65 ]
+[e :U 66 ]
 "41
 [; ;buttons.c: 41:             stop_stopwatch();
 [e ( _stop_stopwatch ..  ]
 "42
 [; ;buttons.c: 42:             break;
-[e $U 62  ]
+[e $U 63  ]
 "43
 [; ;buttons.c: 43:         case START:
-[e :U 66 ]
+[e :U 67 ]
 "44
 [; ;buttons.c: 44:             start_stopwatch();
 [e ( _start_stopwatch ..  ]
 "45
 [; ;buttons.c: 45:             break;
-[e $U 62  ]
+[e $U 63  ]
 "46
 [; ;buttons.c: 46:         default:
-[e :U 67 ]
+[e :U 68 ]
 "47
 [; ;buttons.c: 47:             break;
-[e $U 62  ]
+[e $U 63  ]
 "48
 [; ;buttons.c: 48:     };
 }
-[e $U 62  ]
+[e $U 63  ]
+[e :U 64 ]
+[e [\ -> _btn `ui , $ -> . `E469 1 `ui 65
+ , $ -> . `E469 2 `ui 66
+ , $ -> . `E469 3 `ui 67
+ 68 ]
 [e :U 63 ]
-[e [\ -> _btn `ui , $ -> . `E469 1 `ui 64
- , $ -> . `E469 2 `ui 65
- , $ -> . `E469 3 `ui 66
- 67 ]
-[e :U 62 ]
 "49
 [; ;buttons.c: 49: }
-[e :UE 61 ]
+[e :UE 62 ]
 }

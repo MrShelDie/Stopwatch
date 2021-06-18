@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/disk4/windows/E/Livro%20PIC18/P18F/TIMER01.X/timer.h</file>
-            <file>file:/C:/disk4/windows/E/Livro%20PIC18/P18F/TIMER01.X/clc_freq.h</file>
-            <file>file:/C:/disk4/windows/E/Livro%20PIC18/P18F/TIMER01.X/buttons.h</file>
-            <file>file:/C:/disk4/windows/E/Livro%20PIC18/P18F/TIMER01.X/main.c</file>
-            <file>file:/C:/disk4/windows/E/Livro%20PIC18/P18F/TIMER01.X/timer.c</file>
-            <file>file:/C:/disk4/windows/E/Livro%20PIC18/P18F/TIMER01.X/buttons.c</file>
+            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/main.c</file>
+            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.h</file>
+            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c</file>
+            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/display.h</file>
+            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/buttons.h</file>
+            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c</file>
+            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/display.c</file>
         </group>
     </open-files>
 </project-private>

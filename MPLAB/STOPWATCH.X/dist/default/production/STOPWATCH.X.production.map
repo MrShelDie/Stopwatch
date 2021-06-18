@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\STOPWATCH.X.production.sym \
   --cmf=dist/default/production\STOPWATCH.X.production.cmf -z -Q16F628A \
-  -oC:\Users\nick-\AppData\Local\Temp\xcAsk7k.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\nick-\AppData\Local\Temp\xcAsjjo.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/STOPWATCH.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0A0h-0EFh -pstack=STACK \
   -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
@@ -18,7 +18,7 @@ Linker command line:
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o \
+  C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o \
   dist/default/production\STOPWATCH.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F628A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
+C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
                 end_init                              0        0        1        0       0
                 config                             2007     2007        1        0       4
 dist/default/production\STOPWATCH.X.production.o
@@ -346,13 +346,11 @@ Module		Function		Class		Link	Load	Size
 stopwatch.c
 		_start_stopwatch		CODE           	05CE	0000	5
 		_stop_stopwatch		CODE           	05CA	0000	4
-		_set_disp_digit_value		CODE           	0798	0000	93
 		_reset_stopwatch		CODE           	05D3	0000	6
-		_update_disp   		CODE           	0653	0000	55
 		_format_time   		CODE           	0747	0000	81
 		_update_time_counter		CODE           	060E	0000	29
 
-stopwatch.c estimated size: 273
+stopwatch.c estimated size: 125
 
 buttons.c
 		_handle_btn_pressing		CODE           	05F2	0000	28
@@ -370,6 +368,12 @@ shared
 		__initialization		CODE           	07F5	0000	9
 
 shared estimated size: 9
+
+display.c
+		_set_disp_digit_value		CODE           	0798	0000	93
+		_update_disp   		CODE           	0653	0000	55
+
+display.c estimated size: 148
 
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwdiv.c
 		___lwdiv       		CODE           	0703	0000	68

@@ -1,43 +1,71 @@
 #include <xc.h>
+#include "clc_freq.h"
 #include "display.h"
-#include "timer.h"
+#include "stopwatch.h"
 
-extern struct Timer_format formatted_time;
-
-void reset_disp_value(void)
-{
-    PORTA &= ~DISP_VALUE_MASK_PORT_A;
-    PORTB &= ~DISP_VALUE_MASK_PORT_B;
-}
-
-void set_disp_default_value(void)
-{
-    reset_disp_value();
-    PORTA |= DISP_DEFAULT_VALUE_PORT_A;
-    PORTB |= DISP_DEFAULT_VALUE_PORT_B;
-}
+#define DELAY_TIME              1
 
 
+extern struct   Time_format formatted_time;
+extern void     format_time(void);
 
 
-
-void display_digit(ubyte_t digit_num)
-{
-    switch(digit_num)
+static void set_disp_digit_value(char value)
+{   
+    switch(value)
     {
+        case 0:
+            DISP_VALUE_PORT = DISP_0;
+            break;
         case 1:
-            DISP_THIRD_DIGIT_PIN = 0;
-            DISP_FIRST_DIGIT_PIN = 1;
+            DISP_VALUE_PORT = DISP_1;
             break;
         case 2:
-            DISP_FIRST_DIGIT_PIN  = 0;
-            DISP_SECOND_DIGIT_PIN = 1;
+            DISP_VALUE_PORT = DISP_2;
             break;
         case 3:
-            DISP_SECOND_DIGIT_PIN = 0;
-            DISP_THIRD_DIGIT_PIN  = 1;
+            DISP_VALUE_PORT = DISP_3;
+            break;
+        case 4:
+            DISP_VALUE_PORT = DISP_4;
+            break;
+        case 5:
+            DISP_VALUE_PORT = DISP_5;
+            break;
+        case 6:
+            DISP_VALUE_PORT = DISP_6;
+            break;
+        case 7:
+            DISP_VALUE_PORT = DISP_7;
+            break;
+        case 8:
+            DISP_VALUE_PORT = DISP_8;
+            break;
+        case 9:
+            DISP_VALUE_PORT = DISP_9;
             break;
         default:
             break;
     }
+}
+
+
+void update_disp(void)
+{
+    format_time();
+    
+    set_disp_digit_value(formatted_time.ms);
+    DISP_FIRST_DIGIT_PIN = 1;
+    __delay_ms(DELAY_TIME);
+    DISP_FIRST_DIGIT_PIN  = 0;
+    
+    set_disp_digit_value(formatted_time.sec_1_digit);
+    DISP_SECOND_DIGIT_PIN = 1;
+    __delay_ms(DELAY_TIME);
+    DISP_SECOND_DIGIT_PIN = 0;
+    
+    set_disp_digit_value(formatted_time.sec_2_digit);
+    DISP_THIRD_DIGIT_PIN  = 1;
+    __delay_ms(DELAY_TIME);
+    DISP_THIRD_DIGIT_PIN  = 0;
 }

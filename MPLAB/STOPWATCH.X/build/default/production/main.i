@@ -1017,15 +1017,30 @@ enum Button get_btn_pressed(void);
 void handle_btn_pressing(enum Button btn);
 # 3 "main.c" 2
 
-# 1 "./stopwatch.h" 1
-# 22 "./stopwatch.h"
+# 1 "./display.h" 1
+# 25 "./display.h"
 void update_disp(void);
-void update_time_counter(void);
+# 4 "main.c" 2
+
+# 1 "./stopwatch.h" 1
+
+
+
+
+struct Time_format
+{
+    char ms;
+    char sec_1_digit;
+    char sec_2_digit;
+};
+
 
 void reset_stopwatch(void);
 void stop_stopwatch(void);
 void start_stopwatch(void);
-# 4 "main.c" 2
+
+void update_time_counter(void);
+# 5 "main.c" 2
 
 
 

@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "clc_freq.h"
 #include "buttons.h"
+#include "display.h"
 #include "stopwatch.h"
 
 // Configuration bits

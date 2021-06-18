@@ -46,11 +46,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 837: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
 [v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
 [p mainexit ]
-"25 ./stopwatch.h
-[; ;./stopwatch.h: 25: void reset_stopwatch(void);
+"13 ./stopwatch.h
+[; ;./stopwatch.h: 13: void reset_stopwatch(void);
 [v _reset_stopwatch `(v ~T0 @X0 0 ef ]
-"22
-[; ;./stopwatch.h: 22: void update_disp(void);
+"25 ./display.h
+[; ;./display.h: 25: void update_disp(void);
 [v _update_disp `(v ~T0 @X0 0 ef ]
 "17 ./buttons.h
 [; ;./buttons.h: 17: void handle_btn_pressing(enum Button btn);
@@ -58,8 +58,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16
 [; ;./buttons.h: 16: enum Button get_btn_pressed(void);
 [v _get_btn_pressed `(E469 ~T0 @X0 0 ef ]
-"23 ./stopwatch.h
-[; ;./stopwatch.h: 23: void update_time_counter(void);
+"17 ./stopwatch.h
+[; ;./stopwatch.h: 17: void update_time_counter(void);
 [v _update_time_counter `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 54: __asm("INDF equ 00h");
@@ -175,91 +175,90 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 ./buttons.h
 [; ;./buttons.h: 14: } Button;
 [v _Button `E469 ~T0 @X0 1 e ]
-"7 main.c
-[; ;main.c: 7:     TRISA = 0xE0;
-[p x FOSC    =  INTOSCIO  ]
-"8
+"8 main.c
 [; ;main.c: 8:     TRISB = 0x00;
-[p x WDTE    =  OFF       ]
+[p x FOSC    =  INTOSCIO  ]
 "9
 [; ;main.c: 9: 
-[p x PWRTE  =  OFF       ]
+[p x WDTE    =  OFF       ]
 "10
 [; ;main.c: 10:     OPTION_REGbits.T0CS = 0;
-[p x MCLRE  =  OFF       ]
+[p x PWRTE  =  OFF       ]
 "11
 [; ;main.c: 11:     OPTION_REGbits.PSA = 0;
-[p x BOREN  =  OFF       ]
+[p x MCLRE  =  OFF       ]
 "12
 [; ;main.c: 12:     OPTION_REG |= 0x07;
-[p x LVP      =  OFF       ]
+[p x BOREN  =  OFF       ]
 "13
 [; ;main.c: 13: }
-[p x CPD      =  OFF       ]
+[p x LVP      =  OFF       ]
 "14
 [; ;main.c: 14: 
+[p x CPD      =  OFF       ]
+"15
+[; ;main.c: 15: 
 [p x CP        =  OFF       ]
-"17
-[; ;main.c: 17: {
-[v _configure `(v ~T0 @X0 1 ef ]
 "18
 [; ;main.c: 18:     configure();
+[v _configure `(v ~T0 @X0 1 ef ]
+"19
+[; ;main.c: 19:     reset_stopwatch();
 {
 [e :U _configure ]
 [f ]
-"19
-[; ;main.c: 19:     reset_stopwatch();
+"20
+[; ;main.c: 20: 
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"21
-[; ;main.c: 21:     while(1)
+"22
+[; ;main.c: 22:     {
 [e = _CMCON -> -> 7 `i `uc ]
-"23
-[; ;main.c: 23:         update_disp();
-[e = _TRISA -> -> 224 `i `uc ]
 "24
 [; ;main.c: 24:         handle_btn_pressing(get_btn_pressed());
+[e = _TRISA -> -> 224 `i `uc ]
+"25
+[; ;main.c: 25:         update_time_counter();
 [e = _TRISB -> -> 0 `i `uc ]
-"26
-[; ;main.c: 26:     }
-[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
 "27
 [; ;main.c: 27: 
-[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
 "28
 [; ;main.c: 28:     return;
-[e =| _OPTION_REG -> -> 7 `i `Vuc ]
+[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
 "29
 [; ;main.c: 29: }
-[e :UE 51 ]
+[e =| _OPTION_REG -> -> 7 `i `Vuc ]
+"30
+[e :UE 52 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"32
-[v _main `(v ~T0 @X0 1 ef ]
 "33
+[v _main `(v ~T0 @X0 1 ef ]
+"34
 {
 [e :U _main ]
 [f ]
-"34
-[e ( _configure ..  ]
 "35
+[e ( _configure ..  ]
+"36
 [e ( _reset_stopwatch ..  ]
-"37
-[e :U 54 ]
 "38
-{
-"39
-[e ( _update_disp ..  ]
-"40
-[e ( _handle_btn_pressing (1 ( _get_btn_pressed ..  ]
-"41
-[e ( _update_time_counter ..  ]
-"42
-}
-[e :U 53 ]
-[e $U 54  ]
 [e :U 55 ]
-"44
-[e $UE 52  ]
+"39
+{
+"40
+[e ( _update_disp ..  ]
+"41
+[e ( _handle_btn_pressing (1 ( _get_btn_pressed ..  ]
+"42
+[e ( _update_time_counter ..  ]
+"43
+}
+[e :U 54 ]
+[e $U 55  ]
+[e :U 56 ]
 "45
-[e :UE 52 ]
+[e $UE 53  ]
+"46
+[e :UE 53 ]
 }

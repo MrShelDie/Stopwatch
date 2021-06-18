@@ -7,6 +7,7 @@
       <itemPath>buttons.h</itemPath>
       <itemPath>clc_freq.h</itemPath>
       <itemPath>stopwatch.h</itemPath>
+      <itemPath>display.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,6 +19,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>buttons.c</itemPath>
       <itemPath>stopwatch.c</itemPath>
+      <itemPath>display.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

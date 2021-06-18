@@ -34,23 +34,23 @@ START 3
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"17 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-[v _configure configure `(v  1 e 1 0 ]
-"32
-[v _main main `(v  1 e 1 0 ]
-"22 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-[v _set_disp_digit_value set_disp_digit_value `(v  1 e 1 0 ]
-"62
-[v _reset_stopwatch reset_stopwatch `(v  1 e 1 0 ]
-"69
-[v _stop_stopwatch stop_stopwatch `(v  1 e 1 0 ]
-"75
-[v _start_stopwatch start_stopwatch `(v  1 e 1 0 ]
-"81
-[v _format_time format_time `(v  1 e 1 0 ]
-"90
+"13 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+[v _set_disp_digit_value set_disp_digit_value `(v  1 s 1 set_disp_digit_value ]
+"53
 [v _update_disp update_disp `(v  1 e 1 0 ]
-"111
+"18 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+[v _configure configure `(v  1 e 1 0 ]
+"33
+[v _main main `(v  1 e 1 0 ]
+"14 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+[v _reset_stopwatch reset_stopwatch `(v  1 e 1 0 ]
+"21
+[v _stop_stopwatch stop_stopwatch `(v  1 e 1 0 ]
+"27
+[v _start_stopwatch start_stopwatch `(v  1 e 1 0 ]
+"33
+[v _format_time format_time `(v  1 e 1 0 ]
+"42
 [v _update_time_counter update_time_counter `(v  1 e 1 0 ]
 [s S137 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -105,42 +105,42 @@ START 3
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "969
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"10 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+"9 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 [v _time_ms time_ms `ui  1 s 2 time_ms ]
-"11
+"10
 [v _is_timer_work is_timer_work `uc  1 s 1 is_timer_work ]
 [s S184 Time_format 3 `uc 1 ms 1 0 `uc 1 sec_1_digit 1 1 `uc 1 sec_2_digit 1 2 ]
-"19
+"11
 [v _formatted_time formatted_time `S184  1 e 3 0 ]
-"32 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+"33 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"45
+"46
 } 0
-"111 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+"42 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 [v _update_time_counter update_time_counter `(v  1 e 1 0 ]
 {
-"119
+"50
 } 0
-"90
+"53 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
 [v _update_disp update_disp `(v  1 e 1 0 ]
 {
-"108
+"71
 } 0
-"22
-[v _set_disp_digit_value set_disp_digit_value `(v  1 e 1 0 ]
+"13
+[v _set_disp_digit_value set_disp_digit_value `(v  1 s 1 set_disp_digit_value ]
 {
 [v set_disp_digit_value@value value `uc  1 a 1 wreg ]
 [v set_disp_digit_value@value value `uc  1 a 1 wreg ]
 [v set_disp_digit_value@value value `uc  1 a 1 2 ]
-"59
+"50
 } 0
-"81
+"33 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 [v _format_time format_time `(v  1 e 1 0 ]
 {
-"84
+"36
 [v format_time@cashed_time cashed_time `ui  1 a 2 1 ]
-"87
+"39
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -172,20 +172,20 @@ START 3
 [v handle_btn_pressing@btn btn `E469  1 a 1 2 ]
 "49
 } 0
-"69 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+"21 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 [v _stop_stopwatch stop_stopwatch `(v  1 e 1 0 ]
 {
-"72
+"24
 } 0
-"75
+"27
 [v _start_stopwatch start_stopwatch `(v  1 e 1 0 ]
 {
-"78
+"30
 } 0
-"62
+"14
 [v _reset_stopwatch reset_stopwatch `(v  1 e 1 0 ]
 {
-"66
+"18
 } 0
 "18 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 [v _get_btn_pressed get_btn_pressed `(E469  1 e 1 0 ]
@@ -206,8 +206,8 @@ START 3
 [v is_btn_bounce@btn btn `uc  1 a 1 0 ]
 "15
 } 0
-"17 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+"18 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
 [v _configure configure `(v  1 e 1 0 ]
 {
-"29
+"30
 } 0

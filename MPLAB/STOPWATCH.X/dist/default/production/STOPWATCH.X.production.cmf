@@ -31,7 +31,7 @@ cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 27 27 4 1
 bssBANK0 BANK0 1 20 20 7 1
 config CONFIG 4 2007 2007 1 2
-$C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
+$C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
 end_init CODE 0 0 0 1 2
 config CONFIG 4 2007 2007 1 2
 # %UNUSED Section
@@ -72,29 +72,29 @@ STRING 1-5C9 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\STOPWATCH.X.production.o
-7F5 cinit CODE >437:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7F5 cinit CODE >440:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7F5 cinit CODE >460:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7F6 cinit CODE >461:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7F7 cinit CODE >462:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7F8 cinit CODE >463:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7F9 cinit CODE >464:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7FA cinit CODE >465:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7FB cinit CODE >466:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7FC cinit CODE >467:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7FD cinit CODE >468:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7FE cinit CODE >474:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7FE cinit CODE >476:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-7FF cinit CODE >477:C:\Users\nick-\AppData\Local\Temp\xcAsk7k.s
-5E1 text13 CODE >17:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5E1 text13 CODE >19:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5E2 text13 CODE >21:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5E6 text13 CODE >23:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5EA text13 CODE >24:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5EB text13 CODE >26:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5EC text13 CODE >27:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5ED text13 CODE >28:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5F1 text13 CODE >29:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+7F5 cinit CODE >511:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7F5 cinit CODE >514:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7F5 cinit CODE >534:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7F6 cinit CODE >535:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7F7 cinit CODE >536:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7F8 cinit CODE >537:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7F9 cinit CODE >538:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7FA cinit CODE >539:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7FB cinit CODE >540:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7FC cinit CODE >541:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7FD cinit CODE >542:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7FE cinit CODE >548:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7FE cinit CODE >550:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+7FF cinit CODE >551:C:\Users\nick-\AppData\Local\Temp\xcAsjjo.s
+5E1 text13 CODE >18:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5E1 text13 CODE >20:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5E2 text13 CODE >22:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5E6 text13 CODE >24:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5EA text13 CODE >25:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5EB text13 CODE >27:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5EC text13 CODE >28:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5ED text13 CODE >29:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5F1 text13 CODE >30:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
 62B text12 CODE >8:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 62C text12 CODE >10:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 62E text12 CODE >11:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
@@ -119,16 +119,16 @@ $dist/default/production\STOPWATCH.X.production.o
 6FD text11 CODE >27:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 701 text11 CODE >29:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 702 text11 CODE >30:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
-5D3 text10 CODE >62:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5D3 text10 CODE >64:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5D6 text10 CODE >65:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5D8 text10 CODE >66:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5CE text9 CODE >75:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5CE text9 CODE >77:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5D2 text9 CODE >78:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5CA text8 CODE >69:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5CA text8 CODE >71:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5CD text8 CODE >72:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5D3 text10 CODE >14:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5D3 text10 CODE >16:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5D6 text10 CODE >17:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5D8 text10 CODE >18:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5CE text9 CODE >27:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5CE text9 CODE >29:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5D2 text9 CODE >30:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5CA text8 CODE >21:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5CA text8 CODE >23:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5CD text8 CODE >24:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 5F2 text7 CODE >33:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 5F3 text7 CODE >35:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 5F4 text7 CODE >38:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
@@ -188,78 +188,78 @@ $dist/default/production\STOPWATCH.X.production.o
 6B9 text5 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
 6BF text5 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
 6C3 text5 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
-747 text4 CODE >81:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-747 text4 CODE >83:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-761 text4 CODE >84:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-779 text4 CODE >85:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-788 text4 CODE >86:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-797 text4 CODE >87:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-798 text3 CODE >22:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-799 text3 CODE >24:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-79A text3 CODE >27:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-79E text3 CODE >28:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-79F text3 CODE >30:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7A3 text3 CODE >31:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7A4 text3 CODE >33:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7A8 text3 CODE >34:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7A9 text3 CODE >36:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7AD text3 CODE >37:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7AE text3 CODE >39:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7B2 text3 CODE >40:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7B3 text3 CODE >42:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7B7 text3 CODE >43:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7B8 text3 CODE >45:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7BC text3 CODE >46:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7BD text3 CODE >48:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7C1 text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7C2 text3 CODE >51:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7C6 text3 CODE >52:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7C7 text3 CODE >54:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7CB text3 CODE >55:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7CC text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7D1 text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7D6 text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7D9 text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7DC text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7DF text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7E2 text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7E5 text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7E8 text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7EB text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7EE text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7F1 text3 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-7F4 text3 CODE >59:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-653 text2 CODE >90:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-653 text2 CODE >92:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-654 text2 CODE >94:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-658 text2 CODE >95:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-65B text2 CODE >96:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-664 text2 CODE >97:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-667 text2 CODE >99:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-669 text2 CODE >100:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-66C text2 CODE >101:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-675 text2 CODE >102:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-678 text2 CODE >104:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-67A text2 CODE >105:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-67D text2 CODE >106:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-686 text2 CODE >107:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-689 text2 CODE >108:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-60E text1 CODE >111:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-60E text1 CODE >113:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-615 text1 CODE >115:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-618 text1 CODE >115:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-61A text1 CODE >115:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-61E text1 CODE >116:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-621 text1 CODE >116:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-624 text1 CODE >117:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-626 text1 CODE >117:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-62A text1 CODE >119:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-5D9 maintext CODE >32:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5D9 maintext CODE >34:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5DA maintext CODE >35:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5DB maintext CODE >39:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5DC maintext CODE >40:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
-5DE maintext CODE >41:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+747 text4 CODE >33:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+747 text4 CODE >35:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+761 text4 CODE >36:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+779 text4 CODE >37:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+788 text4 CODE >38:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+797 text4 CODE >39:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+798 text3 CODE >13:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+799 text3 CODE >15:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+79A text3 CODE >18:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+79E text3 CODE >19:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+79F text3 CODE >21:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7A3 text3 CODE >22:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7A4 text3 CODE >24:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7A8 text3 CODE >25:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7A9 text3 CODE >27:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7AD text3 CODE >28:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7AE text3 CODE >30:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7B2 text3 CODE >31:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7B3 text3 CODE >33:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7B7 text3 CODE >34:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7B8 text3 CODE >36:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7BC text3 CODE >37:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7BD text3 CODE >39:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7C1 text3 CODE >40:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7C2 text3 CODE >42:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7C6 text3 CODE >43:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7C7 text3 CODE >45:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7CB text3 CODE >46:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7CC text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7D1 text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7D6 text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7D9 text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7DC text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7DF text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7E2 text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7E5 text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7E8 text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7EB text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7EE text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7F1 text3 CODE >49:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+7F4 text3 CODE >50:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+653 text2 CODE >53:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+653 text2 CODE >55:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+654 text2 CODE >57:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+658 text2 CODE >58:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+65B text2 CODE >59:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+664 text2 CODE >60:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+667 text2 CODE >62:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+669 text2 CODE >63:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+66C text2 CODE >64:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+675 text2 CODE >65:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+678 text2 CODE >67:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+67A text2 CODE >68:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+67D text2 CODE >69:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+686 text2 CODE >70:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+689 text2 CODE >71:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+60E text1 CODE >42:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+60E text1 CODE >44:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+615 text1 CODE >46:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+618 text1 CODE >46:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+61A text1 CODE >46:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+61E text1 CODE >47:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+621 text1 CODE >47:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+624 text1 CODE >48:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+626 text1 CODE >48:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+62A text1 CODE >50:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+5D9 maintext CODE >33:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5D9 maintext CODE >35:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5DA maintext CODE >36:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5DB maintext CODE >40:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5DC maintext CODE >41:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
+5DE maintext CODE >42:C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -283,10 +283,10 @@ __size_of_get_btn_pressed 0 0 ABS 0 - dist/default/production\STOPWATCH.X.produc
 _time_ms 23 0 BANK0 1 bssBANK0 dist/default/production\STOPWATCH.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
+___sp 0 0 STACK 2 stack C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
 _main BB2 0 CODE 0 maintext dist/default/production\STOPWATCH.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
-start 0 0 CODE 0 init C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
+start 0 0 CODE 0 init C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
 _reset_stopwatch BA6 0 CODE 0 text10 dist/default/production\STOPWATCH.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
@@ -297,12 +297,12 @@ _OPTION_REGbits 81 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
 format_time@cashed_time 28 0 BANK0 1 cstackBANK0 dist/default/production\STOPWATCH.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 _format_time E8E 0 CODE 0 text4 dist/default/production\STOPWATCH.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
 __size_of_update_time_counter 0 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -319,14 +319,14 @@ __end_of___lwdiv E8E 0 CODE 0 text6 dist/default/production\STOPWATCH.X.producti
 __end_of___lwmod D88 0 CODE 0 text5 dist/default/production\STOPWATCH.X.production.o
 __size_of_start_stopwatch 0 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
-___stacklo 0 0 ABS 0 - C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
+___stackhi 0 0 ABS 0 - C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
+___stacklo 0 0 ABS 0 - C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\STOPWATCH.X.production.o
 ___lwmod@dividend 7A 0 COMMON 1 cstackCOMMON dist/default/production\STOPWATCH.X.production.o
 start_initialization FEA 0 CODE 0 cinit dist/default/production\STOPWATCH.X.production.o
 __pcstackBANK0 27 0 BANK0 1 cstackBANK0 dist/default/production\STOPWATCH.X.production.o
 __size_of_set_disp_digit_value 0 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
+___int_sp 0 0 STACK 2 stack C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -375,7 +375,7 @@ __S3 0 0 ABS 0 - -
 __end_of_format_time F30 0 CODE 0 text4 dist/default/production\STOPWATCH.X.production.o
 set_disp_digit_value@value 72 0 COMMON 1 cstackCOMMON dist/default/production\STOPWATCH.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\nick-\AppData\Local\Temp\xcAsk7k.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\nick-\AppData\Local\Temp\xcAsjjo.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __size_of_is_btn_bounce 0 0 ABS 0 - dist/default/production\STOPWATCH.X.production.o
 __ptext10 BA6 0 CODE 0 text10 dist/default/production\STOPWATCH.X.production.o

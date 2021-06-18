@@ -994,33 +994,16 @@ extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 # 1 "stopwatch.c" 2
 
-# 1 "./clc_freq.h" 1
-# 2 "stopwatch.c" 2
-
 # 1 "./types.h" 1
 
 
 
 typedef char ubyte_t;
-# 3 "stopwatch.c" 2
+# 2 "stopwatch.c" 2
 
 # 1 "./stopwatch.h" 1
-# 22 "./stopwatch.h"
-void update_disp(void);
-void update_time_counter(void);
-
-void reset_stopwatch(void);
-void stop_stopwatch(void);
-void start_stopwatch(void);
-# 4 "stopwatch.c" 2
 
 
-
-
-
-
-static unsigned int time_ms = 0;
-static char is_timer_work = 0;
 
 
 struct Time_format
@@ -1028,47 +1011,28 @@ struct Time_format
     char ms;
     char sec_1_digit;
     char sec_2_digit;
-} formatted_time = {0};
+};
 
 
-void set_disp_digit_value(char value)
-{
-    switch(value)
-    {
-        case 0:
-            PORTB = 0xC0;
-            break;
-        case 1:
-            PORTB = 0xF9;
-            break;
-        case 2:
-            PORTB = 0xA4;
-            break;
-        case 3:
-            PORTB = 0xB0;
-            break;
-        case 4:
-            PORTB = 0x99;
-            break;
-        case 5:
-            PORTB = 0x92;
-            break;
-        case 6:
-            PORTB = 0x82;
-            break;
-        case 7:
-            PORTB = 0xF8;
-            break;
-        case 8:
-            PORTB = 0x80;
-            break;
-        case 9:
-            PORTB = 0x90;
-            break;
-        default:
-            break;
-    }
-}
+void reset_stopwatch(void);
+void stop_stopwatch(void);
+void start_stopwatch(void);
+
+void update_time_counter(void);
+# 3 "stopwatch.c" 2
+
+# 1 "./display.h" 1
+# 25 "./display.h"
+void update_disp(void);
+# 4 "stopwatch.c" 2
+
+
+
+
+
+static unsigned int time_ms = 0;
+static char is_timer_work = 0;
+struct Time_format formatted_time = {0};
 
 
 void reset_stopwatch(void)
@@ -1096,27 +1060,6 @@ void format_time(void)
     unsigned int cashed_time = time_ms / 1000 % 60;
     formatted_time.sec_1_digit = cashed_time % 10;
     formatted_time.sec_2_digit = (char)(cashed_time / 10);
-}
-
-
-void update_disp(void)
-{
-    format_time();
-
-    set_disp_digit_value(formatted_time.ms);
-    PORTAbits.RA0 = 1;
-    _delay((unsigned long)((1)*(4000000/4000.0)));
-    PORTAbits.RA0 = 0;
-
-    set_disp_digit_value(formatted_time.sec_1_digit);
-    PORTAbits.RA1 = 1;
-    _delay((unsigned long)((1)*(4000000/4000.0)));
-    PORTAbits.RA1 = 0;
-
-    set_disp_digit_value(formatted_time.sec_2_digit);
-    PORTAbits.RA2 = 1;
-    _delay((unsigned long)((1)*(4000000/4000.0)));
-    PORTAbits.RA2 = 0;
 }
 
 
