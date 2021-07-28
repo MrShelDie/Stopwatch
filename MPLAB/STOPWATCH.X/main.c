@@ -1,5 +1,5 @@
 #include <xc.h>
-#include "clc_freq.h"
+#include "_xtal_freq.h"
 #include "buttons.h"
 #include "display.h"
 #include "stopwatch.h"

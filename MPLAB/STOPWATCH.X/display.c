@@ -1,16 +1,15 @@
 #include <xc.h>
-#include "clc_freq.h"
+#include "_xtal_freq.h"
 #include "display.h"
 #include "stopwatch.h"
 
-#define DELAY_TIME              1
+#define DELAY_TIME 1
 
 
-extern struct   Time_format formatted_time;
-extern void     format_time(void);
+extern struct Time_format formatted_time;
 
 
-static void set_disp_digit_value(char value)
+static void set_disp_digit_value(uint8_t value)
 {   
     switch(value)
     {
@@ -61,8 +60,10 @@ void update_disp(void)
     
     set_disp_digit_value(formatted_time.sec_1_digit);
     DISP_SECOND_DIGIT_PIN = 1;
+    PORTBbits.RB7 = 0;          // Light a point in the second digit
     __delay_ms(DELAY_TIME);
     DISP_SECOND_DIGIT_PIN = 0;
+    PORTBbits.RB7 = 1;          // Extinguish the point in the second digit
     
     set_disp_digit_value(formatted_time.sec_2_digit);
     DISP_THIRD_DIGIT_PIN  = 1;

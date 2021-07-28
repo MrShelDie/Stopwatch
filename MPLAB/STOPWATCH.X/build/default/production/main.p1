@@ -46,8 +46,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 837: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
 [v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
 [p mainexit ]
-"13 ./stopwatch.h
-[; ;./stopwatch.h: 13: void reset_stopwatch(void);
+"16 ./stopwatch.h
+[; ;./stopwatch.h: 16: void reset_stopwatch(void);
 [v _reset_stopwatch `(v ~T0 @X0 0 ef ]
 "25 ./display.h
 [; ;./display.h: 25: void update_disp(void);
@@ -58,8 +58,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16
 [; ;./buttons.h: 16: enum Button get_btn_pressed(void);
 [v _get_btn_pressed `(E469 ~T0 @X0 0 ef ]
-"17 ./stopwatch.h
-[; ;./stopwatch.h: 17: void update_time_counter(void);
+"20 ./stopwatch.h
+[; ;./stopwatch.h: 20: void update_time_counter(void);
 [v _update_time_counter `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 54: __asm("INDF equ 00h");

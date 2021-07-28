@@ -16,12 +16,16 @@ RESET 1
 STOP 2
 START 3
 ]
-"8 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
-[v _is_btn_bounce is_btn_bounce `(uc  1 e 1 0 ]
-"18
+"13 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
+[v _is_btn_bounce is_btn_bounce `(a  1 s 1 is_btn_bounce ]
+"31
 [v _get_btn_pressed get_btn_pressed `(E469  1 e 1 0 ]
-"33
+"46
 [v _handle_btn_pressing handle_btn_pressing `(v  1 e 1 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
@@ -34,23 +38,23 @@ START 3
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"13 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+"12 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
 [v _set_disp_digit_value set_disp_digit_value `(v  1 s 1 set_disp_digit_value ]
-"53
+"52
 [v _update_disp update_disp `(v  1 e 1 0 ]
 "18 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
 [v _configure configure `(v  1 e 1 0 ]
 "33
 [v _main main `(v  1 e 1 0 ]
-"14 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+"18 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 [v _reset_stopwatch reset_stopwatch `(v  1 e 1 0 ]
-"21
+"26
 [v _stop_stopwatch stop_stopwatch `(v  1 e 1 0 ]
-"27
+"32
 [v _start_stopwatch start_stopwatch `(v  1 e 1 0 ]
-"33
+"39
 [v _format_time format_time `(v  1 e 1 0 ]
-"42
+"48
 [v _update_time_counter update_time_counter `(v  1 e 1 0 ]
 [s S137 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -66,6 +70,18 @@ START 3
 [v _PORTAbits PORTAbits `VES146  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S227 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"245
+[u S236 . 1 `S227 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES236  1 e 1 @6 ]
 [s S27 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -105,42 +121,42 @@ START 3
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "969
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"9 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
-[v _time_ms time_ms `ui  1 s 2 time_ms ]
-"10
-[v _is_timer_work is_timer_work `uc  1 s 1 is_timer_work ]
-[s S184 Time_format 3 `uc 1 ms 1 0 `uc 1 sec_1_digit 1 1 `uc 1 sec_2_digit 1 2 ]
-"11
-[v _formatted_time formatted_time `S184  1 e 3 0 ]
+"13 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+[v _time_ms time_ms `ui  1 e 2 0 ]
+"14
+[v _is_timer_work is_timer_work `a  1 s 1 is_timer_work ]
+[s S185 Time_format 3 `uc 1 ms 1 0 `uc 1 sec_1_digit 1 1 `uc 1 sec_2_digit 1 2 ]
+"15
+[v _formatted_time formatted_time `S185  1 e 3 0 ]
 "33 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "46
 } 0
-"42 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+"48 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 [v _update_time_counter update_time_counter `(v  1 e 1 0 ]
 {
-"50
+"56
 } 0
-"53 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
+"52 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\display.c
 [v _update_disp update_disp `(v  1 e 1 0 ]
 {
-"71
+"72
 } 0
-"13
+"12
 [v _set_disp_digit_value set_disp_digit_value `(v  1 s 1 set_disp_digit_value ]
 {
 [v set_disp_digit_value@value value `uc  1 a 1 wreg ]
 [v set_disp_digit_value@value value `uc  1 a 1 wreg ]
 [v set_disp_digit_value@value value `uc  1 a 1 2 ]
-"50
+"49
 } 0
-"33 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+"39 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 [v _format_time format_time `(v  1 e 1 0 ]
 {
-"36
-[v format_time@cashed_time cashed_time `ui  1 a 2 1 ]
-"39
+"42
+[v format_time@cashed_value cashed_value `uc  1 a 1 3 ]
+"45
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -164,47 +180,73 @@ START 3
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"33 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"46 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 [v _handle_btn_pressing handle_btn_pressing `(v  1 e 1 0 ]
 {
 [v handle_btn_pressing@btn btn `E469  1 a 1 wreg ]
 [v handle_btn_pressing@btn btn `E469  1 a 1 wreg ]
 [v handle_btn_pressing@btn btn `E469  1 a 1 2 ]
-"49
+"62
 } 0
-"21 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
+"26 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\stopwatch.c
 [v _stop_stopwatch stop_stopwatch `(v  1 e 1 0 ]
 {
-"24
+"29
 } 0
-"27
+"32
 [v _start_stopwatch start_stopwatch `(v  1 e 1 0 ]
 {
-"30
+"35
 } 0
-"14
+"18
 [v _reset_stopwatch reset_stopwatch `(v  1 e 1 0 ]
 {
-"18
+"23
 } 0
-"18 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
+"31 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\buttons.c
 [v _get_btn_pressed get_btn_pressed `(E469  1 e 1 0 ]
 {
-"20
-[v get_btn_pressed@btn btn `E469  1 a 1 4 ]
-"30
+"33
+[v get_btn_pressed@btn btn `E469  1 a 1 5 ]
+"43
 } 0
-"8
-[v _is_btn_bounce is_btn_bounce `(uc  1 e 1 0 ]
+"13
+[v _is_btn_bounce is_btn_bounce `(a  1 s 1 is_btn_bounce ]
 {
 [v is_btn_bounce@btn btn `uc  1 a 1 wreg ]
-"10
-[v is_btn_bounce@i i `i  1 a 2 1 ]
-"8
-[v is_btn_bounce@btn btn `uc  1 a 1 wreg ]
-"10
-[v is_btn_bounce@btn btn `uc  1 a 1 0 ]
+"21
+[v is_btn_bounce@i i `i  1 a 2 2 ]
 "15
+[v is_btn_bounce@is_bounce is_bounce `a  1 a 1 1 ]
+"13
+[v is_btn_bounce@btn btn `uc  1 a 1 wreg ]
+"15
+[v is_btn_bounce@btn btn `uc  1 a 1 0 ]
+"28
 } 0
 "18 C:\Users\nick-\Desktop\STOPWATCH\MPLAB\STOPWATCH.X\main.c
 [v _configure configure `(v  1 e 1 0 ]
