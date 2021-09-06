@@ -3,298 +3,342 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./buttons.h: 14: } Button;
 [c E469 0 1 2 3 .. ]
 [n E469 Button NONE RESET STOP START  ]
-"172 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 172:     struct {
-[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"171
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 171: typedef union {
-[u S5 `S6 1 ]
-[n S5 . . ]
-"183
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
-[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
-"16 ./stopwatch.h
-[; ;./stopwatch.h: 16: void reset_stopwatch(void);
+"166 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"15 ./stopwatch.h
+[; ;./stopwatch.h: 15: void reset_stopwatch(void);
 [v _reset_stopwatch `(v ~T0 @X0 0 ef ]
-"17
-[; ;./stopwatch.h: 17: void stop_stopwatch(void);
+"16
+[; ;./stopwatch.h: 16: void stop_stopwatch(void);
 [v _stop_stopwatch `(v ~T0 @X0 0 ef ]
-"18
-[; ;./stopwatch.h: 18: void start_stopwatch(void);
+"17
+[; ;./stopwatch.h: 17: void start_stopwatch(void);
 [v _start_stopwatch `(v ~T0 @X0 0 ef ]
-"54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 54: __asm("INDF equ 00h");
+"54 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
 "61
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 61: __asm("TMR0 equ 01h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 61: __asm("TMR0 equ 01h");
 [; <" TMR0 equ 01h ;# ">
 "68
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 68: __asm("PCL equ 02h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 68: __asm("PCL equ 02h");
 [; <" PCL equ 02h ;# ">
 "75
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 75: __asm("STATUS equ 03h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 75: __asm("STATUS equ 03h");
 [; <" STATUS equ 03h ;# ">
 "161
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 161: __asm("FSR equ 04h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 161: __asm("FSR equ 04h");
 [; <" FSR equ 04h ;# ">
 "168
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 168: __asm("PORTA equ 05h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 168: __asm("PORTA equ 05h");
 [; <" PORTA equ 05h ;# ">
 "230
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 230: __asm("PORTB equ 06h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 230: __asm("PORTB equ 06h");
 [; <" PORTB equ 06h ;# ">
 "292
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 292: __asm("PCLATH equ 0Ah");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 292: __asm("PCLATH equ 0Ah");
 [; <" PCLATH equ 0Ah ;# ">
 "312
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 312: __asm("INTCON equ 0Bh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 312: __asm("INTCON equ 0Bh");
 [; <" INTCON equ 0Bh ;# ">
 "390
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 390: __asm("PIR1 equ 0Ch");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 390: __asm("PIR1 equ 0Ch");
 [; <" PIR1 equ 0Ch ;# ">
 "447
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 447: __asm("TMR1 equ 0Eh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 447: __asm("TMR1 equ 0Eh");
 [; <" TMR1 equ 0Eh ;# ">
 "454
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 454: __asm("TMR1L equ 0Eh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 454: __asm("TMR1L equ 0Eh");
 [; <" TMR1L equ 0Eh ;# ">
 "461
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 461: __asm("TMR1H equ 0Fh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 461: __asm("TMR1H equ 0Fh");
 [; <" TMR1H equ 0Fh ;# ">
 "468
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 468: __asm("T1CON equ 010h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 468: __asm("T1CON equ 010h");
 [; <" T1CON equ 010h ;# ">
 "527
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 527: __asm("TMR2 equ 011h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 527: __asm("TMR2 equ 011h");
 [; <" TMR2 equ 011h ;# ">
 "534
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 534: __asm("T2CON equ 012h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 534: __asm("T2CON equ 012h");
 [; <" T2CON equ 012h ;# ">
 "605
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 605: __asm("CCPR1 equ 015h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 605: __asm("CCPR1 equ 015h");
 [; <" CCPR1 equ 015h ;# ">
 "612
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 612: __asm("CCPR1L equ 015h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 612: __asm("CCPR1L equ 015h");
 [; <" CCPR1L equ 015h ;# ">
 "619
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 619: __asm("CCPR1H equ 016h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 619: __asm("CCPR1H equ 016h");
 [; <" CCPR1H equ 016h ;# ">
 "626
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 626: __asm("CCP1CON equ 017h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 626: __asm("CCP1CON equ 017h");
 [; <" CCP1CON equ 017h ;# ">
 "684
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 684: __asm("RCSTA equ 018h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 684: __asm("RCSTA equ 018h");
 [; <" RCSTA equ 018h ;# ">
 "755
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 755: __asm("TXREG equ 019h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 755: __asm("TXREG equ 019h");
 [; <" TXREG equ 019h ;# ">
 "762
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 762: __asm("RCREG equ 01Ah");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 762: __asm("RCREG equ 01Ah");
 [; <" RCREG equ 01Ah ;# ">
 "769
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 769: __asm("CMCON equ 01Fh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 769: __asm("CMCON equ 01Fh");
 [; <" CMCON equ 01Fh ;# ">
 "839
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 839: __asm("OPTION_REG equ 081h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 839: __asm("OPTION_REG equ 081h");
 [; <" OPTION_REG equ 081h ;# ">
 "909
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 909: __asm("TRISA equ 085h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 909: __asm("TRISA equ 085h");
 [; <" TRISA equ 085h ;# ">
 "971
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 971: __asm("TRISB equ 086h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 971: __asm("TRISB equ 086h");
 [; <" TRISB equ 086h ;# ">
 "1033
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1033: __asm("PIE1 equ 08Ch");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1033: __asm("PIE1 equ 08Ch");
 [; <" PIE1 equ 08Ch ;# ">
 "1090
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1090: __asm("PCON equ 08Eh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1090: __asm("PCON equ 08Eh");
 [; <" PCON equ 08Eh ;# ">
 "1139
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1139: __asm("PR2 equ 092h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1139: __asm("PR2 equ 092h");
 [; <" PR2 equ 092h ;# ">
 "1146
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1146: __asm("TXSTA equ 098h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1146: __asm("TXSTA equ 098h");
 [; <" TXSTA equ 098h ;# ">
 "1203
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1203: __asm("SPBRG equ 099h");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1203: __asm("SPBRG equ 099h");
 [; <" SPBRG equ 099h ;# ">
 "1210
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1210: __asm("EEDATA equ 09Ah");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1210: __asm("EEDATA equ 09Ah");
 [; <" EEDATA equ 09Ah ;# ">
 "1217
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1217: __asm("EEADR equ 09Bh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1217: __asm("EEADR equ 09Bh");
 [; <" EEADR equ 09Bh ;# ">
 "1224
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1224: __asm("EECON1 equ 09Ch");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1224: __asm("EECON1 equ 09Ch");
 [; <" EECON1 equ 09Ch ;# ">
 "1262
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1262: __asm("EECON2 equ 09Dh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1262: __asm("EECON2 equ 09Dh");
 [; <" EECON2 equ 09Dh ;# ">
 "1269
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
 [; <" VRCON equ 09Fh ;# ">
 "14 ./buttons.h
 [; ;./buttons.h: 14: } Button;
 [v _Button `E469 ~T0 @X0 1 e ]
 "13 buttons.c
-[; ;buttons.c: 13: static _Bool is_btn_bounce(uint8_t btn)
-[v _is_btn_bounce `(a ~T0 @X0 1 sf1`uc ]
+[; ;buttons.c: 13: uint8_t get_mask(enum Button btn)
+[v _get_mask `(uc ~T0 @X0 1 ef1`E469 ]
 "14
 [; ;buttons.c: 14: {
 {
-[e :U _is_btn_bounce ]
+[e :U _get_mask ]
 "13
-[; ;buttons.c: 13: static _Bool is_btn_bounce(uint8_t btn)
-[v _btn `uc ~T0 @X0 1 r1 ]
+[; ;buttons.c: 13: uint8_t get_mask(enum Button btn)
+[v _btn `E469 ~T0 @X0 1 r1 ]
 "14
 [; ;buttons.c: 14: {
 [f ]
 "15
-[; ;buttons.c: 15:     _Bool is_bounce = 0;
+[; ;buttons.c: 15:     uint8_t mask = 0;
+[v _mask `uc ~T0 @X0 1 a ]
+[e = _mask -> -> 0 `i `uc ]
+"17
+[; ;buttons.c: 17:     if (btn == RESET)
+[e $ ! == -> _btn `ui -> . `E469 1 `ui 53  ]
+"18
+[; ;buttons.c: 18:         mask = 0b00000001;
+[e = _mask -> -> 1 `i `uc ]
+[e $U 54  ]
+"19
+[; ;buttons.c: 19:     else if (btn == STOP)
+[e :U 53 ]
+[e $ ! == -> _btn `ui -> . `E469 2 `ui 55  ]
+"20
+[; ;buttons.c: 20:         mask = 0b00000010;
+[e = _mask -> -> 2 `i `uc ]
+[e $U 56  ]
+"21
+[; ;buttons.c: 21:     else
+[e :U 55 ]
+"22
+[; ;buttons.c: 22:         mask = 0b00000100;
+[e = _mask -> -> 4 `i `uc ]
+[e :U 56 ]
+[e :U 54 ]
+"23
+[; ;buttons.c: 23:     return (mask);
+[e ) _mask ]
+[e $UE 52  ]
+"24
+[; ;buttons.c: 24: }
+[e :UE 52 ]
+}
+"26
+[; ;buttons.c: 26: static _Bool is_btn_bounce(enum Button btn)
+[v _is_btn_bounce `(a ~T0 @X0 1 sf1`E469 ]
+"27
+[; ;buttons.c: 27: {
+{
+[e :U _is_btn_bounce ]
+"26
+[; ;buttons.c: 26: static _Bool is_btn_bounce(enum Button btn)
+[v _btn `E469 ~T0 @X0 1 r1 ]
+"27
+[; ;buttons.c: 27: {
+[f ]
+"28
+[; ;buttons.c: 28:     _Bool is_bounce = 0;
 [v _is_bounce `a ~T0 @X0 1 a ]
 [e = _is_bounce -> -> 0 `i `a ]
-"21
-[; ;buttons.c: 21:     for (int i = 0; i < 385; i++)
+"29
+[; ;buttons.c: 29:     uint8_t mask = get_mask(btn);
+[v _mask `uc ~T0 @X0 1 a ]
+[e = _mask ( _get_mask (1 _btn ]
+"34
+[; ;buttons.c: 34:     for (int i = 0; i < 385; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 385 `i 53  ]
-[e $U 54  ]
-[e :U 53 ]
-"22
-[; ;buttons.c: 22:     {
+[e $ < _i -> 385 `i 58  ]
+[e $U 59  ]
+[e :U 58 ]
+"35
+[; ;buttons.c: 35:     {
 {
-"23
-[; ;buttons.c: 23:         if (btn != 0)
-[e $ ! != -> _btn `i -> 0 `i 56  ]
-"24
-[; ;buttons.c: 24:             is_bounce = 1;
+"36
+[; ;buttons.c: 36:         if ((PORTA & mask) != 0)
+[e $ ! != & -> _PORTA `i -> _mask `i -> 0 `i 61  ]
+"37
+[; ;buttons.c: 37:             is_bounce = 1;
 [e = _is_bounce -> -> 1 `i `a ]
-[e :U 56 ]
-"25
-[; ;buttons.c: 25:     }
+[e :U 61 ]
+"38
+[; ;buttons.c: 38:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 385 `i 53  ]
-[e :U 54 ]
+[e $ < _i -> 385 `i 58  ]
+[e :U 59 ]
 }
-"27
-[; ;buttons.c: 27:     return is_bounce;
+"39
+[; ;buttons.c: 39:     return (is_bounce);
 [e ) _is_bounce ]
-[e $UE 52  ]
-"28
-[; ;buttons.c: 28: }
-[e :UE 52 ]
+[e $UE 57  ]
+"40
+[; ;buttons.c: 40: }
+[e :UE 57 ]
 }
-"31
-[; ;buttons.c: 31: enum Button get_btn_pressed(void)
+"42
+[; ;buttons.c: 42: enum Button get_btn_pressed(void)
 [v _get_btn_pressed `(E469 ~T0 @X0 1 ef ]
-"32
-[; ;buttons.c: 32: {
+"43
+[; ;buttons.c: 43: {
 {
 [e :U _get_btn_pressed ]
 [f ]
-"33
-[; ;buttons.c: 33:     enum Button btn = NONE;
+"44
+[; ;buttons.c: 44:     enum Button btn = NONE;
 [v _btn `E469 ~T0 @X0 1 a ]
 [e = _btn . `E469 0 ]
-"35
-[; ;buttons.c: 35:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(PORTAbits.RA7))
-[e $ ! && == -> . . _PORTAbits 0 7 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . . _PORTAbits 0 7 `i -> 0 `i 58  ]
-"36
-[; ;buttons.c: 36:         btn = RESET;
-[e = _btn . `E469 1 ]
-[e $U 59  ]
-"37
-[; ;buttons.c: 37:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(PORTAbits.RA6))
-[e :U 58 ]
-[e $ ! && == -> . . _PORTAbits 0 6 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . . _PORTAbits 0 6 `i -> 0 `i 60  ]
-"38
-[; ;buttons.c: 38:         btn = STOP;
-[e = _btn . `E469 2 ]
-[e $U 61  ]
-"39
-[; ;buttons.c: 39:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(PORTAbits.RA5))
-[e :U 60 ]
-[e $ ! && == -> . . _PORTAbits 0 5 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . . _PORTAbits 0 5 `i -> 0 `i 62  ]
-"40
-[; ;buttons.c: 40:         btn = START;
-[e = _btn . `E469 3 ]
-[e :U 62 ]
-[e :U 61 ]
-[e :U 59 ]
-"42
-[; ;buttons.c: 42:     return btn;
-[e ) _btn ]
-[e $UE 57  ]
-"43
-[; ;buttons.c: 43: }
-[e :UE 57 ]
-}
 "46
-[; ;buttons.c: 46: void handle_btn_pressing(enum Button btn)
-[v _handle_btn_pressing `(v ~T0 @X0 1 ef1`E469 ]
+[; ;buttons.c: 46:     if (!is_btn_bounce(RESET))
+[e $ ! ! != -> ( _is_btn_bounce (1 . `E469 1 `i -> 0 `i 63  ]
 "47
-[; ;buttons.c: 47: {
+[; ;buttons.c: 47:         btn = RESET;
+[e = _btn . `E469 1 ]
+[e $U 64  ]
+"48
+[; ;buttons.c: 48:     else if (!is_btn_bounce(STOP))
+[e :U 63 ]
+[e $ ! ! != -> ( _is_btn_bounce (1 . `E469 2 `i -> 0 `i 65  ]
+"49
+[; ;buttons.c: 49:         btn = STOP;
+[e = _btn . `E469 2 ]
+[e $U 66  ]
+"50
+[; ;buttons.c: 50:     else if (!is_btn_bounce(START))
+[e :U 65 ]
+[e $ ! ! != -> ( _is_btn_bounce (1 . `E469 3 `i -> 0 `i 67  ]
+"51
+[; ;buttons.c: 51:         btn = START;
+[e = _btn . `E469 3 ]
+[e :U 67 ]
+[e :U 66 ]
+[e :U 64 ]
+"52
+[; ;buttons.c: 52:     return (btn);
+[e ) _btn ]
+[e $UE 62  ]
+"53
+[; ;buttons.c: 53: }
+[e :UE 62 ]
+}
+"55
+[; ;buttons.c: 55: void handle_btn_pressing(enum Button btn)
+[v _handle_btn_pressing `(v ~T0 @X0 1 ef1`E469 ]
+"56
+[; ;buttons.c: 56: {
 {
 [e :U _handle_btn_pressing ]
-"46
-[; ;buttons.c: 46: void handle_btn_pressing(enum Button btn)
-[v _btn `E469 ~T0 @X0 1 r1 ]
-"47
-[; ;buttons.c: 47: {
-[f ]
-"48
-[; ;buttons.c: 48:     switch(btn)
-[e $U 65  ]
-"49
-[; ;buttons.c: 49:     {
-{
-"50
-[; ;buttons.c: 50:         case RESET:
-[e :U 66 ]
-"51
-[; ;buttons.c: 51:             reset_stopwatch();
-[e ( _reset_stopwatch ..  ]
-"52
-[; ;buttons.c: 52:             break;
-[e $U 64  ]
-"53
-[; ;buttons.c: 53:         case STOP:
-[e :U 67 ]
-"54
-[; ;buttons.c: 54:             stop_stopwatch();
-[e ( _stop_stopwatch ..  ]
 "55
-[; ;buttons.c: 55:             break;
-[e $U 64  ]
+[; ;buttons.c: 55: void handle_btn_pressing(enum Button btn)
+[v _btn `E469 ~T0 @X0 1 r1 ]
 "56
-[; ;buttons.c: 56:         case START:
-[e :U 68 ]
+[; ;buttons.c: 56: {
+[f ]
 "57
-[; ;buttons.c: 57:             start_stopwatch();
-[e ( _start_stopwatch ..  ]
+[; ;buttons.c: 57:     switch(btn)
+[e $U 70  ]
 "58
-[; ;buttons.c: 58:             break;
-[e $U 64  ]
+[; ;buttons.c: 58:     {
+{
 "59
-[; ;buttons.c: 59:         default:
-[e :U 69 ]
+[; ;buttons.c: 59:         case RESET:
+[e :U 71 ]
 "60
-[; ;buttons.c: 60:             break;
-[e $U 64  ]
+[; ;buttons.c: 60:             reset_stopwatch();
+[e ( _reset_stopwatch ..  ]
 "61
-[; ;buttons.c: 61:     };
-}
-[e $U 64  ]
-[e :U 65 ]
-[e [\ -> _btn `ui , $ -> . `E469 1 `ui 66
- , $ -> . `E469 2 `ui 67
- , $ -> . `E469 3 `ui 68
- 69 ]
-[e :U 64 ]
+[; ;buttons.c: 61:             break;
+[e $U 69  ]
 "62
-[; ;buttons.c: 62: }
-[e :UE 63 ]
+[; ;buttons.c: 62:         case STOP:
+[e :U 72 ]
+"63
+[; ;buttons.c: 63:             stop_stopwatch();
+[e ( _stop_stopwatch ..  ]
+"64
+[; ;buttons.c: 64:             break;
+[e $U 69  ]
+"65
+[; ;buttons.c: 65:         case START:
+[e :U 73 ]
+"66
+[; ;buttons.c: 66:             start_stopwatch();
+[e ( _start_stopwatch ..  ]
+"67
+[; ;buttons.c: 67:             break;
+[e $U 69  ]
+"68
+[; ;buttons.c: 68:         default:
+[e :U 74 ]
+"69
+[; ;buttons.c: 69:             break;
+[e $U 69  ]
+"70
+[; ;buttons.c: 70:     };
+}
+[e $U 69  ]
+[e :U 70 ]
+[e [\ -> _btn `ui , $ -> . `E469 1 `ui 71
+ , $ -> . `E469 2 `ui 72
+ , $ -> . `E469 3 `ui 73
+ 74 ]
+[e :U 69 ]
+"71
+[; ;buttons.c: 71: }
+[e :UE 68 ]
 }

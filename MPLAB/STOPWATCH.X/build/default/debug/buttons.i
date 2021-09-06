@@ -1,4 +1,4 @@
-# 1 "/opt/microchip/xc8/v2.32/pic/sources/c90/pic/__eeprom.c"
+# 1 "buttons.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "/opt/microchip/xc8/v2.32/pic/sources/c90/pic/__eeprom.c" 2
+# 1 "buttons.c" 2
 # 1 "/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 1 3
 # 18 "/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -992,175 +992,250 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h" 2 3
-# 2 "/opt/microchip/xc8/v2.32/pic/sources/c90/pic/__eeprom.c" 2
+# 2 "buttons.c" 2
+# 1 "./_xtal_freq.h" 1
+# 3 "buttons.c" 2
+# 1 "/opt/microchip/xc8/v2.32/pic/include/c90/stdbool.h" 1 3
+# 4 "buttons.c" 2
+# 1 "./buttons.h" 1
 
 
 
-void
-__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+
+
+
+
+enum Button
 {
- volatile unsigned char *cp = to;
+    NONE,
+    RESET,
+    STOP,
+    START
+} Button;
 
- while (EECON1bits.WR) continue;
- EEADR = (unsigned char)from;
- while(size--) {
-  while (EECON1bits.WR) continue;
+enum Button get_btn_pressed(void);
+void handle_btn_pressing(enum Button btn);
+# 5 "buttons.c" 2
+# 1 "./stopwatch.h" 1
 
-  EECON1 &= 0x7F;
 
-  EECON1bits.RD = 1;
-  *cp++ = EEDATA;
-  ++EEADR;
- }
-# 36 "/opt/microchip/xc8/v2.32/pic/sources/c90/pic/__eeprom.c"
+
+
+# 1 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 1 3
+# 13 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef signed char int8_t;
+
+
+
+
+
+
+typedef signed int int16_t;
+
+
+
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+
+
+
+typedef signed long int int32_t;
+# 52 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef unsigned char uint8_t;
+
+
+
+
+
+typedef unsigned int uint16_t;
+
+
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+
+
+typedef unsigned long int uint32_t;
+# 88 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef signed char int_least8_t;
+
+
+
+
+
+
+
+typedef signed int int_least16_t;
+# 109 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef __int24 int_least24_t;
+# 118 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef signed long int int_least32_t;
+# 136 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef unsigned char uint_least8_t;
+
+
+
+
+
+
+typedef unsigned int uint_least16_t;
+# 154 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef __uint24 uint_least24_t;
+
+
+
+
+
+
+
+typedef unsigned long int uint_least32_t;
+# 181 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef signed char int_fast8_t;
+
+
+
+
+
+
+typedef signed int int_fast16_t;
+# 200 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef __int24 int_fast24_t;
+
+
+
+
+
+
+
+typedef signed long int int_fast32_t;
+# 224 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef unsigned char uint_fast8_t;
+
+
+
+
+
+typedef unsigned int uint_fast16_t;
+# 240 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef __uint24 uint_fast24_t;
+
+
+
+
+
+
+typedef unsigned long int uint_fast32_t;
+# 268 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef int32_t intmax_t;
+# 282 "/opt/microchip/xc8/v2.32/pic/include/c90/stdint.h" 3
+typedef uint32_t uintmax_t;
+
+
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+# 6 "./stopwatch.h" 2
+
+
+struct Time_format
+{
+    uint8_t ms;
+    uint8_t sec_1_digit;
+    uint8_t sec_2_digit;
+};
+
+void reset_stopwatch(void);
+void stop_stopwatch(void);
+void start_stopwatch(void);
+
+void update_time_counter(void);
+
+
+void format_time(void);
+# 6 "buttons.c" 2
+
+
+
+
+
+extern uint16_t time_ms;
+
+uint8_t get_mask(enum Button btn)
+{
+    uint8_t mask = 0;
+
+    if (btn == RESET)
+        mask = 0b10000000;
+    else if (btn == STOP)
+        mask = 0b01000000;
+    else
+        mask = 0b00100000;
+    return (mask);
 }
 
-void
-__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+static _Bool is_btn_bounce(enum Button btn)
 {
- const unsigned char *ptr =from;
+    _Bool is_bounce = 0;
+    uint8_t mask = get_mask(btn);
 
- while (EECON1bits.WR) continue;
- EEADR = (unsigned char)to - 1U;
 
- EECON1 &= 0x7F;
 
- while(size--) {
-  while (EECON1bits.WR) {
-   continue;
-  }
-  EEDATA = *ptr++;
-  ++EEADR;
-  STATUSbits.CARRY = 0;
-  if (INTCONbits.GIE) {
-   STATUSbits.CARRY = 1;
-  }
-  INTCONbits.GIE = 0;
-  EECON1bits.WREN = 1;
-  EECON2 = 0x55;
-  EECON2 = 0xAA;
-  EECON1bits.WR = 1;
-  EECON1bits.WREN = 0;
-  if (STATUSbits.CARRY) {
-   INTCONbits.GIE = 1;
-  }
- }
-# 101 "/opt/microchip/xc8/v2.32/pic/sources/c90/pic/__eeprom.c"
+
+    for (int i = 0; i < 385; i++)
+    {
+        if (!is_bounce && (PORTA & mask) != 0)
+            is_bounce = 1;
+    }
+    return (is_bounce);
 }
 
-unsigned char
-__eetoc(__eeprom void *addr)
+enum Button get_btn_pressed(void)
 {
- unsigned char data;
- __eecpymem((unsigned char *) &data,addr,1);
- return data;
+    enum Button btn = NONE;
+
+    if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
+        btn = RESET;
+    else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
+        btn = STOP;
+    else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
+        btn = START;
+    return (btn);
 }
 
-unsigned int
-__eetoi(__eeprom void *addr)
+void handle_btn_pressing(enum Button btn)
 {
- unsigned int data;
- __eecpymem((unsigned char *) &data,addr,2);
- return data;
-}
-
-#pragma warning push
-#pragma warning disable 2040
-__uint24
-__eetom(__eeprom void *addr)
-{
- __uint24 data;
- __eecpymem((unsigned char *) &data,addr,3);
- return data;
-}
-#pragma warning pop
-
-unsigned long
-__eetol(__eeprom void *addr)
-{
- unsigned long data;
- __eecpymem((unsigned char *) &data,addr,4);
- return data;
-}
-
-#pragma warning push
-#pragma warning disable 1516
-unsigned long long
-__eetoo(__eeprom void *addr)
-{
- unsigned long long data;
- __eecpymem((unsigned char *) &data,addr,8);
- return data;
-}
-#pragma warning pop
-
-unsigned char
-__ctoee(__eeprom void *addr, unsigned char data)
-{
- __memcpyee(addr,(unsigned char *) &data,1);
- return data;
-}
-
-unsigned int
-__itoee(__eeprom void *addr, unsigned int data)
-{
- __memcpyee(addr,(unsigned char *) &data,2);
- return data;
-}
-
-#pragma warning push
-#pragma warning disable 2040
-__uint24
-__mtoee(__eeprom void *addr, __uint24 data)
-{
- __memcpyee(addr,(unsigned char *) &data,3);
- return data;
-}
-#pragma warning pop
-
-unsigned long
-__ltoee(__eeprom void *addr, unsigned long data)
-{
- __memcpyee(addr,(unsigned char *) &data,4);
- return data;
-}
-
-#pragma warning push
-#pragma warning disable 1516
-unsigned long long
-__otoee(__eeprom void *addr, unsigned long long data)
-{
- __memcpyee(addr,(unsigned char *) &data,8);
- return data;
-}
-#pragma warning pop
-
-float
-__eetoft(__eeprom void *addr)
-{
- float data;
- __eecpymem((unsigned char *) &data,addr,3);
- return data;
-}
-
-double
-__eetofl(__eeprom void *addr)
-{
- double data;
- __eecpymem((unsigned char *) &data,addr,4);
- return data;
-}
-
-float
-__fttoee(__eeprom void *addr, float data)
-{
- __memcpyee(addr,(unsigned char *) &data,3);
- return data;
-}
-
-double
-__fltoee(__eeprom void *addr, double data)
-{
- __memcpyee(addr,(unsigned char *) &data,4);
- return data;
+    switch(btn)
+    {
+        case RESET:
+            reset_stopwatch();
+            break;
+        case STOP:
+            stop_stopwatch();
+            break;
+        case START:
+            start_stopwatch();
+            break;
+        default:
+            break;
+    };
 }

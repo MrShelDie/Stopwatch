@@ -10,40 +10,49 @@
 
 extern uint16_t time_ms;
 
-static _Bool is_btn_bounce(uint8_t btn)
+uint8_t get_mask(enum Button btn)
+{
+    uint8_t mask = 0;
+    
+    if      (btn == RESET)
+        mask = 0b10000000;
+    else if (btn == STOP)
+        mask = 0b01000000;
+    else
+        mask = 0b00100000;
+    return (mask);
+}
+
+static _Bool    is_btn_bounce(enum Button btn)
 {   
-    _Bool is_bounce = false;
+    _Bool   is_bounce   = false;
+    uint8_t mask        = get_mask(btn);
     
     /* This cycle must continue to the end. It cannot be interrupted when a button bounce is detected. 
      * This is due to the fact that the execution time of each cycle of the stopwatch is constant and 
      * was calculated at the time of writing the program.*/
-    
     for (int i = 0; i < BUTTON_BOUNCE_ITERATION_AMOUNT; i++)
     {
-        if (btn != 0)
+        if (!is_bounce && (PORTA & mask) != 0)
             is_bounce = true;
     }
-    
-    return is_bounce;
+    return (is_bounce);
 }
-
 
 enum Button get_btn_pressed(void)
 {
     enum Button btn = NONE;
     
-    if      (RESET_BTN_PIN == 0 && !is_btn_bounce(RESET_BTN_PIN))
+    if      (RESET_BTN_PIN  == 0 && !is_btn_bounce(RESET))
         btn = RESET;
-    else if (STOP_BTN_PIN  == 0 && !is_btn_bounce(STOP_BTN_PIN))
+    else if (STOP_BTN_PIN   == 0 && !is_btn_bounce(STOP))
         btn = STOP;
-    else if (START_BTN_PIN == 0 && !is_btn_bounce(START_BTN_PIN))
-        btn = START;
-    
-    return btn;
+    else if (START_BTN_PIN  == 0 && !is_btn_bounce(START))
+        btn = START;   
+    return (btn);
 }
 
-
-void handle_btn_pressing(enum Button btn)
+void    handle_btn_pressing(enum Button btn)
 {
     switch(btn)
     {

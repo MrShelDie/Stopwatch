@@ -22,6 +22,6 @@
 // Port used to display numbers on the display
 #define DISP_VALUE_PORT     PORTB
 
-void update_disp(void);
+void    update_disp(void);
 
 #endif

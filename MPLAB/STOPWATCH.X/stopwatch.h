@@ -12,7 +12,6 @@ struct Time_format
     uint8_t sec_2_digit;
 };
 
-
 void reset_stopwatch(void);
 void stop_stopwatch(void);
 void start_stopwatch(void);

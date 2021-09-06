@@ -15,7 +15,7 @@
 #pragma config CP    = OFF      // Flash Program Memory Code Protection bit (Code protection off)
 
 
-void configure(void)
+void    configure(void)
 {
     INTCONbits.GIE = 1;         // Enable global interrupts
     
@@ -30,7 +30,7 @@ void configure(void)
 }
 
 
-void main(void) 
+void    main(void) 
 {   
     configure();
     reset_stopwatch();
@@ -41,6 +41,5 @@ void main(void)
         handle_btn_pressing(get_btn_pressed());
         update_time_counter();
     }
-    
-    return;
+    return ;
 }

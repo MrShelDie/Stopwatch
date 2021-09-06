@@ -60,7 +60,7 @@ START 3
 [v _update_time_counter update_time_counter `(v  1 e 1 0 ]
 "166 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S186 . 1 `uc 1 RA0 1 0 :1:0 
+[s S138 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -70,11 +70,11 @@ START 3
 `uc 1 RA7 1 0 :1:7 
 ]
 "183
-[u S195 . 1 `S186 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES195  1 e 1 @5 ]
+[u S147 . 1 `S138 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES147  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S213 . 1 `uc 1 RB0 1 0 :1:0 
+[s S233 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -84,8 +84,8 @@ START 3
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S222 . 1 `S213 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES222  1 e 1 @6 ]
+[u S242 . 1 `S233 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES242  1 e 1 @6 ]
 [s S27 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -129,9 +129,9 @@ START 3
 [v _time_ms time_ms `ui  1 e 2 0 ]
 "12
 [v _is_timer_work is_timer_work `a  1 s 1 is_timer_work ]
-[s S162 Time_format 3 `uc 1 ms 1 0 `uc 1 sec_1_digit 1 1 `uc 1 sec_2_digit 1 2 ]
+[s S191 Time_format 3 `uc 1 ms 1 0 `uc 1 sec_1_digit 1 1 `uc 1 sec_2_digit 1 2 ]
 "13
-[v _formatted_time formatted_time `S162  1 e 3 0 ]
+[v _formatted_time formatted_time `S191  1 e 3 0 ]
 "33 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -243,9 +243,9 @@ START 3
 {
 [v is_btn_bounce@btn btn `E469  1 a 1 wreg ]
 "34
-[v is_btn_bounce@i i `i  1 a 2 7 ]
+[v is_btn_bounce@i i `i  1 a 2 6 ]
 "28
-[v is_btn_bounce@is_bounce is_bounce `a  1 a 1 6 ]
+[v is_btn_bounce@is_bounce is_bounce `a  1 a 1 8 ]
 "29
 [v is_btn_bounce@mask mask `uc  1 a 1 5 ]
 "26

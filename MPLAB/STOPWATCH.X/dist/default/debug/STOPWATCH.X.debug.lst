@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Sep  6 23:41:45 2021
+                                                                                               Tue Sep  7 00:05:56 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F628A
@@ -259,8 +259,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    245  009D                     	;# 
    246  009F                     	;# 
    247  0006                     _PORTBbits	set	6
-   248  0005                     _PORTAbits	set	5
-   249  0006                     _PORTB	set	6
+   248  0006                     _PORTB	set	6
+   249  0005                     _PORTAbits	set	5
    250  0005                     _PORTA	set	5
    251  001F                     _CMCON	set	31
    252  000B                     _INTCONbits	set	11
@@ -290,7 +290,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    276                           
    277  07FE                     __end_of__initialization:
    278  07FE  0183               	clrf	3
-   279  07FF  2D12               	ljmp	_main	;jump to C main() function
+   279  07FF  2CF9               	ljmp	_main	;jump to C main() function
    280                           
    281                           	psect	bssBANK0
    282  0020                     __pbssBANK0:
@@ -440,29 +440,29 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    426                           
    427                           ; 2 bytes @ 0x5
    428  0075                     	ds	1
-   429  0076                     is_btn_bounce@is_bounce:
-   430  0076                     ___awdiv@sign:	
+   429  0076                     ___awdiv@sign:
+   430  0076                     ___awmod@sign:	
    431                           ; 1 bytes @ 0x6
    432                           
-   433  0076                     ___awmod@sign:	
+   433  0076                     is_btn_bounce@i:	
    434                           ; 1 bytes @ 0x6
    435                           
    436                           
-   437                           ; 1 bytes @ 0x6
+   437                           ; 2 bytes @ 0x6
    438  0076                     	ds	1
    439  0077                     ___lwdiv@counter:
-   440  0077                     is_btn_bounce@i:	
+   440  0077                     ___awdiv@quotient:	
    441                           ; 1 bytes @ 0x7
    442                           
-   443  0077                     ___awdiv@quotient:	
+   443                           
    444                           ; 2 bytes @ 0x7
-   445                           
-   446                           
-   447                           ; 2 bytes @ 0x7
-   448  0077                     	ds	1
-   449  0078                     ?___lwmod:
+   445  0077                     	ds	1
+   446  0078                     ?___lwmod:
+   447  0078                     is_btn_bounce@is_bounce:	
+   448                           ; 2 bytes @ 0x8
+   449                           
    450  0078                     ___lwmod@divisor:	
-   451                           ; 2 bytes @ 0x8
+   451                           ; 1 bytes @ 0x8
    452                           
    453                           
    454                           ; 2 bytes @ 0x8
@@ -506,7 +506,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    492  002B                     	ds	1
    493                           
    494                           	psect	maintext
-   495  0512                     __pmaintext:	
+   495  04F9                     __pmaintext:	
    496 ;;
    497 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
    498 ;;
@@ -546,26 +546,26 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    532                           
    533                           
    534                           ;psect for function _main
-   535  0512                     _main:
-   536  0512                     l1279:	
+   535  04F9                     _main:
+   536  04F9                     l1285:	
    537                           ;incstack = 0
    538                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
    539                           
-   540  0512  251A               	fcall	_configure
-   541  0513  250A               	fcall	_reset_stopwatch
-   542  0514                     l1281:
-   543  0514  25CA               	fcall	_update_disp
-   544  0515                     l1283:
-   545  0515  257E               	fcall	_get_btn_pressed
-   546  0516  2545               	fcall	_handle_btn_pressing
-   547  0517                     l1285:
-   548  0517  2561               	fcall	_update_time_counter
-   549  0518  2D14               	goto	l1281
-   550  0519  2800               	ljmp	start
-   551  051A                     __end_of_main:
+   540  04F9  2501               	fcall	_configure
+   541  04FA  24F1               	fcall	_reset_stopwatch
+   542  04FB                     l1287:
+   543  04FB  25CA               	fcall	_update_disp
+   544  04FC                     l1289:
+   545  04FC  2594               	fcall	_get_btn_pressed
+   546  04FD  252E               	fcall	_handle_btn_pressing
+   547  04FE                     l1291:
+   548  04FE  254A               	fcall	_update_time_counter
+   549  04FF  2CFB               	goto	l1287
+   550  0500  2800               	ljmp	start
+   551  0501                     __end_of_main:
    552                           
    553                           	psect	text1
-   554  0561                     __ptext1:	
+   554  054A                     __ptext1:	
    555 ;; *************** function _update_time_counter *****************
    556 ;; Defined at:
    557 ;;		line 43 in file "stopwatch.c"
@@ -597,57 +597,57 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    583                           
    584                           
    585                           ;psect for function _update_time_counter
-   586  0561                     _update_time_counter:
-   587  0561                     l1273:	
+   586  054A                     _update_time_counter:
+   587  054A                     l1279:	
    588                           ;incstack = 0
    589                           ; Regs used in _update_time_counter: [wreg+status,2+status,0]
    590                           
    591                           
    592                           ;stopwatch.c: 45:     if (is_timer_work)
-   593  0561  1283               	bcf	3,5	;RP0=0, select bank0
-   594  0562  1303               	bcf	3,6	;RP1=0, select bank0
-   595  0563  0825               	movf	_is_timer_work,w
-   596  0564  1903               	btfsc	3,2
-   597  0565  2D67               	goto	u741
-   598  0566  2D68               	goto	u740
-   599  0567                     u741:
-   600  0567  2D7D               	goto	l100
-   601  0568                     u740:
-   602  0568                     l1275:
+   593  054A  1283               	bcf	3,5	;RP0=0, select bank0
+   594  054B  1303               	bcf	3,6	;RP1=0, select bank0
+   595  054C  0825               	movf	_is_timer_work,w
+   596  054D  1903               	btfsc	3,2
+   597  054E  2D50               	goto	u781
+   598  054F  2D51               	goto	u780
+   599  0550                     u781:
+   600  0550  2D66               	goto	l102
+   601  0551                     u780:
+   602  0551                     l1281:
    603                           
    604                           ;stopwatch.c: 46:     {;stopwatch.c: 47:         if (time_ms > 60000)
-   605  0568  30EA               	movlw	234
-   606  0569  0224               	subwf	_time_ms+1,w
-   607  056A  3061               	movlw	97
-   608  056B  1903               	skipnz
-   609  056C  0223               	subwf	_time_ms,w
-   610  056D  1C03               	skipc
-   611  056E  2D70               	goto	u751
-   612  056F  2D71               	goto	u750
-   613  0570                     u751:
-   614  0570  2D77               	goto	l99
-   615  0571                     u750:
-   616  0571                     l1277:
+   605  0551  30EA               	movlw	234
+   606  0552  0224               	subwf	_time_ms+1,w
+   607  0553  3061               	movlw	97
+   608  0554  1903               	skipnz
+   609  0555  0223               	subwf	_time_ms,w
+   610  0556  1C03               	skipc
+   611  0557  2D59               	goto	u791
+   612  0558  2D5A               	goto	u790
+   613  0559                     u791:
+   614  0559  2D60               	goto	l101
+   615  055A                     u790:
+   616  055A                     l1283:
    617                           
    618                           ;stopwatch.c: 48:             time_ms -= 60000;
-   619  0571  3060               	movlw	96
-   620  0572  02A3               	subwf	_time_ms,f
-   621  0573  30EA               	movlw	234
-   622  0574  1C03               	skipc
-   623  0575  03A4               	decf	_time_ms+1,f
-   624  0576  02A4               	subwf	_time_ms+1,f
-   625  0577                     l99:
+   619  055A  3060               	movlw	96
+   620  055B  02A3               	subwf	_time_ms,f
+   621  055C  30EA               	movlw	234
+   622  055D  1C03               	skipc
+   623  055E  03A4               	decf	_time_ms+1,f
+   624  055F  02A4               	subwf	_time_ms+1,f
+   625  0560                     l101:
    626                           
    627                           ;stopwatch.c: 49:         time_ms += 16;
-   628  0577  3010               	movlw	16
-   629  0578  07A3               	addwf	_time_ms,f
-   630  0579  1803               	skipnc
-   631  057A  0AA4               	incf	_time_ms+1,f
-   632  057B  3000               	movlw	0
-   633  057C  07A4               	addwf	_time_ms+1,f
-   634  057D                     l100:
-   635  057D  0008               	return
-   636  057E                     __end_of_update_time_counter:
+   628  0560  3010               	movlw	16
+   629  0561  07A3               	addwf	_time_ms,f
+   630  0562  1803               	skipnc
+   631  0563  0AA4               	incf	_time_ms+1,f
+   632  0564  3000               	movlw	0
+   633  0565  07A4               	addwf	_time_ms+1,f
+   634  0566                     l102:
+   635  0566  0008               	return
+   636  0567                     __end_of_update_time_counter:
    637                           
    638                           	psect	text2
    639  05CA                     __ptext2:	
@@ -685,114 +685,114 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    671                           
    672                           ;psect for function _update_disp
    673  05CA                     _update_disp:
-   674  05CA                     l1227:	
+   674  05CA                     l1233:	
    675                           ;incstack = 0
    676                           ; Regs used in _update_disp: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    677                           
    678                           
    679                           ;display.c: 51:     format_time();
    680  05CA  2681               	fcall	_format_time
-   681  05CB                     l1229:
+   681  05CB                     l1235:
    682                           
    683                           ;display.c: 53:     set_disp_digit_value(formatted_time.ms);
    684  05CB  1283               	bcf	3,5	;RP0=0, select bank0
    685  05CC  1303               	bcf	3,6	;RP1=0, select bank0
    686  05CD  0820               	movf	_formatted_time,w
    687  05CE  2731               	fcall	_set_disp_digit_value
-   688  05CF                     l1231:
+   688  05CF                     l1237:
    689                           
    690                           ;display.c: 54:     PORTAbits.RA0 = 1;
    691  05CF  1283               	bcf	3,5	;RP0=0, select bank0
    692  05D0  1303               	bcf	3,6	;RP1=0, select bank0
    693  05D1  1405               	bsf	5,0	;volatile
-   694  05D2                     l1233:
+   694  05D2                     l1239:
    695                           
    696                           ;display.c: 55:     _delay((unsigned long)((1)*(4000000/4000.0)));
    697  05D2  30C7               	movlw	199
    698  05D3  1283               	bcf	3,5	;RP0=0, select bank0
    699  05D4  1303               	bcf	3,6	;RP1=0, select bank0
    700  05D5  00AB               	movwf	??_update_disp
-   701  05D6                     u767:
+   701  05D6                     u807:
    702  05D6  2DD7               	nop2
    703  05D7  0BAB               	decfsz	??_update_disp,f
-   704  05D8  2DD6               	goto	u767
+   704  05D8  2DD6               	goto	u807
    705  05D9  2DDA               	nop2
    706  05DA  0000               	nop
-   707  05DB                     l1235:
+   707  05DB                     l1241:
    708                           
    709                           ;display.c: 56:     PORTAbits.RA0 = 0;
    710  05DB  1283               	bcf	3,5	;RP0=0, select bank0
    711  05DC  1303               	bcf	3,6	;RP1=0, select bank0
    712  05DD  1005               	bcf	5,0	;volatile
-   713  05DE                     l1237:
+   713  05DE                     l1243:
    714                           
    715                           ;display.c: 58:     set_disp_digit_value(formatted_time.sec_1_digit);
    716  05DE  0821               	movf	_formatted_time+1,w
    717  05DF  2731               	fcall	_set_disp_digit_value
-   718  05E0                     l1239:
+   718  05E0                     l1245:
    719                           
    720                           ;display.c: 59:     PORTAbits.RA1 = 1;
    721  05E0  1283               	bcf	3,5	;RP0=0, select bank0
    722  05E1  1303               	bcf	3,6	;RP1=0, select bank0
    723  05E2  1485               	bsf	5,1	;volatile
-   724  05E3                     l1241:
+   724  05E3                     l1247:
    725                           
    726                           ;display.c: 60:     PORTBbits.RB7 = 0;
    727  05E3  1386               	bcf	6,7	;volatile
-   728  05E4                     l1243:
+   728  05E4                     l1249:
    729                           
    730                           ;display.c: 61:     _delay((unsigned long)((1)*(4000000/4000.0)));
    731  05E4  30C7               	movlw	199
    732  05E5  1283               	bcf	3,5	;RP0=0, select bank0
    733  05E6  1303               	bcf	3,6	;RP1=0, select bank0
    734  05E7  00AB               	movwf	??_update_disp
-   735  05E8                     u777:
+   735  05E8                     u817:
    736  05E8  2DE9               	nop2
    737  05E9  0BAB               	decfsz	??_update_disp,f
-   738  05EA  2DE8               	goto	u777
+   738  05EA  2DE8               	goto	u817
    739  05EB  2DEC               	nop2
    740  05EC  0000               	nop
-   741  05ED                     l1245:
+   741  05ED                     l1251:
    742                           
    743                           ;display.c: 62:     PORTAbits.RA1 = 0;
    744  05ED  1283               	bcf	3,5	;RP0=0, select bank0
    745  05EE  1303               	bcf	3,6	;RP1=0, select bank0
    746  05EF  1085               	bcf	5,1	;volatile
-   747  05F0                     l1247:
+   747  05F0                     l1253:
    748                           
    749                           ;display.c: 63:     PORTBbits.RB7 = 1;
    750  05F0  1786               	bsf	6,7	;volatile
-   751  05F1                     l1249:
+   751  05F1                     l1255:
    752                           
    753                           ;display.c: 65:     set_disp_digit_value(formatted_time.sec_2_digit);
    754  05F1  0822               	movf	_formatted_time+2,w
    755  05F2  2731               	fcall	_set_disp_digit_value
-   756  05F3                     l1251:
+   756  05F3                     l1257:
    757                           
    758                           ;display.c: 66:     PORTAbits.RA2 = 1;
    759  05F3  1283               	bcf	3,5	;RP0=0, select bank0
    760  05F4  1303               	bcf	3,6	;RP1=0, select bank0
    761  05F5  1505               	bsf	5,2	;volatile
-   762  05F6                     l1253:
+   762  05F6                     l1259:
    763                           
    764                           ;display.c: 67:     _delay((unsigned long)((1)*(4000000/4000.0)));
    765  05F6  30C7               	movlw	199
    766  05F7  1283               	bcf	3,5	;RP0=0, select bank0
    767  05F8  1303               	bcf	3,6	;RP1=0, select bank0
    768  05F9  00AB               	movwf	??_update_disp
-   769  05FA                     u787:
+   769  05FA                     u827:
    770  05FA  2DFB               	nop2
    771  05FB  0BAB               	decfsz	??_update_disp,f
-   772  05FC  2DFA               	goto	u787
+   772  05FC  2DFA               	goto	u827
    773  05FD  2DFE               	nop2
    774  05FE  0000               	nop
-   775  05FF                     l1255:
+   775  05FF                     l1261:
    776                           
    777                           ;display.c: 68:     PORTAbits.RA2 = 0;
    778  05FF  1283               	bcf	3,5	;RP0=0, select bank0
    779  0600  1303               	bcf	3,6	;RP1=0, select bank0
    780  0601  1105               	bcf	5,2	;volatile
-   781  0602                     l131:
+   781  0602                     l133:
    782  0602  0008               	return
    783  0603                     __end_of_update_disp:
    784                           
@@ -835,12 +835,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    821                           ; Regs used in _set_disp_digit_value: [wreg-fsr0h+status,2+status,0]
    822                           ;set_disp_digit_value@value stored from wreg
    823  0731  00F2               	movwf	set_disp_digit_value@value
-   824  0732                     l1197:
+   824  0732                     l1203:
    825                           
    826                           ;display.c: 10: static void set_disp_digit_value(uint8_t value);display.c: 11: {;display
       +                          .c: 12:     switch(value)
-   827  0732  2F65               	goto	l1221
-   828  0733                     l1199:
+   827  0732  2F65               	goto	l1227
+   828  0733                     l1205:
    829                           
    830                           ;display.c: 15:             PORTB = 0xC0;
    831  0733  30C0               	movlw	192
@@ -849,8 +849,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    834  0736  0086               	movwf	6	;volatile
    835                           
    836                           ;display.c: 16:             break;
-   837  0737  2F8D               	goto	l128
-   838  0738                     l1201:
+   837  0737  2F8D               	goto	l130
+   838  0738                     l1207:
    839                           
    840                           ;display.c: 18:             PORTB = 0xF9;
    841  0738  30F9               	movlw	249
@@ -859,8 +859,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    844  073B  0086               	movwf	6	;volatile
    845                           
    846                           ;display.c: 19:             break;
-   847  073C  2F8D               	goto	l128
-   848  073D                     l1203:
+   847  073C  2F8D               	goto	l130
+   848  073D                     l1209:
    849                           
    850                           ;display.c: 21:             PORTB = 0xA4;
    851  073D  30A4               	movlw	164
@@ -869,8 +869,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    854  0740  0086               	movwf	6	;volatile
    855                           
    856                           ;display.c: 22:             break;
-   857  0741  2F8D               	goto	l128
-   858  0742                     l1205:
+   857  0741  2F8D               	goto	l130
+   858  0742                     l1211:
    859                           
    860                           ;display.c: 24:             PORTB = 0xB0;
    861  0742  30B0               	movlw	176
@@ -879,8 +879,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    864  0745  0086               	movwf	6	;volatile
    865                           
    866                           ;display.c: 25:             break;
-   867  0746  2F8D               	goto	l128
-   868  0747                     l1207:
+   867  0746  2F8D               	goto	l130
+   868  0747                     l1213:
    869                           
    870                           ;display.c: 27:             PORTB = 0x99;
    871  0747  3099               	movlw	153
@@ -889,8 +889,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    874  074A  0086               	movwf	6	;volatile
    875                           
    876                           ;display.c: 28:             break;
-   877  074B  2F8D               	goto	l128
-   878  074C                     l1209:
+   877  074B  2F8D               	goto	l130
+   878  074C                     l1215:
    879                           
    880                           ;display.c: 30:             PORTB = 0x92;
    881  074C  3092               	movlw	146
@@ -899,8 +899,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    884  074F  0086               	movwf	6	;volatile
    885                           
    886                           ;display.c: 31:             break;
-   887  0750  2F8D               	goto	l128
-   888  0751                     l1211:
+   887  0750  2F8D               	goto	l130
+   888  0751                     l1217:
    889                           
    890                           ;display.c: 33:             PORTB = 0x82;
    891  0751  3082               	movlw	130
@@ -909,8 +909,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    894  0754  0086               	movwf	6	;volatile
    895                           
    896                           ;display.c: 34:             break;
-   897  0755  2F8D               	goto	l128
-   898  0756                     l1213:
+   897  0755  2F8D               	goto	l130
+   898  0756                     l1219:
    899                           
    900                           ;display.c: 36:             PORTB = 0xF8;
    901  0756  30F8               	movlw	248
@@ -919,8 +919,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    904  0759  0086               	movwf	6	;volatile
    905                           
    906                           ;display.c: 37:             break;
-   907  075A  2F8D               	goto	l128
-   908  075B                     l1215:
+   907  075A  2F8D               	goto	l130
+   908  075B                     l1221:
    909                           
    910                           ;display.c: 39:             PORTB = 0x80;
    911  075B  3080               	movlw	128
@@ -929,8 +929,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    914  075E  0086               	movwf	6	;volatile
    915                           
    916                           ;display.c: 40:             break;
-   917  075F  2F8D               	goto	l128
-   918  0760                     l1217:
+   917  075F  2F8D               	goto	l130
+   918  0760                     l1223:
    919                           
    920                           ;display.c: 42:             PORTB = 0x90;
    921  0760  3090               	movlw	144
@@ -939,8 +939,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    924  0763  0086               	movwf	6	;volatile
    925                           
    926                           ;display.c: 43:             break;
-   927  0764  2F8D               	goto	l128
-   928  0765                     l1221:
+   927  0764  2F8D               	goto	l130
+   928  0765                     l1227:
    929  0765  0872               	movf	set_disp_digit_value@value,w
    930  0766  00F0               	movwf	??_set_disp_digit_value
    931  0767  01F1               	clrf	??_set_disp_digit_value+1
@@ -958,9 +958,9 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    942  0768  0871               	movf	??_set_disp_digit_value+1,w
    943  0769  3A00               	xorlw	0	; case 0
    944  076A  1903               	skipnz
-   945  076B  2F6D               	goto	l1327
-   946  076C  2F8D               	goto	l128
-   947  076D                     l1327:
+   945  076B  2F6D               	goto	l1333
+   946  076C  2F8D               	goto	l130
+   947  076D                     l1333:
    948                           
    949                           ; Switch size 1, requested type "simple"
    950                           ; Number of cases is 10, Range of values is 0 to 9
@@ -973,36 +973,36 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    957  076D  0870               	movf	??_set_disp_digit_value,w
    958  076E  3A00               	xorlw	0	; case 0
    959  076F  1903               	skipnz
-   960  0770  2F33               	goto	l1199
+   960  0770  2F33               	goto	l1205
    961  0771  3A01               	xorlw	1	; case 1
    962  0772  1903               	skipnz
-   963  0773  2F38               	goto	l1201
+   963  0773  2F38               	goto	l1207
    964  0774  3A03               	xorlw	3	; case 2
    965  0775  1903               	skipnz
-   966  0776  2F3D               	goto	l1203
+   966  0776  2F3D               	goto	l1209
    967  0777  3A01               	xorlw	1	; case 3
    968  0778  1903               	skipnz
-   969  0779  2F42               	goto	l1205
+   969  0779  2F42               	goto	l1211
    970  077A  3A07               	xorlw	7	; case 4
    971  077B  1903               	skipnz
-   972  077C  2F47               	goto	l1207
+   972  077C  2F47               	goto	l1213
    973  077D  3A01               	xorlw	1	; case 5
    974  077E  1903               	skipnz
-   975  077F  2F4C               	goto	l1209
+   975  077F  2F4C               	goto	l1215
    976  0780  3A03               	xorlw	3	; case 6
    977  0781  1903               	skipnz
-   978  0782  2F51               	goto	l1211
+   978  0782  2F51               	goto	l1217
    979  0783  3A01               	xorlw	1	; case 7
    980  0784  1903               	skipnz
-   981  0785  2F56               	goto	l1213
+   981  0785  2F56               	goto	l1219
    982  0786  3A0F               	xorlw	15	; case 8
    983  0787  1903               	skipnz
-   984  0788  2F5B               	goto	l1215
+   984  0788  2F5B               	goto	l1221
    985  0789  3A01               	xorlw	1	; case 9
    986  078A  1903               	skipnz
-   987  078B  2F60               	goto	l1217
-   988  078C  2F8D               	goto	l128
-   989  078D                     l128:
+   987  078B  2F60               	goto	l1223
+   988  078C  2F8D               	goto	l130
+   989  078D                     l130:
    990  078D  0008               	return
    991  078E                     __end_of_set_disp_digit_value:
    992                           
@@ -1044,7 +1044,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1028                           
   1029                           ;psect for function _format_time
   1030  0681                     _format_time:
-  1031  0681                     l1195:	
+  1031  0681                     l1201:	
   1032                           ;incstack = 0
   1033                           ; Regs used in _format_time: [wreg+status,2+status,0+pclath+cstack]
   1034                           
@@ -1143,7 +1143,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1126  06D4  00A9               	movwf	??_format_time+2
   1127  06D5  0829               	movf	??_format_time+2,w
   1128  06D6  00A2               	movwf	_formatted_time+2
-  1129  06D7                     l95:
+  1129  06D7                     l97:
   1130  06D7  0008               	return
   1131  06D8                     __end_of_format_time:
   1132                           
@@ -1182,88 +1182,88 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1165                           
   1166                           ;psect for function ___lwmod
   1167  0603                     ___lwmod:
-  1168  0603                     l1165:	
+  1168  0603                     l1171:	
   1169                           ;incstack = 0
   1170                           ; Regs used in ___lwmod: [wreg+status,2+status,0]
   1171                           
   1172  0603  0878               	movf	___lwmod@divisor,w
   1173  0604  0479               	iorwf	___lwmod@divisor+1,w
   1174  0605  1903               	btfsc	3,2
-  1175  0606  2E08               	goto	u681
-  1176  0607  2E09               	goto	u680
-  1177  0608                     u681:
-  1178  0608  2E38               	goto	l1183
-  1179  0609                     u680:
-  1180  0609                     l1167:
+  1175  0606  2E08               	goto	u721
+  1176  0607  2E09               	goto	u720
+  1177  0608                     u721:
+  1178  0608  2E38               	goto	l1189
+  1179  0609                     u720:
+  1180  0609                     l1173:
   1181  0609  01FD               	clrf	___lwmod@counter
   1182  060A  0AFD               	incf	___lwmod@counter,f
-  1183  060B  2E17               	goto	l1173
-  1184  060C                     l1169:
+  1183  060B  2E17               	goto	l1179
+  1184  060C                     l1175:
   1185  060C  3001               	movlw	1
-  1186  060D                     u695:
+  1186  060D                     u735:
   1187  060D  1003               	clrc
   1188  060E  0DF8               	rlf	___lwmod@divisor,f
   1189  060F  0DF9               	rlf	___lwmod@divisor+1,f
   1190  0610  3EFF               	addlw	-1
   1191  0611  1D03               	skipz
-  1192  0612  2E0D               	goto	u695
-  1193  0613                     l1171:
+  1192  0612  2E0D               	goto	u735
+  1193  0613                     l1177:
   1194  0613  3001               	movlw	1
   1195  0614  00FC               	movwf	??___lwmod
   1196  0615  087C               	movf	??___lwmod,w
   1197  0616  07FD               	addwf	___lwmod@counter,f
-  1198  0617                     l1173:
+  1198  0617                     l1179:
   1199  0617  1FF9               	btfss	___lwmod@divisor+1,7
-  1200  0618  2E1A               	goto	u701
-  1201  0619  2E1B               	goto	u700
-  1202  061A                     u701:
-  1203  061A  2E0C               	goto	l1169
-  1204  061B                     u700:
-  1205  061B                     l1175:
+  1200  0618  2E1A               	goto	u741
+  1201  0619  2E1B               	goto	u740
+  1202  061A                     u741:
+  1203  061A  2E0C               	goto	l1175
+  1204  061B                     u740:
+  1205  061B                     l1181:
   1206  061B  0879               	movf	___lwmod@divisor+1,w
   1207  061C  027B               	subwf	___lwmod@dividend+1,w
   1208  061D  1D03               	skipz
-  1209  061E  2E21               	goto	u715
+  1209  061E  2E21               	goto	u755
   1210  061F  0878               	movf	___lwmod@divisor,w
   1211  0620  027A               	subwf	___lwmod@dividend,w
-  1212  0621                     u715:
+  1212  0621                     u755:
   1213  0621  1C03               	skipc
-  1214  0622  2E24               	goto	u711
-  1215  0623  2E25               	goto	u710
-  1216  0624                     u711:
-  1217  0624  2E2B               	goto	l1179
-  1218  0625                     u710:
-  1219  0625                     l1177:
+  1214  0622  2E24               	goto	u751
+  1215  0623  2E25               	goto	u750
+  1216  0624                     u751:
+  1217  0624  2E2B               	goto	l1185
+  1218  0625                     u750:
+  1219  0625                     l1183:
   1220  0625  0878               	movf	___lwmod@divisor,w
   1221  0626  02FA               	subwf	___lwmod@dividend,f
   1222  0627  0879               	movf	___lwmod@divisor+1,w
   1223  0628  1C03               	skipc
   1224  0629  03FB               	decf	___lwmod@dividend+1,f
   1225  062A  02FB               	subwf	___lwmod@dividend+1,f
-  1226  062B                     l1179:
+  1226  062B                     l1185:
   1227  062B  3001               	movlw	1
-  1228  062C                     u725:
+  1228  062C                     u765:
   1229  062C  1003               	clrc
   1230  062D  0CF9               	rrf	___lwmod@divisor+1,f
   1231  062E  0CF8               	rrf	___lwmod@divisor,f
   1232  062F  3EFF               	addlw	-1
   1233  0630  1D03               	skipz
-  1234  0631  2E2C               	goto	u725
-  1235  0632                     l1181:
+  1234  0631  2E2C               	goto	u765
+  1235  0632                     l1187:
   1236  0632  3001               	movlw	1
   1237  0633  02FD               	subwf	___lwmod@counter,f
   1238  0634  1D03               	btfss	3,2
-  1239  0635  2E37               	goto	u731
-  1240  0636  2E38               	goto	u730
-  1241  0637                     u731:
-  1242  0637  2E1B               	goto	l1175
-  1243  0638                     u730:
-  1244  0638                     l1183:
+  1239  0635  2E37               	goto	u771
+  1240  0636  2E38               	goto	u770
+  1241  0637                     u771:
+  1242  0637  2E1B               	goto	l1181
+  1243  0638                     u770:
+  1244  0638                     l1189:
   1245  0638  087B               	movf	___lwmod@dividend+1,w
   1246  0639  00F9               	movwf	?___lwmod+1
   1247  063A  087A               	movf	___lwmod@dividend,w
   1248  063B  00F8               	movwf	?___lwmod
-  1249  063C                     l499:
+  1249  063C                     l501:
   1250  063C  0008               	return
   1251  063D                     __end_of___lwmod:
   1252                           
@@ -1303,101 +1303,101 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1286                           
   1287                           ;psect for function ___lwdiv
   1288  063D                     ___lwdiv:
-  1289  063D                     l1139:	
+  1289  063D                     l1145:	
   1290                           ;incstack = 0
   1291                           ; Regs used in ___lwdiv: [wreg+status,2+status,0]
   1292                           
   1293  063D  01F5               	clrf	___lwdiv@quotient
   1294  063E  01F6               	clrf	___lwdiv@quotient+1
-  1295  063F                     l1141:
+  1295  063F                     l1147:
   1296  063F  0870               	movf	___lwdiv@divisor,w
   1297  0640  0471               	iorwf	___lwdiv@divisor+1,w
   1298  0641  1903               	btfsc	3,2
-  1299  0642  2E44               	goto	u611
-  1300  0643  2E45               	goto	u610
-  1301  0644                     u611:
-  1302  0644  2E7C               	goto	l1161
-  1303  0645                     u610:
-  1304  0645                     l1143:
+  1299  0642  2E44               	goto	u651
+  1300  0643  2E45               	goto	u650
+  1301  0644                     u651:
+  1302  0644  2E7C               	goto	l1167
+  1303  0645                     u650:
+  1304  0645                     l1149:
   1305  0645  01F7               	clrf	___lwdiv@counter
   1306  0646  0AF7               	incf	___lwdiv@counter,f
-  1307  0647  2E53               	goto	l1149
-  1308  0648                     l1145:
+  1307  0647  2E53               	goto	l1155
+  1308  0648                     l1151:
   1309  0648  3001               	movlw	1
-  1310  0649                     u625:
+  1310  0649                     u665:
   1311  0649  1003               	clrc
   1312  064A  0DF0               	rlf	___lwdiv@divisor,f
   1313  064B  0DF1               	rlf	___lwdiv@divisor+1,f
   1314  064C  3EFF               	addlw	-1
   1315  064D  1D03               	skipz
-  1316  064E  2E49               	goto	u625
-  1317  064F                     l1147:
+  1316  064E  2E49               	goto	u665
+  1317  064F                     l1153:
   1318  064F  3001               	movlw	1
   1319  0650  00F4               	movwf	??___lwdiv
   1320  0651  0874               	movf	??___lwdiv,w
   1321  0652  07F7               	addwf	___lwdiv@counter,f
-  1322  0653                     l1149:
+  1322  0653                     l1155:
   1323  0653  1FF1               	btfss	___lwdiv@divisor+1,7
-  1324  0654  2E56               	goto	u631
-  1325  0655  2E57               	goto	u630
-  1326  0656                     u631:
-  1327  0656  2E48               	goto	l1145
-  1328  0657                     u630:
-  1329  0657                     l1151:
+  1324  0654  2E56               	goto	u671
+  1325  0655  2E57               	goto	u670
+  1326  0656                     u671:
+  1327  0656  2E48               	goto	l1151
+  1328  0657                     u670:
+  1329  0657                     l1157:
   1330  0657  3001               	movlw	1
-  1331  0658                     u645:
+  1331  0658                     u685:
   1332  0658  1003               	clrc
   1333  0659  0DF5               	rlf	___lwdiv@quotient,f
   1334  065A  0DF6               	rlf	___lwdiv@quotient+1,f
   1335  065B  3EFF               	addlw	-1
   1336  065C  1D03               	skipz
-  1337  065D  2E58               	goto	u645
+  1337  065D  2E58               	goto	u685
   1338  065E  0871               	movf	___lwdiv@divisor+1,w
   1339  065F  0273               	subwf	___lwdiv@dividend+1,w
   1340  0660  1D03               	skipz
-  1341  0661  2E64               	goto	u655
+  1341  0661  2E64               	goto	u695
   1342  0662  0870               	movf	___lwdiv@divisor,w
   1343  0663  0272               	subwf	___lwdiv@dividend,w
-  1344  0664                     u655:
+  1344  0664                     u695:
   1345  0664  1C03               	skipc
-  1346  0665  2E67               	goto	u651
-  1347  0666  2E68               	goto	u650
-  1348  0667                     u651:
-  1349  0667  2E6F               	goto	l1157
-  1350  0668                     u650:
-  1351  0668                     l1153:
+  1346  0665  2E67               	goto	u691
+  1347  0666  2E68               	goto	u690
+  1348  0667                     u691:
+  1349  0667  2E6F               	goto	l1163
+  1350  0668                     u690:
+  1351  0668                     l1159:
   1352  0668  0870               	movf	___lwdiv@divisor,w
   1353  0669  02F2               	subwf	___lwdiv@dividend,f
   1354  066A  0871               	movf	___lwdiv@divisor+1,w
   1355  066B  1C03               	skipc
   1356  066C  03F3               	decf	___lwdiv@dividend+1,f
   1357  066D  02F3               	subwf	___lwdiv@dividend+1,f
-  1358  066E                     l1155:
+  1358  066E                     l1161:
   1359  066E  1475               	bsf	___lwdiv@quotient,0
-  1360  066F                     l1157:
+  1360  066F                     l1163:
   1361  066F  3001               	movlw	1
-  1362  0670                     u665:
+  1362  0670                     u705:
   1363  0670  1003               	clrc
   1364  0671  0CF1               	rrf	___lwdiv@divisor+1,f
   1365  0672  0CF0               	rrf	___lwdiv@divisor,f
   1366  0673  3EFF               	addlw	-1
   1367  0674  1D03               	skipz
-  1368  0675  2E70               	goto	u665
-  1369  0676                     l1159:
+  1368  0675  2E70               	goto	u705
+  1369  0676                     l1165:
   1370  0676  3001               	movlw	1
   1371  0677  02F7               	subwf	___lwdiv@counter,f
   1372  0678  1D03               	btfss	3,2
-  1373  0679  2E7B               	goto	u671
-  1374  067A  2E7C               	goto	u670
-  1375  067B                     u671:
-  1376  067B  2E57               	goto	l1151
-  1377  067C                     u670:
-  1378  067C                     l1161:
+  1373  0679  2E7B               	goto	u711
+  1374  067A  2E7C               	goto	u710
+  1375  067B                     u711:
+  1376  067B  2E57               	goto	l1157
+  1377  067C                     u710:
+  1378  067C                     l1167:
   1379  067C  0876               	movf	___lwdiv@quotient+1,w
   1380  067D  00F1               	movwf	?___lwdiv+1
   1381  067E  0875               	movf	___lwdiv@quotient,w
   1382  067F  00F0               	movwf	?___lwdiv
-  1383  0680                     l489:
+  1383  0680                     l491:
   1384  0680  0008               	return
   1385  0681                     __end_of___lwdiv:
   1386                           
@@ -1437,133 +1437,133 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1420                           
   1421                           ;psect for function ___awmod
   1422  06D8                     ___awmod:
-  1423  06D8                     l1101:	
+  1423  06D8                     l1107:	
   1424                           ;incstack = 0
   1425                           ; Regs used in ___awmod: [wreg+status,2+status,0]
   1426                           
   1427  06D8  01F6               	clrf	___awmod@sign
-  1428  06D9                     l1103:
+  1428  06D9                     l1109:
   1429  06D9  1FF3               	btfss	___awmod@dividend+1,7
-  1430  06DA  2EDC               	goto	u521
-  1431  06DB  2EDD               	goto	u520
-  1432  06DC                     u521:
-  1433  06DC  2EE4               	goto	l1109
-  1434  06DD                     u520:
-  1435  06DD                     l1105:
+  1430  06DA  2EDC               	goto	u561
+  1431  06DB  2EDD               	goto	u560
+  1432  06DC                     u561:
+  1433  06DC  2EE4               	goto	l1115
+  1434  06DD                     u560:
+  1435  06DD                     l1111:
   1436  06DD  09F2               	comf	___awmod@dividend,f
   1437  06DE  09F3               	comf	___awmod@dividend+1,f
   1438  06DF  0AF2               	incf	___awmod@dividend,f
   1439  06E0  1903               	skipnz
   1440  06E1  0AF3               	incf	___awmod@dividend+1,f
-  1441  06E2                     l1107:
+  1441  06E2                     l1113:
   1442  06E2  01F6               	clrf	___awmod@sign
   1443  06E3  0AF6               	incf	___awmod@sign,f
-  1444  06E4                     l1109:
+  1444  06E4                     l1115:
   1445  06E4  1FF1               	btfss	___awmod@divisor+1,7
-  1446  06E5  2EE7               	goto	u531
-  1447  06E6  2EE8               	goto	u530
-  1448  06E7                     u531:
-  1449  06E7  2EED               	goto	l1113
-  1450  06E8                     u530:
-  1451  06E8                     l1111:
+  1446  06E5  2EE7               	goto	u571
+  1447  06E6  2EE8               	goto	u570
+  1448  06E7                     u571:
+  1449  06E7  2EED               	goto	l1119
+  1450  06E8                     u570:
+  1451  06E8                     l1117:
   1452  06E8  09F0               	comf	___awmod@divisor,f
   1453  06E9  09F1               	comf	___awmod@divisor+1,f
   1454  06EA  0AF0               	incf	___awmod@divisor,f
   1455  06EB  1903               	skipnz
   1456  06EC  0AF1               	incf	___awmod@divisor+1,f
-  1457  06ED                     l1113:
+  1457  06ED                     l1119:
   1458  06ED  0870               	movf	___awmod@divisor,w
   1459  06EE  0471               	iorwf	___awmod@divisor+1,w
   1460  06EF  1903               	btfsc	3,2
-  1461  06F0  2EF2               	goto	u541
-  1462  06F1  2EF3               	goto	u540
-  1463  06F2                     u541:
-  1464  06F2  2F22               	goto	l1131
-  1465  06F3                     u540:
-  1466  06F3                     l1115:
+  1461  06F0  2EF2               	goto	u581
+  1462  06F1  2EF3               	goto	u580
+  1463  06F2                     u581:
+  1464  06F2  2F22               	goto	l1137
+  1465  06F3                     u580:
+  1466  06F3                     l1121:
   1467  06F3  01F5               	clrf	___awmod@counter
   1468  06F4  0AF5               	incf	___awmod@counter,f
-  1469  06F5  2F01               	goto	l1121
-  1470  06F6                     l1117:
+  1469  06F5  2F01               	goto	l1127
+  1470  06F6                     l1123:
   1471  06F6  3001               	movlw	1
-  1472  06F7                     u555:
+  1472  06F7                     u595:
   1473  06F7  1003               	clrc
   1474  06F8  0DF0               	rlf	___awmod@divisor,f
   1475  06F9  0DF1               	rlf	___awmod@divisor+1,f
   1476  06FA  3EFF               	addlw	-1
   1477  06FB  1D03               	skipz
-  1478  06FC  2EF7               	goto	u555
-  1479  06FD                     l1119:
+  1478  06FC  2EF7               	goto	u595
+  1479  06FD                     l1125:
   1480  06FD  3001               	movlw	1
   1481  06FE  00F4               	movwf	??___awmod
   1482  06FF  0874               	movf	??___awmod,w
   1483  0700  07F5               	addwf	___awmod@counter,f
-  1484  0701                     l1121:
+  1484  0701                     l1127:
   1485  0701  1FF1               	btfss	___awmod@divisor+1,7
-  1486  0702  2F04               	goto	u561
-  1487  0703  2F05               	goto	u560
-  1488  0704                     u561:
-  1489  0704  2EF6               	goto	l1117
-  1490  0705                     u560:
-  1491  0705                     l1123:
+  1486  0702  2F04               	goto	u601
+  1487  0703  2F05               	goto	u600
+  1488  0704                     u601:
+  1489  0704  2EF6               	goto	l1123
+  1490  0705                     u600:
+  1491  0705                     l1129:
   1492  0705  0871               	movf	___awmod@divisor+1,w
   1493  0706  0273               	subwf	___awmod@dividend+1,w
   1494  0707  1D03               	skipz
-  1495  0708  2F0B               	goto	u575
+  1495  0708  2F0B               	goto	u615
   1496  0709  0870               	movf	___awmod@divisor,w
   1497  070A  0272               	subwf	___awmod@dividend,w
-  1498  070B                     u575:
+  1498  070B                     u615:
   1499  070B  1C03               	skipc
-  1500  070C  2F0E               	goto	u571
-  1501  070D  2F0F               	goto	u570
-  1502  070E                     u571:
-  1503  070E  2F15               	goto	l1127
-  1504  070F                     u570:
-  1505  070F                     l1125:
+  1500  070C  2F0E               	goto	u611
+  1501  070D  2F0F               	goto	u610
+  1502  070E                     u611:
+  1503  070E  2F15               	goto	l1133
+  1504  070F                     u610:
+  1505  070F                     l1131:
   1506  070F  0870               	movf	___awmod@divisor,w
   1507  0710  02F2               	subwf	___awmod@dividend,f
   1508  0711  0871               	movf	___awmod@divisor+1,w
   1509  0712  1C03               	skipc
   1510  0713  03F3               	decf	___awmod@dividend+1,f
   1511  0714  02F3               	subwf	___awmod@dividend+1,f
-  1512  0715                     l1127:
+  1512  0715                     l1133:
   1513  0715  3001               	movlw	1
-  1514  0716                     u585:
+  1514  0716                     u625:
   1515  0716  1003               	clrc
   1516  0717  0CF1               	rrf	___awmod@divisor+1,f
   1517  0718  0CF0               	rrf	___awmod@divisor,f
   1518  0719  3EFF               	addlw	-1
   1519  071A  1D03               	skipz
-  1520  071B  2F16               	goto	u585
-  1521  071C                     l1129:
+  1520  071B  2F16               	goto	u625
+  1521  071C                     l1135:
   1522  071C  3001               	movlw	1
   1523  071D  02F5               	subwf	___awmod@counter,f
   1524  071E  1D03               	btfss	3,2
-  1525  071F  2F21               	goto	u591
-  1526  0720  2F22               	goto	u590
-  1527  0721                     u591:
-  1528  0721  2F05               	goto	l1123
-  1529  0722                     u590:
-  1530  0722                     l1131:
+  1525  071F  2F21               	goto	u631
+  1526  0720  2F22               	goto	u630
+  1527  0721                     u631:
+  1528  0721  2F05               	goto	l1129
+  1529  0722                     u630:
+  1530  0722                     l1137:
   1531  0722  0876               	movf	___awmod@sign,w
   1532  0723  1903               	btfsc	3,2
-  1533  0724  2F26               	goto	u601
-  1534  0725  2F27               	goto	u600
-  1535  0726                     u601:
-  1536  0726  2F2C               	goto	l1135
-  1537  0727                     u600:
-  1538  0727                     l1133:
+  1533  0724  2F26               	goto	u641
+  1534  0725  2F27               	goto	u640
+  1535  0726                     u641:
+  1536  0726  2F2C               	goto	l1141
+  1537  0727                     u640:
+  1538  0727                     l1139:
   1539  0727  09F2               	comf	___awmod@dividend,f
   1540  0728  09F3               	comf	___awmod@dividend+1,f
   1541  0729  0AF2               	incf	___awmod@dividend,f
   1542  072A  1903               	skipnz
   1543  072B  0AF3               	incf	___awmod@dividend+1,f
-  1544  072C                     l1135:
+  1544  072C                     l1141:
   1545  072C  0873               	movf	___awmod@dividend+1,w
   1546  072D  00F1               	movwf	?___awmod+1
   1547  072E  0872               	movf	___awmod@dividend,w
   1548  072F  00F0               	movwf	?___awmod
-  1549  0730                     l383:
+  1549  0730                     l385:
   1550  0730  0008               	return
   1551  0731                     __end_of___awmod:
   1552                           
@@ -1604,156 +1604,156 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1587                           
   1588                           ;psect for function ___awdiv
   1589  078E                     ___awdiv:
-  1590  078E                     l1057:	
+  1590  078E                     l1063:	
   1591                           ;incstack = 0
   1592                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
   1593                           
   1594  078E  01F6               	clrf	___awdiv@sign
-  1595  078F                     l1059:
+  1595  078F                     l1065:
   1596  078F  1FF1               	btfss	___awdiv@divisor+1,7
-  1597  0790  2F92               	goto	u421
-  1598  0791  2F93               	goto	u420
-  1599  0792                     u421:
-  1600  0792  2F9A               	goto	l1065
-  1601  0793                     u420:
-  1602  0793                     l1061:
+  1597  0790  2F92               	goto	u461
+  1598  0791  2F93               	goto	u460
+  1599  0792                     u461:
+  1600  0792  2F9A               	goto	l1071
+  1601  0793                     u460:
+  1602  0793                     l1067:
   1603  0793  09F0               	comf	___awdiv@divisor,f
   1604  0794  09F1               	comf	___awdiv@divisor+1,f
   1605  0795  0AF0               	incf	___awdiv@divisor,f
   1606  0796  1903               	skipnz
   1607  0797  0AF1               	incf	___awdiv@divisor+1,f
-  1608  0798                     l1063:
+  1608  0798                     l1069:
   1609  0798  01F6               	clrf	___awdiv@sign
   1610  0799  0AF6               	incf	___awdiv@sign,f
-  1611  079A                     l1065:
+  1611  079A                     l1071:
   1612  079A  1FF3               	btfss	___awdiv@dividend+1,7
-  1613  079B  2F9D               	goto	u431
-  1614  079C  2F9E               	goto	u430
-  1615  079D                     u431:
-  1616  079D  2FA7               	goto	l1071
-  1617  079E                     u430:
-  1618  079E                     l1067:
+  1613  079B  2F9D               	goto	u471
+  1614  079C  2F9E               	goto	u470
+  1615  079D                     u471:
+  1616  079D  2FA7               	goto	l1077
+  1617  079E                     u470:
+  1618  079E                     l1073:
   1619  079E  09F2               	comf	___awdiv@dividend,f
   1620  079F  09F3               	comf	___awdiv@dividend+1,f
   1621  07A0  0AF2               	incf	___awdiv@dividend,f
   1622  07A1  1903               	skipnz
   1623  07A2  0AF3               	incf	___awdiv@dividend+1,f
-  1624  07A3                     l1069:
+  1624  07A3                     l1075:
   1625  07A3  3001               	movlw	1
   1626  07A4  00F4               	movwf	??___awdiv
   1627  07A5  0874               	movf	??___awdiv,w
   1628  07A6  06F6               	xorwf	___awdiv@sign,f
-  1629  07A7                     l1071:
+  1629  07A7                     l1077:
   1630  07A7  01F7               	clrf	___awdiv@quotient
   1631  07A8  01F8               	clrf	___awdiv@quotient+1
-  1632  07A9                     l1073:
+  1632  07A9                     l1079:
   1633  07A9  0870               	movf	___awdiv@divisor,w
   1634  07AA  0471               	iorwf	___awdiv@divisor+1,w
   1635  07AB  1903               	btfsc	3,2
-  1636  07AC  2FAE               	goto	u441
-  1637  07AD  2FAF               	goto	u440
-  1638  07AE                     u441:
-  1639  07AE  2FE6               	goto	l1093
-  1640  07AF                     u440:
-  1641  07AF                     l1075:
+  1636  07AC  2FAE               	goto	u481
+  1637  07AD  2FAF               	goto	u480
+  1638  07AE                     u481:
+  1639  07AE  2FE6               	goto	l1099
+  1640  07AF                     u480:
+  1641  07AF                     l1081:
   1642  07AF  01F5               	clrf	___awdiv@counter
   1643  07B0  0AF5               	incf	___awdiv@counter,f
-  1644  07B1  2FBD               	goto	l1081
-  1645  07B2                     l1077:
+  1644  07B1  2FBD               	goto	l1087
+  1645  07B2                     l1083:
   1646  07B2  3001               	movlw	1
-  1647  07B3                     u455:
+  1647  07B3                     u495:
   1648  07B3  1003               	clrc
   1649  07B4  0DF0               	rlf	___awdiv@divisor,f
   1650  07B5  0DF1               	rlf	___awdiv@divisor+1,f
   1651  07B6  3EFF               	addlw	-1
   1652  07B7  1D03               	skipz
-  1653  07B8  2FB3               	goto	u455
-  1654  07B9                     l1079:
+  1653  07B8  2FB3               	goto	u495
+  1654  07B9                     l1085:
   1655  07B9  3001               	movlw	1
   1656  07BA  00F4               	movwf	??___awdiv
   1657  07BB  0874               	movf	??___awdiv,w
   1658  07BC  07F5               	addwf	___awdiv@counter,f
-  1659  07BD                     l1081:
+  1659  07BD                     l1087:
   1660  07BD  1FF1               	btfss	___awdiv@divisor+1,7
-  1661  07BE  2FC0               	goto	u461
-  1662  07BF  2FC1               	goto	u460
-  1663  07C0                     u461:
-  1664  07C0  2FB2               	goto	l1077
-  1665  07C1                     u460:
-  1666  07C1                     l1083:
+  1661  07BE  2FC0               	goto	u501
+  1662  07BF  2FC1               	goto	u500
+  1663  07C0                     u501:
+  1664  07C0  2FB2               	goto	l1083
+  1665  07C1                     u500:
+  1666  07C1                     l1089:
   1667  07C1  3001               	movlw	1
-  1668  07C2                     u475:
+  1668  07C2                     u515:
   1669  07C2  1003               	clrc
   1670  07C3  0DF7               	rlf	___awdiv@quotient,f
   1671  07C4  0DF8               	rlf	___awdiv@quotient+1,f
   1672  07C5  3EFF               	addlw	-1
   1673  07C6  1D03               	skipz
-  1674  07C7  2FC2               	goto	u475
+  1674  07C7  2FC2               	goto	u515
   1675  07C8  0871               	movf	___awdiv@divisor+1,w
   1676  07C9  0273               	subwf	___awdiv@dividend+1,w
   1677  07CA  1D03               	skipz
-  1678  07CB  2FCE               	goto	u485
+  1678  07CB  2FCE               	goto	u525
   1679  07CC  0870               	movf	___awdiv@divisor,w
   1680  07CD  0272               	subwf	___awdiv@dividend,w
-  1681  07CE                     u485:
+  1681  07CE                     u525:
   1682  07CE  1C03               	skipc
-  1683  07CF  2FD1               	goto	u481
-  1684  07D0  2FD2               	goto	u480
-  1685  07D1                     u481:
-  1686  07D1  2FD9               	goto	l1089
-  1687  07D2                     u480:
-  1688  07D2                     l1085:
+  1683  07CF  2FD1               	goto	u521
+  1684  07D0  2FD2               	goto	u520
+  1685  07D1                     u521:
+  1686  07D1  2FD9               	goto	l1095
+  1687  07D2                     u520:
+  1688  07D2                     l1091:
   1689  07D2  0870               	movf	___awdiv@divisor,w
   1690  07D3  02F2               	subwf	___awdiv@dividend,f
   1691  07D4  0871               	movf	___awdiv@divisor+1,w
   1692  07D5  1C03               	skipc
   1693  07D6  03F3               	decf	___awdiv@dividend+1,f
   1694  07D7  02F3               	subwf	___awdiv@dividend+1,f
-  1695  07D8                     l1087:
+  1695  07D8                     l1093:
   1696  07D8  1477               	bsf	___awdiv@quotient,0
-  1697  07D9                     l1089:
+  1697  07D9                     l1095:
   1698  07D9  3001               	movlw	1
-  1699  07DA                     u495:
+  1699  07DA                     u535:
   1700  07DA  1003               	clrc
   1701  07DB  0CF1               	rrf	___awdiv@divisor+1,f
   1702  07DC  0CF0               	rrf	___awdiv@divisor,f
   1703  07DD  3EFF               	addlw	-1
   1704  07DE  1D03               	skipz
-  1705  07DF  2FDA               	goto	u495
-  1706  07E0                     l1091:
+  1705  07DF  2FDA               	goto	u535
+  1706  07E0                     l1097:
   1707  07E0  3001               	movlw	1
   1708  07E1  02F5               	subwf	___awdiv@counter,f
   1709  07E2  1D03               	btfss	3,2
-  1710  07E3  2FE5               	goto	u501
-  1711  07E4  2FE6               	goto	u500
-  1712  07E5                     u501:
-  1713  07E5  2FC1               	goto	l1083
-  1714  07E6                     u500:
-  1715  07E6                     l1093:
+  1710  07E3  2FE5               	goto	u541
+  1711  07E4  2FE6               	goto	u540
+  1712  07E5                     u541:
+  1713  07E5  2FC1               	goto	l1089
+  1714  07E6                     u540:
+  1715  07E6                     l1099:
   1716  07E6  0876               	movf	___awdiv@sign,w
   1717  07E7  1903               	btfsc	3,2
-  1718  07E8  2FEA               	goto	u511
-  1719  07E9  2FEB               	goto	u510
-  1720  07EA                     u511:
-  1721  07EA  2FF0               	goto	l1097
-  1722  07EB                     u510:
-  1723  07EB                     l1095:
+  1718  07E8  2FEA               	goto	u551
+  1719  07E9  2FEB               	goto	u550
+  1720  07EA                     u551:
+  1721  07EA  2FF0               	goto	l1103
+  1722  07EB                     u550:
+  1723  07EB                     l1101:
   1724  07EB  09F7               	comf	___awdiv@quotient,f
   1725  07EC  09F8               	comf	___awdiv@quotient+1,f
   1726  07ED  0AF7               	incf	___awdiv@quotient,f
   1727  07EE  1903               	skipnz
   1728  07EF  0AF8               	incf	___awdiv@quotient+1,f
-  1729  07F0                     l1097:
+  1729  07F0                     l1103:
   1730  07F0  0878               	movf	___awdiv@quotient+1,w
   1731  07F1  00F1               	movwf	?___awdiv+1
   1732  07F2  0877               	movf	___awdiv@quotient,w
   1733  07F3  00F0               	movwf	?___awdiv
-  1734  07F4                     l370:
+  1734  07F4                     l372:
   1735  07F4  0008               	return
   1736  07F5                     __end_of___awdiv:
   1737                           
   1738                           	psect	text9
-  1739  0545                     __ptext9:	
+  1739  052E                     __ptext9:	
   1740 ;; *************** function _handle_btn_pressing *****************
   1741 ;; Defined at:
   1742 ;;		line 55 in file "buttons.c"
@@ -1788,42 +1788,42 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1771                           
   1772                           
   1773                           ;psect for function _handle_btn_pressing
-  1774  0545                     _handle_btn_pressing:
+  1774  052E                     _handle_btn_pressing:
   1775                           
   1776                           ;incstack = 0
   1777                           ; Regs used in _handle_btn_pressing: [wreg-fsr0h+status,2+status,0+pclath+cstack]
   1778                           ;handle_btn_pressing@btn stored from wreg
-  1779  0545  00F2               	movwf	handle_btn_pressing@btn
-  1780  0546                     l1257:
+  1779  052E  00F2               	movwf	handle_btn_pressing@btn
+  1780  052F                     l1263:
   1781                           
   1782                           ;buttons.c: 55: void handle_btn_pressing(enum Button btn);buttons.c: 56: {;buttons.c: 57
       +                          :     switch(btn)
-  1783  0546  2D4D               	goto	l1267
-  1784  0547                     l1259:
+  1783  052F  2D36               	goto	l1273
+  1784  0530                     l1265:
   1785                           
   1786                           ;buttons.c: 60:             reset_stopwatch();
-  1787  0547  250A               	fcall	_reset_stopwatch
+  1787  0530  24F1               	fcall	_reset_stopwatch
   1788                           
   1789                           ;buttons.c: 61:             break;
-  1790  0548  2D60               	goto	l75
-  1791  0549                     l1261:
+  1790  0531  2D49               	goto	l77
+  1791  0532                     l1267:
   1792                           
   1793                           ;buttons.c: 63:             stop_stopwatch();
-  1794  0549  2501               	fcall	_stop_stopwatch
+  1794  0532  24E8               	fcall	_stop_stopwatch
   1795                           
   1796                           ;buttons.c: 64:             break;
-  1797  054A  2D60               	goto	l75
-  1798  054B                     l1263:
+  1797  0533  2D49               	goto	l77
+  1798  0534                     l1269:
   1799                           
   1800                           ;buttons.c: 66:             start_stopwatch();
-  1801  054B  2505               	fcall	_start_stopwatch
+  1801  0534  24EC               	fcall	_start_stopwatch
   1802                           
   1803                           ;buttons.c: 67:             break;
-  1804  054C  2D60               	goto	l75
-  1805  054D                     l1267:
-  1806  054D  0872               	movf	handle_btn_pressing@btn,w
-  1807  054E  00F0               	movwf	??_handle_btn_pressing
-  1808  054F  01F1               	clrf	??_handle_btn_pressing+1
+  1804  0535  2D49               	goto	l77
+  1805  0536                     l1273:
+  1806  0536  0872               	movf	handle_btn_pressing@btn,w
+  1807  0537  00F0               	movwf	??_handle_btn_pressing
+  1808  0538  01F1               	clrf	??_handle_btn_pressing+1
   1809                           
   1810                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -1835,12 +1835,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1816                           ; direct_byte            7     6 (fixed)
   1817                           ; jumptable            260     6 (fixed)
   1818                           ;	Chosen strategy is simple_byte
-  1819  0550  0871               	movf	??_handle_btn_pressing+1,w
-  1820  0551  3A00               	xorlw	0	; case 0
-  1821  0552  1903               	skipnz
-  1822  0553  2D55               	goto	l1329
-  1823  0554  2D60               	goto	l75
-  1824  0555                     l1329:
+  1819  0539  0871               	movf	??_handle_btn_pressing+1,w
+  1820  053A  3A00               	xorlw	0	; case 0
+  1821  053B  1903               	skipnz
+  1822  053C  2D3E               	goto	l1335
+  1823  053D  2D49               	goto	l77
+  1824  053E                     l1335:
   1825                           
   1826                           ; Switch size 1, requested type "simple"
   1827                           ; Number of cases is 3, Range of values is 1 to 3
@@ -1850,23 +1850,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1831                           ; direct_byte           12     9 (fixed)
   1832                           ; jumptable            263     9 (fixed)
   1833                           ;	Chosen strategy is simple_byte
-  1834  0555  0870               	movf	??_handle_btn_pressing,w
-  1835  0556  3A01               	xorlw	1	; case 1
-  1836  0557  1903               	skipnz
-  1837  0558  2D47               	goto	l1259
-  1838  0559  3A03               	xorlw	3	; case 2
-  1839  055A  1903               	skipnz
-  1840  055B  2D49               	goto	l1261
-  1841  055C  3A01               	xorlw	1	; case 3
-  1842  055D  1903               	skipnz
-  1843  055E  2D4B               	goto	l1263
-  1844  055F  2D60               	goto	l75
-  1845  0560                     l75:
-  1846  0560  0008               	return
-  1847  0561                     __end_of_handle_btn_pressing:
+  1834  053E  0870               	movf	??_handle_btn_pressing,w
+  1835  053F  3A01               	xorlw	1	; case 1
+  1836  0540  1903               	skipnz
+  1837  0541  2D30               	goto	l1265
+  1838  0542  3A03               	xorlw	3	; case 2
+  1839  0543  1903               	skipnz
+  1840  0544  2D32               	goto	l1267
+  1841  0545  3A01               	xorlw	1	; case 3
+  1842  0546  1903               	skipnz
+  1843  0547  2D34               	goto	l1269
+  1844  0548  2D49               	goto	l77
+  1845  0549                     l77:
+  1846  0549  0008               	return
+  1847  054A                     __end_of_handle_btn_pressing:
   1848                           
   1849                           	psect	text10
-  1850  0501                     __ptext10:	
+  1850  04E8                     __ptext10:	
   1851 ;; *************** function _stop_stopwatch *****************
   1852 ;; Defined at:
   1853 ;;		line 22 in file "stopwatch.c"
@@ -1898,22 +1898,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1879                           
   1880                           
   1881                           ;psect for function _stop_stopwatch
-  1882  0501                     _stop_stopwatch:
-  1883  0501                     l1191:	
+  1882  04E8                     _stop_stopwatch:
+  1883  04E8                     l1197:	
   1884                           ;incstack = 0
   1885                           ; Regs used in _stop_stopwatch: [status,2]
   1886                           
   1887                           
   1888                           ;stopwatch.c: 24:     is_timer_work = 0;
-  1889  0501  1283               	bcf	3,5	;RP0=0, select bank0
-  1890  0502  1303               	bcf	3,6	;RP1=0, select bank0
-  1891  0503  01A5               	clrf	_is_timer_work
-  1892  0504                     l89:
-  1893  0504  0008               	return
-  1894  0505                     __end_of_stop_stopwatch:
+  1889  04E8  1283               	bcf	3,5	;RP0=0, select bank0
+  1890  04E9  1303               	bcf	3,6	;RP1=0, select bank0
+  1891  04EA  01A5               	clrf	_is_timer_work
+  1892  04EB                     l91:
+  1893  04EB  0008               	return
+  1894  04EC                     __end_of_stop_stopwatch:
   1895                           
   1896                           	psect	text11
-  1897  0505                     __ptext11:	
+  1897  04EC                     __ptext11:	
   1898 ;; *************** function _start_stopwatch *****************
   1899 ;; Defined at:
   1900 ;;		line 27 in file "stopwatch.c"
@@ -1945,23 +1945,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1926                           
   1927                           
   1928                           ;psect for function _start_stopwatch
-  1929  0505                     _start_stopwatch:
-  1930  0505                     l1193:	
+  1929  04EC                     _start_stopwatch:
+  1930  04EC                     l1199:	
   1931                           ;incstack = 0
   1932                           ; Regs used in _start_stopwatch: []
   1933                           
   1934                           
   1935                           ;stopwatch.c: 29:     is_timer_work = 1;
-  1936  0505  1283               	bcf	3,5	;RP0=0, select bank0
-  1937  0506  1303               	bcf	3,6	;RP1=0, select bank0
-  1938  0507  01A5               	clrf	_is_timer_work
-  1939  0508  0AA5               	incf	_is_timer_work,f
-  1940  0509                     l92:
-  1941  0509  0008               	return
-  1942  050A                     __end_of_start_stopwatch:
+  1936  04EC  1283               	bcf	3,5	;RP0=0, select bank0
+  1937  04ED  1303               	bcf	3,6	;RP1=0, select bank0
+  1938  04EE  01A5               	clrf	_is_timer_work
+  1939  04EF  0AA5               	incf	_is_timer_work,f
+  1940  04F0                     l94:
+  1941  04F0  0008               	return
+  1942  04F1                     __end_of_start_stopwatch:
   1943                           
   1944                           	psect	text12
-  1945  050A                     __ptext12:	
+  1945  04F1                     __ptext12:	
   1946 ;; *************** function _reset_stopwatch *****************
   1947 ;; Defined at:
   1948 ;;		line 15 in file "stopwatch.c"
@@ -1994,31 +1994,31 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1975                           
   1976                           
   1977                           ;psect for function _reset_stopwatch
-  1978  050A                     _reset_stopwatch:
-  1979  050A                     l1187:	
+  1978  04F1                     _reset_stopwatch:
+  1979  04F1                     l1193:	
   1980                           ;incstack = 0
   1981                           ; Regs used in _reset_stopwatch: [wreg+status,2]
   1982                           
   1983                           
   1984                           ;stopwatch.c: 17:     is_timer_work = 0;
-  1985  050A  1283               	bcf	3,5	;RP0=0, select bank0
-  1986  050B  1303               	bcf	3,6	;RP1=0, select bank0
-  1987  050C  01A5               	clrf	_is_timer_work
+  1985  04F1  1283               	bcf	3,5	;RP0=0, select bank0
+  1986  04F2  1303               	bcf	3,6	;RP1=0, select bank0
+  1987  04F3  01A5               	clrf	_is_timer_work
   1988                           
   1989                           ;stopwatch.c: 18:     time_ms = 0;
-  1990  050D  01A3               	clrf	_time_ms
-  1991  050E  01A4               	clrf	_time_ms+1
-  1992  050F                     l1189:
+  1990  04F4  01A3               	clrf	_time_ms
+  1991  04F5  01A4               	clrf	_time_ms+1
+  1992  04F6                     l1195:
   1993                           
   1994                           ;stopwatch.c: 19:     PORTB = 0xC0;
-  1995  050F  30C0               	movlw	192
-  1996  0510  0086               	movwf	6	;volatile
-  1997  0511                     l86:
-  1998  0511  0008               	return
-  1999  0512                     __end_of_reset_stopwatch:
+  1995  04F6  30C0               	movlw	192
+  1996  04F7  0086               	movwf	6	;volatile
+  1997  04F8                     l88:
+  1998  04F8  0008               	return
+  1999  04F9                     __end_of_reset_stopwatch:
   2000                           
   2001                           	psect	text13
-  2002  057E                     __ptext13:	
+  2002  0594                     __ptext13:	
   2003 ;; *************** function _get_btn_pressed *****************
   2004 ;; Defined at:
   2005 ;;		line 42 in file "buttons.c"
@@ -2051,377 +2051,418 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2032                           
   2033                           
   2034                           ;psect for function _get_btn_pressed
-  2035  057E                     _get_btn_pressed:
-  2036  057E                     l971:	
+  2035  0594                     _get_btn_pressed:
+  2036  0594                     l975:	
   2037                           ;incstack = 0
   2038                           ; Regs used in _get_btn_pressed: [wreg+status,2+status,0+btemp+1+pclath+cstack]
   2039                           
   2040                           
   2041                           ;buttons.c: 44:     enum Button btn = NONE;
-  2042  057E  01FA               	clrf	get_btn_pressed@btn
-  2043  057F                     l973:
+  2042  0594  01FA               	clrf	get_btn_pressed@btn
+  2043  0595                     l977:
   2044                           
-  2045                           ;buttons.c: 46:     if (!is_btn_bounce(RESET))
-  2046  057F  3001               	movlw	1
-  2047  0580  25A2               	fcall	_is_btn_bounce
-  2048  0581  3A00               	xorlw	0
-  2049  0582  1D03               	skipz
-  2050  0583  2D85               	goto	u371
-  2051  0584  2D86               	goto	u370
-  2052  0585                     u371:
-  2053  0585  2D89               	goto	l977
-  2054  0586                     u370:
-  2055  0586                     l975:
-  2056                           
-  2057                           ;buttons.c: 47:         btn = RESET;
-  2058  0586  01FA               	clrf	get_btn_pressed@btn
-  2059  0587  0AFA               	incf	get_btn_pressed@btn,f
-  2060  0588  2DA0               	goto	l62
-  2061  0589                     l977:
-  2062  0589  3002               	movlw	2
-  2063  058A  25A2               	fcall	_is_btn_bounce
-  2064  058B  3A00               	xorlw	0
-  2065  058C  1D03               	skipz
-  2066  058D  2D8F               	goto	u381
-  2067  058E  2D90               	goto	u380
-  2068  058F                     u381:
-  2069  058F  2D95               	goto	l981
-  2070  0590                     u380:
-  2071  0590                     l979:
+  2045                           ;buttons.c: 46:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
+  2046  0595  1283               	bcf	3,5	;RP0=0, select bank0
+  2047  0596  1303               	bcf	3,6	;RP1=0, select bank0
+  2048  0597  1B85               	btfsc	5,7	;volatile
+  2049  0598  2D9A               	goto	u381
+  2050  0599  2D9B               	goto	u380
+  2051  059A                     u381:
+  2052  059A  2DA5               	goto	l63
+  2053  059B                     u380:
+  2054  059B                     l979:
+  2055  059B  3001               	movlw	1
+  2056  059C  2567               	fcall	_is_btn_bounce
+  2057  059D  3A00               	xorlw	0
+  2058  059E  1D03               	skipz
+  2059  059F  2DA1               	goto	u391
+  2060  05A0  2DA2               	goto	u390
+  2061  05A1                     u391:
+  2062  05A1  2DA5               	goto	l63
+  2063  05A2                     u390:
+  2064  05A2                     l981:
+  2065                           
+  2066                           ;buttons.c: 47:         btn = RESET;
+  2067  05A2  01FA               	clrf	get_btn_pressed@btn
+  2068  05A3  0AFA               	incf	get_btn_pressed@btn,f
+  2069  05A4  2DC8               	goto	l64
+  2070  05A5                     l63:	
+  2071                           ;buttons.c: 48:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
   2072                           
-  2073                           ;buttons.c: 49:         btn = STOP;
-  2074  0590  3002               	movlw	2
-  2075  0591  00F9               	movwf	??_get_btn_pressed
-  2076  0592  0879               	movf	??_get_btn_pressed,w
-  2077  0593  00FA               	movwf	get_btn_pressed@btn
-  2078  0594  2DA0               	goto	l62
-  2079  0595                     l981:
-  2080  0595  3003               	movlw	3
-  2081  0596  25A2               	fcall	_is_btn_bounce
-  2082  0597  3A00               	xorlw	0
-  2083  0598  1D03               	skipz
-  2084  0599  2D9B               	goto	u391
-  2085  059A  2D9C               	goto	u390
-  2086  059B                     u391:
-  2087  059B  2DA0               	goto	l62
-  2088  059C                     u390:
-  2089  059C                     l983:
-  2090                           
-  2091                           ;buttons.c: 51:         btn = START;
-  2092  059C  3003               	movlw	3
-  2093  059D  00F9               	movwf	??_get_btn_pressed
-  2094  059E  0879               	movf	??_get_btn_pressed,w
-  2095  059F  00FA               	movwf	get_btn_pressed@btn
-  2096  05A0                     l62:
-  2097                           
-  2098                           ;buttons.c: 52:     return (btn);
-  2099  05A0  087A               	movf	get_btn_pressed@btn,w
-  2100  05A1                     l66:
-  2101  05A1  0008               	return
-  2102  05A2                     __end_of_get_btn_pressed:
-  2103                           
-  2104                           	psect	text14
-  2105  05A2                     __ptext14:	
-  2106 ;; *************** function _is_btn_bounce *****************
-  2107 ;; Defined at:
-  2108 ;;		line 26 in file "buttons.c"
-  2109 ;; Parameters:    Size  Location     Type
-  2110 ;;  btn             1    wreg     enum E469
-  2111 ;; Auto vars:     Size  Location     Type
-  2112 ;;  btn             1    4[COMMON] enum E469
-  2113 ;;  i               2    7[COMMON] int 
-  2114 ;;  is_bounce       1    6[COMMON] _Bool 
-  2115 ;;  mask            1    5[COMMON] unsigned char 
-  2116 ;; Return value:  Size  Location     Type
-  2117 ;;                  1    wreg      _Bool 
-  2118 ;; Registers used:
-  2119 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
-  2120 ;; Tracked objects:
-  2121 ;;		On entry : 0/0
-  2122 ;;		On exit  : 0/0
-  2123 ;;		Unchanged: 0/0
-  2124 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  2125 ;;      Params:         0       0       0       0
-  2126 ;;      Locals:         5       0       0       0
-  2127 ;;      Temps:          1       0       0       0
-  2128 ;;      Totals:         6       0       0       0
-  2129 ;;Total ram usage:        6 bytes
-  2130 ;; Hardware stack levels used: 1
-  2131 ;; Hardware stack levels required when called: 1
-  2132 ;; This function calls:
-  2133 ;;		_get_mask
-  2134 ;; This function is called by:
-  2135 ;;		_get_btn_pressed
-  2136 ;; This function uses a non-reentrant model
-  2137 ;;
-  2138                           
-  2139                           
-  2140                           ;psect for function _is_btn_bounce
-  2141  05A2                     _is_btn_bounce:
-  2142                           
-  2143                           ;incstack = 0
-  2144                           ; Regs used in _is_btn_bounce: [wreg+status,2+status,0+btemp+1+pclath+cstack]
-  2145                           ;is_btn_bounce@btn stored from wreg
-  2146  05A2  00F4               	movwf	is_btn_bounce@btn
-  2147  05A3                     l871:
-  2148                           
-  2149                           ;buttons.c: 26: static _Bool is_btn_bounce(enum Button btn);buttons.c: 27: {;buttons.c: 
+  2073  05A5  1283               	bcf	3,5	;RP0=0, select bank0
+  2074  05A6  1303               	bcf	3,6	;RP1=0, select bank0
+  2075  05A7  1B05               	btfsc	5,6	;volatile
+  2076  05A8  2DAA               	goto	u401
+  2077  05A9  2DAB               	goto	u400
+  2078  05AA                     u401:
+  2079  05AA  2DB7               	goto	l65
+  2080  05AB                     u400:
+  2081  05AB                     l983:
+  2082  05AB  3002               	movlw	2
+  2083  05AC  2567               	fcall	_is_btn_bounce
+  2084  05AD  3A00               	xorlw	0
+  2085  05AE  1D03               	skipz
+  2086  05AF  2DB1               	goto	u411
+  2087  05B0  2DB2               	goto	u410
+  2088  05B1                     u411:
+  2089  05B1  2DB7               	goto	l65
+  2090  05B2                     u410:
+  2091  05B2                     l985:
+  2092                           
+  2093                           ;buttons.c: 49:         btn = STOP;
+  2094  05B2  3002               	movlw	2
+  2095  05B3  00F9               	movwf	??_get_btn_pressed
+  2096  05B4  0879               	movf	??_get_btn_pressed,w
+  2097  05B5  00FA               	movwf	get_btn_pressed@btn
+  2098  05B6  2DC8               	goto	l64
+  2099  05B7                     l65:	
+  2100                           ;buttons.c: 50:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
+  2101                           
+  2102  05B7  1283               	bcf	3,5	;RP0=0, select bank0
+  2103  05B8  1303               	bcf	3,6	;RP1=0, select bank0
+  2104  05B9  1A85               	btfsc	5,5	;volatile
+  2105  05BA  2DBC               	goto	u421
+  2106  05BB  2DBD               	goto	u420
+  2107  05BC                     u421:
+  2108  05BC  2DC8               	goto	l64
+  2109  05BD                     u420:
+  2110  05BD                     l987:
+  2111  05BD  3003               	movlw	3
+  2112  05BE  2567               	fcall	_is_btn_bounce
+  2113  05BF  3A00               	xorlw	0
+  2114  05C0  1D03               	skipz
+  2115  05C1  2DC3               	goto	u431
+  2116  05C2  2DC4               	goto	u430
+  2117  05C3                     u431:
+  2118  05C3  2DC8               	goto	l64
+  2119  05C4                     u430:
+  2120  05C4                     l989:
+  2121                           
+  2122                           ;buttons.c: 51:         btn = START;
+  2123  05C4  3003               	movlw	3
+  2124  05C5  00F9               	movwf	??_get_btn_pressed
+  2125  05C6  0879               	movf	??_get_btn_pressed,w
+  2126  05C7  00FA               	movwf	get_btn_pressed@btn
+  2127  05C8                     l64:
+  2128                           
+  2129                           ;buttons.c: 52:     return (btn);
+  2130  05C8  087A               	movf	get_btn_pressed@btn,w
+  2131  05C9                     l68:
+  2132  05C9  0008               	return
+  2133  05CA                     __end_of_get_btn_pressed:
+  2134                           
+  2135                           	psect	text14
+  2136  0567                     __ptext14:	
+  2137 ;; *************** function _is_btn_bounce *****************
+  2138 ;; Defined at:
+  2139 ;;		line 26 in file "buttons.c"
+  2140 ;; Parameters:    Size  Location     Type
+  2141 ;;  btn             1    wreg     enum E469
+  2142 ;; Auto vars:     Size  Location     Type
+  2143 ;;  btn             1    4[COMMON] enum E469
+  2144 ;;  i               2    6[COMMON] int 
+  2145 ;;  is_bounce       1    8[COMMON] _Bool 
+  2146 ;;  mask            1    5[COMMON] unsigned char 
+  2147 ;; Return value:  Size  Location     Type
+  2148 ;;                  1    wreg      _Bool 
+  2149 ;; Registers used:
+  2150 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+  2151 ;; Tracked objects:
+  2152 ;;		On entry : 0/0
+  2153 ;;		On exit  : 0/0
+  2154 ;;		Unchanged: 0/0
+  2155 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2156 ;;      Params:         0       0       0       0
+  2157 ;;      Locals:         5       0       0       0
+  2158 ;;      Temps:          1       0       0       0
+  2159 ;;      Totals:         6       0       0       0
+  2160 ;;Total ram usage:        6 bytes
+  2161 ;; Hardware stack levels used: 1
+  2162 ;; Hardware stack levels required when called: 1
+  2163 ;; This function calls:
+  2164 ;;		_get_mask
+  2165 ;; This function is called by:
+  2166 ;;		_get_btn_pressed
+  2167 ;; This function uses a non-reentrant model
+  2168 ;;
+  2169                           
+  2170                           
+  2171                           ;psect for function _is_btn_bounce
+  2172  0567                     _is_btn_bounce:
+  2173                           
+  2174                           ;incstack = 0
+  2175                           ; Regs used in _is_btn_bounce: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+  2176                           ;is_btn_bounce@btn stored from wreg
+  2177  0567  00F4               	movwf	is_btn_bounce@btn
+  2178  0568                     l873:
+  2179                           
+  2180                           ;buttons.c: 26: static _Bool is_btn_bounce(enum Button btn);buttons.c: 27: {;buttons.c: 
       +                          28:     _Bool is_bounce = 0;
-  2150  05A3  01F6               	clrf	is_btn_bounce@is_bounce
-  2151  05A4                     l873:
-  2152                           
-  2153                           ;buttons.c: 29:     uint8_t mask = get_mask(btn);
-  2154  05A4  0874               	movf	is_btn_bounce@btn,w
-  2155  05A5  252B               	fcall	_get_mask
-  2156  05A6  00F3               	movwf	??_is_btn_bounce
-  2157  05A7  0873               	movf	??_is_btn_bounce,w
-  2158  05A8  00F5               	movwf	is_btn_bounce@mask
-  2159  05A9                     l875:
-  2160                           
-  2161                           ;buttons.c: 34:     for (int i = 0; i < 385; i++)
-  2162  05A9  01F7               	clrf	is_btn_bounce@i
-  2163  05AA  01F8               	clrf	is_btn_bounce@i+1
-  2164  05AB                     l881:
-  2165                           
-  2166                           ;buttons.c: 35:     {;buttons.c: 36:         if ((PORTA & mask) != 0)
-  2167  05AB  1283               	bcf	3,5	;RP0=0, select bank0
-  2168  05AC  1303               	bcf	3,6	;RP1=0, select bank0
-  2169  05AD  0805               	movf	5,w	;volatile
-  2170  05AE  0575               	andwf	is_btn_bounce@mask,w
-  2171  05AF  1903               	btfsc	3,2
-  2172  05B0  2DB2               	goto	u351
-  2173  05B1  2DB3               	goto	u350
-  2174  05B2                     u351:
-  2175  05B2  2DB5               	goto	l885
-  2176  05B3                     u350:
-  2177  05B3                     l883:
-  2178                           
-  2179                           ;buttons.c: 37:             is_bounce = 1;
-  2180  05B3  01F6               	clrf	is_btn_bounce@is_bounce
-  2181  05B4  0AF6               	incf	is_btn_bounce@is_bounce,f
-  2182  05B5                     l885:
+  2181  0568  01F8               	clrf	is_btn_bounce@is_bounce
+  2182  0569                     l875:
   2183                           
-  2184                           ;buttons.c: 38:     }
-  2185  05B5  3001               	movlw	1
-  2186  05B6  07F7               	addwf	is_btn_bounce@i,f
-  2187  05B7  1803               	skipnc
-  2188  05B8  0AF8               	incf	is_btn_bounce@i+1,f
-  2189  05B9  3000               	movlw	0
-  2190  05BA  07F8               	addwf	is_btn_bounce@i+1,f
-  2191  05BB                     l887:
-  2192  05BB  0878               	movf	is_btn_bounce@i+1,w
-  2193  05BC  3A80               	xorlw	128
-  2194  05BD  00FF               	movwf	btemp+1
-  2195  05BE  3081               	movlw	129
-  2196  05BF  027F               	subwf	btemp+1,w
-  2197  05C0  1D03               	skipz
-  2198  05C1  2DC4               	goto	u365
-  2199  05C2  3081               	movlw	129
-  2200  05C3  0277               	subwf	is_btn_bounce@i,w
-  2201  05C4                     u365:
-  2202  05C4  1C03               	skipc
-  2203  05C5  2DC7               	goto	u361
-  2204  05C6  2DC8               	goto	u360
-  2205  05C7                     u361:
-  2206  05C7  2DAB               	goto	l881
-  2207  05C8                     u360:
-  2208  05C8                     l889:
-  2209                           
-  2210                           ;buttons.c: 39:     return (is_bounce);
-  2211  05C8  0876               	movf	is_btn_bounce@is_bounce,w
-  2212  05C9                     l58:
-  2213  05C9  0008               	return
-  2214  05CA                     __end_of_is_btn_bounce:
-  2215                           
-  2216                           	psect	text15
-  2217  052B                     __ptext15:	
-  2218 ;; *************** function _get_mask *****************
-  2219 ;; Defined at:
-  2220 ;;		line 13 in file "buttons.c"
-  2221 ;; Parameters:    Size  Location     Type
-  2222 ;;  btn             1    wreg     enum E469
-  2223 ;; Auto vars:     Size  Location     Type
-  2224 ;;  btn             1    2[COMMON] enum E469
-  2225 ;;  mask            1    1[COMMON] unsigned char 
-  2226 ;; Return value:  Size  Location     Type
-  2227 ;;                  1    wreg      unsigned char 
-  2228 ;; Registers used:
-  2229 ;;		wreg, status,2, status,0
-  2230 ;; Tracked objects:
-  2231 ;;		On entry : 0/0
-  2232 ;;		On exit  : 0/0
-  2233 ;;		Unchanged: 0/0
-  2234 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  2235 ;;      Params:         0       0       0       0
-  2236 ;;      Locals:         2       0       0       0
-  2237 ;;      Temps:          1       0       0       0
-  2238 ;;      Totals:         3       0       0       0
-  2239 ;;Total ram usage:        3 bytes
-  2240 ;; Hardware stack levels used: 1
-  2241 ;; This function calls:
-  2242 ;;		Nothing
-  2243 ;; This function is called by:
-  2244 ;;		_is_btn_bounce
-  2245 ;; This function uses a non-reentrant model
-  2246 ;;
-  2247                           
+  2184                           ;buttons.c: 29:     uint8_t mask = get_mask(btn);
+  2185  0569  0874               	movf	is_btn_bounce@btn,w
+  2186  056A  2512               	fcall	_get_mask
+  2187  056B  00F3               	movwf	??_is_btn_bounce
+  2188  056C  0873               	movf	??_is_btn_bounce,w
+  2189  056D  00F5               	movwf	is_btn_bounce@mask
+  2190  056E                     l877:
+  2191                           
+  2192                           ;buttons.c: 34:     for (int i = 0; i < 385; i++)
+  2193  056E  01F6               	clrf	is_btn_bounce@i
+  2194  056F  01F7               	clrf	is_btn_bounce@i+1
+  2195  0570                     l883:
+  2196                           
+  2197                           ;buttons.c: 35:     {;buttons.c: 36:         if (!is_bounce && (PORTA & mask) != 0)
+  2198  0570  0878               	movf	is_btn_bounce@is_bounce,w
+  2199  0571  1D03               	btfss	3,2
+  2200  0572  2D74               	goto	u351
+  2201  0573  2D75               	goto	u350
+  2202  0574                     u351:
+  2203  0574  2D7F               	goto	l889
+  2204  0575                     u350:
+  2205  0575                     l885:
+  2206  0575  1283               	bcf	3,5	;RP0=0, select bank0
+  2207  0576  1303               	bcf	3,6	;RP1=0, select bank0
+  2208  0577  0805               	movf	5,w	;volatile
+  2209  0578  0575               	andwf	is_btn_bounce@mask,w
+  2210  0579  1903               	btfsc	3,2
+  2211  057A  2D7C               	goto	u361
+  2212  057B  2D7D               	goto	u360
+  2213  057C                     u361:
+  2214  057C  2D7F               	goto	l889
+  2215  057D                     u360:
+  2216  057D                     l887:
+  2217                           
+  2218                           ;buttons.c: 37:             is_bounce = 1;
+  2219  057D  01F8               	clrf	is_btn_bounce@is_bounce
+  2220  057E  0AF8               	incf	is_btn_bounce@is_bounce,f
+  2221  057F                     l889:
+  2222                           
+  2223                           ;buttons.c: 38:     }
+  2224  057F  3001               	movlw	1
+  2225  0580  07F6               	addwf	is_btn_bounce@i,f
+  2226  0581  1803               	skipnc
+  2227  0582  0AF7               	incf	is_btn_bounce@i+1,f
+  2228  0583  3000               	movlw	0
+  2229  0584  07F7               	addwf	is_btn_bounce@i+1,f
+  2230  0585                     l891:
+  2231  0585  0877               	movf	is_btn_bounce@i+1,w
+  2232  0586  3A80               	xorlw	128
+  2233  0587  00FF               	movwf	btemp+1
+  2234  0588  3081               	movlw	129
+  2235  0589  027F               	subwf	btemp+1,w
+  2236  058A  1D03               	skipz
+  2237  058B  2D8E               	goto	u375
+  2238  058C  3081               	movlw	129
+  2239  058D  0276               	subwf	is_btn_bounce@i,w
+  2240  058E                     u375:
+  2241  058E  1C03               	skipc
+  2242  058F  2D91               	goto	u371
+  2243  0590  2D92               	goto	u370
+  2244  0591                     u371:
+  2245  0591  2D70               	goto	l883
+  2246  0592                     u370:
+  2247  0592                     l893:
   2248                           
-  2249                           ;psect for function _get_mask
-  2250  052B                     _get_mask:
-  2251                           
-  2252                           ;incstack = 0
-  2253                           ; Regs used in _get_mask: [wreg+status,2+status,0]
-  2254                           ;get_mask@btn stored from wreg
-  2255  052B  00F2               	movwf	get_mask@btn
-  2256  052C                     l723:
-  2257  052C                     l725:
-  2258                           
-  2259                           ;buttons.c: 17:     if (btn == RESET)
-  2260  052C  0372               	decf	get_mask@btn,w
-  2261  052D  1D03               	btfss	3,2
-  2262  052E  2D30               	goto	u11
-  2263  052F  2D31               	goto	u10
-  2264  0530                     u11:
-  2265  0530  2D34               	goto	l729
-  2266  0531                     u10:
-  2267  0531                     l727:
-  2268                           
-  2269                           ;buttons.c: 18:         mask = 0b00000001;
-  2270  0531  01F1               	clrf	get_mask@mask
-  2271  0532  0AF1               	incf	get_mask@mask,f
-  2272  0533  2D43               	goto	l49
-  2273  0534                     l729:
-  2274  0534  3002               	movlw	2
-  2275  0535  0672               	xorwf	get_mask@btn,w
-  2276  0536  1D03               	btfss	3,2
-  2277  0537  2D39               	goto	u21
-  2278  0538  2D3A               	goto	u20
-  2279  0539                     u21:
-  2280  0539  2D3F               	goto	l733
-  2281  053A                     u20:
-  2282  053A                     l731:
-  2283                           
-  2284                           ;buttons.c: 20:         mask = 0b00000010;
-  2285  053A  3002               	movlw	2
-  2286  053B  00F0               	movwf	??_get_mask
-  2287  053C  0870               	movf	??_get_mask,w
-  2288  053D  00F1               	movwf	get_mask@mask
-  2289  053E  2D43               	goto	l49
-  2290  053F                     l733:
-  2291                           
-  2292                           ;buttons.c: 22:         mask = 0b00000100;
-  2293  053F  3004               	movlw	4
-  2294  0540  00F0               	movwf	??_get_mask
-  2295  0541  0870               	movf	??_get_mask,w
-  2296  0542  00F1               	movwf	get_mask@mask
-  2297  0543                     l49:
-  2298                           
-  2299                           ;buttons.c: 23:     return (mask);
-  2300  0543  0871               	movf	get_mask@mask,w
-  2301  0544                     l52:
-  2302  0544  0008               	return
-  2303  0545                     __end_of_get_mask:
-  2304                           
-  2305                           	psect	text16
-  2306  051A                     __ptext16:	
-  2307 ;; *************** function _configure *****************
-  2308 ;; Defined at:
-  2309 ;;		line 18 in file "main.c"
-  2310 ;; Parameters:    Size  Location     Type
-  2311 ;;		None
-  2312 ;; Auto vars:     Size  Location     Type
-  2313 ;;		None
-  2314 ;; Return value:  Size  Location     Type
-  2315 ;;                  1    wreg      void 
-  2316 ;; Registers used:
-  2317 ;;		wreg, status,2, status,0
-  2318 ;; Tracked objects:
-  2319 ;;		On entry : 0/0
-  2320 ;;		On exit  : 0/0
-  2321 ;;		Unchanged: 0/0
-  2322 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  2323 ;;      Params:         0       0       0       0
-  2324 ;;      Locals:         0       0       0       0
-  2325 ;;      Temps:          1       0       0       0
-  2326 ;;      Totals:         1       0       0       0
-  2327 ;;Total ram usage:        1 bytes
-  2328 ;; Hardware stack levels used: 1
-  2329 ;; This function calls:
-  2330 ;;		Nothing
-  2331 ;; This function is called by:
-  2332 ;;		_main
-  2333 ;; This function uses a non-reentrant model
-  2334 ;;
-  2335                           
-  2336                           
-  2337                           ;psect for function _configure
-  2338  051A                     _configure:
-  2339  051A                     l929:	
-  2340                           ;incstack = 0
-  2341                           ; Regs used in _configure: [wreg+status,2+status,0]
-  2342                           
-  2343                           
-  2344                           ;main.c: 20: 
-  2345  051A  178B               	bsf	11,7	;volatile
-  2346  051B                     l931:
-  2347                           
-  2348                           ;main.c: 22:     {
-  2349  051B  3007               	movlw	7
-  2350  051C  1283               	bcf	3,5	;RP0=0, select bank0
-  2351  051D  1303               	bcf	3,6	;RP1=0, select bank0
-  2352  051E  009F               	movwf	31	;volatile
-  2353                           
-  2354                           ;main.c: 24:         handle_btn_pressing(get_btn_pressed());
-  2355  051F  30E0               	movlw	224
-  2356  0520  1683               	bsf	3,5	;RP0=1, select bank1
-  2357  0521  1303               	bcf	3,6	;RP1=0, select bank1
-  2358  0522  0085               	movwf	5	;volatile
-  2359  0523                     l933:
-  2360                           
-  2361                           ;main.c: 25:         update_time_counter();
-  2362  0523  0186               	clrf	6	;volatile
-  2363  0524                     l935:
-  2364                           
-  2365                           ;main.c: 27:     return ;
-  2366  0524  1281               	bcf	1,5	;volatile
-  2367  0525                     l937:
-  2368                           
-  2369                           ;main.c: 28: }
-  2370  0525  1181               	bcf	1,3	;volatile
-  2371  0526                     l939:
-  2372  0526  3007               	movlw	7
-  2373  0527  00F0               	movwf	??_configure
-  2374  0528  0870               	movf	??_configure,w
-  2375  0529  0481               	iorwf	1,f	;volatile
-  2376  052A                     l27:
-  2377  052A  0008               	return
-  2378  052B                     __end_of_configure:
-  2379  007E                     btemp	set	126	;btemp
-  2380  007E                     wtemp0	set	126
-  2381                           
-  2382                           	psect	config
+  2249                           ;buttons.c: 39:     return (is_bounce);
+  2250  0592  0878               	movf	is_btn_bounce@is_bounce,w
+  2251  0593                     l60:
+  2252  0593  0008               	return
+  2253  0594                     __end_of_is_btn_bounce:
+  2254                           
+  2255                           	psect	text15
+  2256  0512                     __ptext15:	
+  2257 ;; *************** function _get_mask *****************
+  2258 ;; Defined at:
+  2259 ;;		line 13 in file "buttons.c"
+  2260 ;; Parameters:    Size  Location     Type
+  2261 ;;  btn             1    wreg     enum E469
+  2262 ;; Auto vars:     Size  Location     Type
+  2263 ;;  btn             1    2[COMMON] enum E469
+  2264 ;;  mask            1    1[COMMON] unsigned char 
+  2265 ;; Return value:  Size  Location     Type
+  2266 ;;                  1    wreg      unsigned char 
+  2267 ;; Registers used:
+  2268 ;;		wreg, status,2, status,0
+  2269 ;; Tracked objects:
+  2270 ;;		On entry : 0/0
+  2271 ;;		On exit  : 0/0
+  2272 ;;		Unchanged: 0/0
+  2273 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2274 ;;      Params:         0       0       0       0
+  2275 ;;      Locals:         2       0       0       0
+  2276 ;;      Temps:          1       0       0       0
+  2277 ;;      Totals:         3       0       0       0
+  2278 ;;Total ram usage:        3 bytes
+  2279 ;; Hardware stack levels used: 1
+  2280 ;; This function calls:
+  2281 ;;		Nothing
+  2282 ;; This function is called by:
+  2283 ;;		_is_btn_bounce
+  2284 ;; This function uses a non-reentrant model
+  2285 ;;
+  2286                           
+  2287                           
+  2288                           ;psect for function _get_mask
+  2289  0512                     _get_mask:
+  2290                           
+  2291                           ;incstack = 0
+  2292                           ; Regs used in _get_mask: [wreg+status,2+status,0]
+  2293                           ;get_mask@btn stored from wreg
+  2294  0512  00F2               	movwf	get_mask@btn
+  2295  0513                     l725:
+  2296  0513                     l727:
+  2297                           
+  2298                           ;buttons.c: 17:     if (btn == RESET)
+  2299  0513  0372               	decf	get_mask@btn,w
+  2300  0514  1D03               	btfss	3,2
+  2301  0515  2D17               	goto	u11
+  2302  0516  2D18               	goto	u10
+  2303  0517                     u11:
+  2304  0517  2D1D               	goto	l731
+  2305  0518                     u10:
+  2306  0518                     l729:
+  2307                           
+  2308                           ;buttons.c: 18:         mask = 0b10000000;
+  2309  0518  3080               	movlw	128
+  2310  0519  00F0               	movwf	??_get_mask
+  2311  051A  0870               	movf	??_get_mask,w
+  2312  051B  00F1               	movwf	get_mask@mask
+  2313  051C  2D2C               	goto	l51
+  2314  051D                     l731:
+  2315  051D  3002               	movlw	2
+  2316  051E  0672               	xorwf	get_mask@btn,w
+  2317  051F  1D03               	btfss	3,2
+  2318  0520  2D22               	goto	u21
+  2319  0521  2D23               	goto	u20
+  2320  0522                     u21:
+  2321  0522  2D28               	goto	l735
+  2322  0523                     u20:
+  2323  0523                     l733:
+  2324                           
+  2325                           ;buttons.c: 20:         mask = 0b01000000;
+  2326  0523  3040               	movlw	64
+  2327  0524  00F0               	movwf	??_get_mask
+  2328  0525  0870               	movf	??_get_mask,w
+  2329  0526  00F1               	movwf	get_mask@mask
+  2330  0527  2D2C               	goto	l51
+  2331  0528                     l735:
+  2332                           
+  2333                           ;buttons.c: 22:         mask = 0b00100000;
+  2334  0528  3020               	movlw	32
+  2335  0529  00F0               	movwf	??_get_mask
+  2336  052A  0870               	movf	??_get_mask,w
+  2337  052B  00F1               	movwf	get_mask@mask
+  2338  052C                     l51:
+  2339                           
+  2340                           ;buttons.c: 23:     return (mask);
+  2341  052C  0871               	movf	get_mask@mask,w
+  2342  052D                     l54:
+  2343  052D  0008               	return
+  2344  052E                     __end_of_get_mask:
+  2345                           
+  2346                           	psect	text16
+  2347  0501                     __ptext16:	
+  2348 ;; *************** function _configure *****************
+  2349 ;; Defined at:
+  2350 ;;		line 18 in file "main.c"
+  2351 ;; Parameters:    Size  Location     Type
+  2352 ;;		None
+  2353 ;; Auto vars:     Size  Location     Type
+  2354 ;;		None
+  2355 ;; Return value:  Size  Location     Type
+  2356 ;;                  1    wreg      void 
+  2357 ;; Registers used:
+  2358 ;;		wreg, status,2, status,0
+  2359 ;; Tracked objects:
+  2360 ;;		On entry : 0/0
+  2361 ;;		On exit  : 0/0
+  2362 ;;		Unchanged: 0/0
+  2363 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2364 ;;      Params:         0       0       0       0
+  2365 ;;      Locals:         0       0       0       0
+  2366 ;;      Temps:          1       0       0       0
+  2367 ;;      Totals:         1       0       0       0
+  2368 ;;Total ram usage:        1 bytes
+  2369 ;; Hardware stack levels used: 1
+  2370 ;; This function calls:
+  2371 ;;		Nothing
+  2372 ;; This function is called by:
+  2373 ;;		_main
+  2374 ;; This function uses a non-reentrant model
+  2375 ;;
+  2376                           
+  2377                           
+  2378                           ;psect for function _configure
+  2379  0501                     _configure:
+  2380  0501                     l933:	
+  2381                           ;incstack = 0
+  2382                           ; Regs used in _configure: [wreg+status,2+status,0]
   2383                           
-  2384                           ;Config register CONFIG @ 0x2007
-  2385                           ;	Oscillator Selection bits
-  2386                           ;	FOSC = INTOSCIO, INTOSC oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function 
+  2384                           
+  2385                           ;main.c: 20: 
+  2386  0501  178B               	bsf	11,7	;volatile
+  2387  0502                     l935:
+  2388                           
+  2389                           ;main.c: 22:     {
+  2390  0502  3007               	movlw	7
+  2391  0503  1283               	bcf	3,5	;RP0=0, select bank0
+  2392  0504  1303               	bcf	3,6	;RP1=0, select bank0
+  2393  0505  009F               	movwf	31	;volatile
+  2394                           
+  2395                           ;main.c: 24:         handle_btn_pressing(get_btn_pressed());
+  2396  0506  30E0               	movlw	224
+  2397  0507  1683               	bsf	3,5	;RP0=1, select bank1
+  2398  0508  1303               	bcf	3,6	;RP1=0, select bank1
+  2399  0509  0085               	movwf	5	;volatile
+  2400  050A                     l937:
+  2401                           
+  2402                           ;main.c: 25:         update_time_counter();
+  2403  050A  0186               	clrf	6	;volatile
+  2404  050B                     l939:
+  2405                           
+  2406                           ;main.c: 27:     return ;
+  2407  050B  1281               	bcf	1,5	;volatile
+  2408  050C                     l941:
+  2409                           
+  2410                           ;main.c: 28: }
+  2411  050C  1181               	bcf	1,3	;volatile
+  2412  050D                     l943:
+  2413  050D  3007               	movlw	7
+  2414  050E  00F0               	movwf	??_configure
+  2415  050F  0870               	movf	??_configure,w
+  2416  0510  0481               	iorwf	1,f	;volatile
+  2417  0511                     l27:
+  2418  0511  0008               	return
+  2419  0512                     __end_of_configure:
+  2420  007E                     btemp	set	126	;btemp
+  2421  007E                     wtemp0	set	126
+  2422                           
+  2423                           	psect	config
+  2424                           
+  2425                           ;Config register CONFIG @ 0x2007
+  2426                           ;	Oscillator Selection bits
+  2427                           ;	FOSC = INTOSCIO, INTOSC oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function 
       +                          on RA7/OSC1/CLKIN
-  2387                           ;	Watchdog Timer Enable bit
-  2388                           ;	WDTE = OFF, WDT disabled
-  2389                           ;	Power-up Timer Enable bit
-  2390                           ;	PWRTE = OFF, PWRT disabled
-  2391                           ;	RA5/MCLR/VPP Pin Function Select bit
-  2392                           ;	MCLRE = OFF, RA5/MCLR/VPP pin function is digital input, MCLR internally tied to VDD
-  2393                           ;	Brown-out Detect Enable bit
-  2394                           ;	BOREN = OFF, BOD disabled
-  2395                           ;	Low-Voltage Programming Enable bit
-  2396                           ;	LVP = OFF, RB4/PGM pin has digital I/O function, HV on MCLR must be used for programmi
+  2428                           ;	Watchdog Timer Enable bit
+  2429                           ;	WDTE = OFF, WDT disabled
+  2430                           ;	Power-up Timer Enable bit
+  2431                           ;	PWRTE = OFF, PWRT disabled
+  2432                           ;	RA5/MCLR/VPP Pin Function Select bit
+  2433                           ;	MCLRE = OFF, RA5/MCLR/VPP pin function is digital input, MCLR internally tied to VDD
+  2434                           ;	Brown-out Detect Enable bit
+  2435                           ;	BOREN = OFF, BOD disabled
+  2436                           ;	Low-Voltage Programming Enable bit
+  2437                           ;	LVP = OFF, RB4/PGM pin has digital I/O function, HV on MCLR must be used for programmi
       +                          ng
-  2397                           ;	Data EE Memory Code Protection bit
-  2398                           ;	CPD = OFF, Data memory code protection off
-  2399                           ;	Flash Program Memory Code Protection bit
-  2400                           ;	CP = OFF, Code protection off
-  2401  2007                     	org	8199
-  2402  2007  3F18               	dw	16152
+  2438                           ;	Data EE Memory Code Protection bit
+  2439                           ;	CPD = OFF, Data memory code protection off
+  2440                           ;	Flash Program Memory Code Protection bit
+  2441                           ;	CP = OFF, Code protection off
+  2442  2007                     	org	8199
+  2443  2007  3F18               	dw	16152
 
 Data Sizes:
     Strings     0
@@ -2467,7 +2508,7 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 0     0      0    2053
+ (0) _main                                                 0     0      0    2068
                           _configure
                     _get_btn_pressed
                 _handle_btn_pressing
@@ -2517,11 +2558,11 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (1) _reset_stopwatch                                      0     0      0       0
  ---------------------------------------------------------------------------------
- (1) _get_btn_pressed                                      2     2      0     135
+ (1) _get_btn_pressed                                      2     2      0     150
                                               9 COMMON     2     2      0
                       _is_btn_bounce
  ---------------------------------------------------------------------------------
- (2) _is_btn_bounce                                        6     6      0     120
+ (2) _is_btn_bounce                                        6     6      0     135
                                               3 COMMON     6     6      0
                            _get_mask
  ---------------------------------------------------------------------------------
@@ -2583,134 +2624,138 @@ DATA                 0      0      1A      10        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Sep  6 23:41:45 2021
+Symbol Table                                                                                   Tue Sep  7 00:05:56 2021
 
-                  _update_disp 05CA                             l27 052A                             l52 0544  
-                           l62 05A0                             l49 0543                             l58 05C9  
-                           l66 05A1                             l75 0560                             l92 0509  
-                           l86 0511                             l95 06D7                             l89 0504  
-                           l99 0577                             u10 0531                             u11 0530  
-                           u20 053A                             u21 0539                   ___awdiv@sign 0076  
-                          l100 057D                            l131 0602                            l128 078D  
-                          l370 07F4                            l383 0730                            l731 053A  
-                          l723 052C                            l733 053F                            l725 052C  
-                          l727 0531                            l729 0534                            l489 0680  
-                          l931 051B                            l499 063C                            l933 0523  
-                          l935 0524                            l871 05A3                            l937 0525  
-                          l929 051A                            l881 05AB                            l873 05A4  
-                          l939 0526                            l883 05B3                            l875 05A9  
-                          l971 057E                            l885 05B5                            l981 0595  
-                          l973 057F                            l887 05BB                            l983 059C  
-                          l975 0586                            l889 05C8                            l977 0589  
-                          l979 0590                            u500 07E6                            u420 0793  
-                          u501 07E5                            u421 0792                            u350 05B3  
-                          u510 07EB                            u430 079E                            u351 05B2  
-                          u511 07EA                            u431 079D                            u360 05C8  
-                          u440 07AF                            u600 0727                            u520 06DD  
-                          u361 05C7                            u441 07AE                            u601 0726  
-                          u521 06DC                            u370 0586                            u530 06E8  
-                          u610 0645                            u371 0585                            u531 06E7  
-                          u611 0644                            u380 0590                            u460 07C1  
-                          u540 06F3                            u700 061B                            u365 05C4  
-                          u381 058F                            u461 07C0                            u541 06F2  
-                          u701 061A                            u390 059C                            u630 0657  
-                          u710 0625                            u391 059B                            u455 07B3  
-                          u631 0656                            u711 0624                            u480 07D2  
-                          u560 0705                            u481 07D1                            u561 0704  
-                          u625 0649                            u570 070F                            u650 0668  
-                          u730 0638                            u475 07C2                            u571 070E  
-                          u555 06F7                            u651 0667                            u731 0637  
-                          u715 0621                            u740 0568                            u485 07CE  
-                          u645 0658                            u725 062C                            u741 0567  
-                          u590 0722                            u670 067C                            u750 0571  
-                          u495 07DA                            u591 0721                            u575 070B  
-                          u671 067B                            u655 0664                            u751 0570  
-                          u680 0609                            u585 0716                            u665 0670  
-                          u681 0608                            u695 060D                            u767 05D6  
-                          u777 05E8                            u787 05FA                    get_mask@btn 0072  
+                  _update_disp 05CA                             l27 0511                             l51 052C  
+                           l60 0593                             l54 052D                             l63 05A5  
+                           l64 05C8                             l65 05B7                             l91 04EB  
+                           l68 05C9                             l77 0549                             l94 04F0  
+                           l88 04F8                             l97 06D7                             u10 0518  
+                           u11 0517                             u20 0523                             u21 0522  
+                 ___awdiv@sign 0076                            l101 0560                            l102 0566  
+                          l130 078D                            l133 0602                            l501 063C  
+                          l372 07F4                            l385 0730                            l731 051D  
+                          l491 0680                            l733 0523                            l725 0513  
+                          l735 0528                            l727 0513                            l729 0518  
+                          l941 050C                            l933 0501                            l943 050D  
+                          l935 0502                            l937 050A                            l873 0568  
+                          l939 050B                            l891 0585                            l883 0570  
+                          l875 0569                            l893 0592                            l885 0575  
+                          l877 056E                            l981 05A2                            l887 057D  
+                          l983 05AB                            l975 0594                            l889 057F  
+                          l985 05B2                            l977 0595                            l987 05BD  
+                          l979 059B                            l989 05C4                            u400 05AB  
+                          u401 05AA                            u410 05B2                            u411 05B1  
+                          u420 05BD                            u500 07C1                            u421 05BC  
+                          u501 07C0                            u350 0575                            u430 05C4  
+                          u351 0574                            u431 05C3                            u360 057D  
+                          u520 07D2                            u600 0705                            u361 057C  
+                          u521 07D1                            u601 0704                            u370 0592  
+                          u610 070F                            u371 0591                            u515 07C2  
+                          u611 070E                            u380 059B                            u540 07E6  
+                          u460 0793                            u381 059A                            u541 07E5  
+                          u525 07CE                            u461 0792                            u390 05A2  
+                          u550 07EB                            u470 079E                            u630 0722  
+                          u710 067C                            u375 058E                            u391 05A1  
+                          u551 07EA                            u535 07DA                            u471 079D  
+                          u631 0721                            u615 070B                            u711 067B  
+                          u480 07AF                            u640 0727                            u560 06DD  
+                          u720 0609                            u481 07AE                            u641 0726  
+                          u625 0716                            u561 06DC                            u705 0670  
+                          u721 0608                            u570 06E8                            u650 0645  
+                          u571 06E7                            u651 0644                            u580 06F3  
+                          u740 061B                            u581 06F2                            u741 061A  
+                          u670 0657                            u750 0625                            u495 07B3  
+                          u671 0656                            u751 0624                            u735 060D  
+                          u807 05D6                            u665 0649                            u817 05E8  
+                          u690 0668                            u770 0638                            u595 06F7  
+                          u691 0667                            u771 0637                            u755 0621  
+                          u827 05FA                            u780 0551                            u685 0658  
+                          u765 062C                            u781 0550                            u790 055A  
+                          u695 0664                            u791 0559                    get_mask@btn 0072  
          ?_handle_btn_pressing 0070          ??_update_time_counter 0070                   ___awmod@sign 0076  
-                         l1101 06D8                           l1111 06E8                           l1103 06D9  
-                         l1121 0701                           l1113 06ED                           l1105 06DD  
-                         l1201 0738                           l1123 0705                           l1115 06F3  
-                         l1131 0722                           l1107 06E2                           l1211 0751  
-                         l1203 073D                           l1061 0793                           l1133 0727  
-                         l1125 070F                           l1117 06F6                           l1109 06E4  
-                         l1141 063F                           l1213 0756                           l1205 0742  
-                         l1221 0765                           l1071 07A7                           l1063 0798  
-                         l1135 072C                           l1127 0715                           l1119 06FD  
-                         l1151 0657                           l1143 0645                           l1215 075B  
-                         l1207 0747                           l1231 05CF                           l1081 07BD  
-                         l1073 07A9                           l1065 079A                           l1057 078E  
-                         l1129 071C                           l1153 0668                           l1145 0648  
-                         l1161 067C                           l1217 0760                           l1209 074C  
-                         l1241 05E3                           l1233 05D2                           l1091 07E0  
-                         l1083 07C1                           l1075 07AF                           l1067 079E  
-                         l1059 078F                           l1155 066E                           l1147 064F  
-                         l1139 063D                           l1171 0613                           l1251 05F3  
-                         l1243 05E4                           l1235 05DB                           l1227 05CA  
-                         l1261 0549                           l1085 07D2                           l1077 07B2  
-                         l1093 07E6                           l1069 07A3                           l1157 066F  
-                         l1149 0653                           l1181 0632                           l1173 0617  
-                         l1165 0603                           l1253 05F6                           l1245 05ED  
-                         l1237 05DE                           l1229 05CB                           l1191 0501  
-                         l1263 054B                           l1095 07EB                           l1087 07D8  
-                         l1079 07B9                           l1159 0676                           l1175 061B  
-                         l1167 0609                           l1183 0638                           l1327 076D  
-                         l1255 05FF                           l1247 05F0                           l1239 05E0  
-                         l1193 0505                           l1329 0555                           l1257 0546  
-                         l1097 07F0                           l1089 07D9                           l1177 0625  
-                         l1169 060C                           l1249 05F1                           l1273 0561  
-                         l1281 0514                           l1187 050A                           l1259 0547  
-                         l1267 054D                           l1179 062B                           l1195 0681  
-                         l1275 0568                           l1283 0515                           l1189 050F  
-                         l1197 0732                           l1277 0571                           l1285 0517  
-                         l1199 0733                           l1279 0512                   get_mask@mask 0071  
-                         _main 0512                           btemp 007E                           start 0000  
-      __end_of_reset_stopwatch 0512                   ?_format_time 0070       __size_of_start_stopwatch 0005  
+                         l1101 07EB                           l1103 07F0                           l1111 06DD  
+                         l1121 06F3                           l1113 06E2                           l1201 0681  
+                         l1131 070F                           l1123 06F6                           l1115 06E4  
+                         l1107 06D8                           l1211 0742                           l1203 0732  
+                         l1141 072C                           l1133 0715                           l1125 06FD  
+                         l1117 06E8                           l1109 06D9                           l1221 075B  
+                         l1213 0747                           l1205 0733                           l1071 079A  
+                         l1063 078E                           l1135 071C                           l1127 0701  
+                         l1119 06ED                           l1151 0648                           l1223 0760  
+                         l1215 074C                           l1207 0738                           l1081 07AF  
+                         l1073 079E                           l1065 078F                           l1129 0705  
+                         l1137 0722                           l1161 066E                           l1153 064F  
+                         l1145 063D                           l1217 0751                           l1209 073D  
+                         l1241 05DB                           l1233 05CA                           l1091 07D2  
+                         l1083 07B2                           l1075 07A3                           l1067 0793  
+                         l1139 0727                           l1163 066F                           l1155 0653  
+                         l1147 063F                           l1171 0603                           l1219 0756  
+                         l1227 0765                           l1251 05ED                           l1243 05DE  
+                         l1235 05CB                           l1093 07D8                           l1085 07B9  
+                         l1077 07A7                           l1069 0798                           l1165 0676  
+                         l1157 0657                           l1149 0645                           l1181 061B  
+                         l1173 0609                           l1333 076D                           l1261 05FF  
+                         l1253 05F0                           l1245 05E0                           l1237 05CF  
+                         l1335 053E                           l1263 052F                           l1095 07D9  
+                         l1087 07BD                           l1079 07A9                           l1159 0668  
+                         l1167 067C                           l1183 0625                           l1175 060C  
+                         l1255 05F1                           l1247 05E3                           l1239 05D2  
+                         l1193 04F1                           l1265 0530                           l1273 0536  
+                         l1097 07E0                           l1089 07C1                           l1185 062B  
+                         l1177 0613                           l1257 05F3                           l1249 05E4  
+                         l1281 0551                           l1195 04F6                           l1267 0532  
+                         l1099 07E6                           l1187 0632                           l1179 0617  
+                         l1259 05F6                           l1283 055A                           l1291 04FE  
+                         l1197 04E8                           l1269 0534                           l1189 0638  
+                         l1285 04F9                           l1199 04EC                           l1279 054A  
+                         l1287 04FB                           l1289 04FC                   get_mask@mask 0071  
+                         _main 04F9                           btemp 007E                           start 0000  
+      __end_of_reset_stopwatch 04F9                   ?_format_time 0070       __size_of_start_stopwatch 0005  
                         ?_main 0070                __end_of___awdiv 07F5                __end_of___awmod 0731  
                         _CMCON 001F                ___awdiv@divisor 0070                __end_of___lwdiv 0681  
         ??_handle_btn_pressing 0070                __end_of___lwmod 063D                ___awdiv@counter 0075  
                         _PORTA 0005                          _PORTB 0006                          _TRISA 0085  
                         _TRISB 0086      set_disp_digit_value@value 0072                          status 0003  
-                        wtemp0 007E                __initialization 07F5                   __end_of_main 051A  
-       __size_of_is_btn_bounce 0028                         ??_main 007E               ___awdiv@dividend 0072  
-       handle_btn_pressing@btn 0072                         _Button 0026               __end_of_get_mask 0545  
+                        wtemp0 007E                __initialization 07F5                   __end_of_main 0501  
+       __size_of_is_btn_bounce 002D                         ??_main 007E               ___awdiv@dividend 0072  
+       handle_btn_pressing@btn 0072                         _Button 0026               __end_of_get_mask 052E  
              ?_reset_stopwatch 0070                      ??___awdiv 0074                      ??___awmod 0074  
                     ??___lwdiv 0074                      ??___lwmod 007C               ___awdiv@quotient 0077  
               ___awmod@divisor 0070                ___awmod@counter 0075              ??_start_stopwatch 0070  
-                _is_btn_bounce 05A2        __end_of__initialization 07FE       __size_of_get_btn_pressed 0024  
+                _is_btn_bounce 0567        __end_of__initialization 07FE       __size_of_get_btn_pressed 0036  
                  ?_update_disp 0070                 __pcstackCOMMON 0070        format_time@cashed_value 002A  
          __size_of_format_time 0057                 _OPTION_REGbits 0081                 ?_is_btn_bounce 0070  
-           __size_of_configure 0011                     __pbssBANK0 0020                     __pmaintext 0512  
-__size_of_set_disp_digit_value 005D    __end_of_update_time_counter 057E                  _is_timer_work 0025  
+           __size_of_configure 0011                     __pbssBANK0 0020                     __pmaintext 04F9  
+__size_of_set_disp_digit_value 005D    __end_of_update_time_counter 0567                  _is_timer_work 0025  
                     ?_get_mask 0070        __size_of_stop_stopwatch 0004              ??_get_btn_pressed 0079  
-            __end_of_configure 052B                        ___awdiv 078E                        ___awmod 06D8  
-  __end_of_handle_btn_pressing 0561                        ___lwdiv 063D                        ___lwmod 0603  
-                      __ptext1 0561                        __ptext2 05CA                        __ptext3 0731  
+            __end_of_configure 0512                        ___awdiv 078E                        ___awmod 06D8  
+  __end_of_handle_btn_pressing 054A                        ___lwdiv 063D                        ___lwmod 0603  
+                      __ptext1 054A                        __ptext2 05CA                        __ptext3 0731  
                       __ptext4 0681                        __ptext5 0603                        __ptext6 063D  
-                      __ptext7 06D8                        __ptext8 078E                        __ptext9 0545  
+                      __ptext7 06D8                        __ptext8 078E                        __ptext9 052E  
              ___awmod@dividend 0072                ??_is_btn_bounce 0073                        _time_ms 0023  
                    ??_get_mask 0070           end_of_initialization 07FE           __size_of_update_disp 0039  
-              _start_stopwatch 0505                      _PORTAbits 0005                      _PORTBbits 0006  
-               is_btn_bounce@i 0077                 _formatted_time 0020       __size_of_reset_stopwatch 0008  
-          start_initialization 07F5                 _stop_stopwatch 0501        __end_of_start_stopwatch 050A  
+              _start_stopwatch 04EC                      _PORTAbits 0005                      _PORTBbits 0006  
+               is_btn_bounce@i 0076                 _formatted_time 0020       __size_of_reset_stopwatch 0008  
+          start_initialization 07F5                 _stop_stopwatch 04E8        __end_of_start_stopwatch 04F1  
                 ??_format_time 0027   __end_of_set_disp_digit_value 078E                      ___latbits 0000  
-                __pcstackBANK0 0027         __end_of_stop_stopwatch 0505                _get_btn_pressed 057E  
-            __size_of_get_mask 001A               ___lwdiv@dividend 0072                       ?___awdiv 0070  
+                __pcstackBANK0 0027         __end_of_stop_stopwatch 04EC                _get_btn_pressed 0594  
+            __size_of_get_mask 001C               ___lwdiv@dividend 0072                       ?___awdiv 0070  
                      ?___awmod 0070                       ?___lwdiv 0070                       ?___lwmod 0078  
-                    _configure 051A            __end_of_format_time 06D8   __size_of_update_time_counter 001D  
+                    _configure 0501            __end_of_format_time 06D8   __size_of_update_time_counter 001D  
              ___lwdiv@quotient 0075                ?_stop_stopwatch 0070              ??_reset_stopwatch 0070  
              ?_start_stopwatch 0070                     ?_configure 0070   __size_of_handle_btn_pressing 001C  
-      __end_of_get_btn_pressed 05A2          __end_of_is_btn_bounce 05CA                  ??_update_disp 002B  
+      __end_of_get_btn_pressed 05CA          __end_of_is_btn_bounce 0594                  ??_update_disp 002B  
          _set_disp_digit_value 0731               __size_of___awdiv 0067               __size_of___awmod 0059  
                   _format_time 0681               __size_of___lwdiv 0044               __size_of___lwmod 003A  
-              ___lwdiv@divisor 0070                ___lwdiv@counter 0077                       __ptext10 0501  
-                     __ptext11 0505                       __ptext12 050A                       __ptext13 057E  
-                     __ptext14 05A2                       __ptext15 052B                       __ptext16 051A  
-                     _get_mask 052B                  __size_of_main 0008          ?_set_disp_digit_value 0070  
+              ___lwdiv@divisor 0070                ___lwdiv@counter 0077                       __ptext10 04E8  
+                     __ptext11 04EC                       __ptext12 04F1                       __ptext13 0594  
+                     __ptext14 0567                       __ptext15 0512                       __ptext16 0501  
+                     _get_mask 0512                  __size_of_main 0008          ?_set_disp_digit_value 0070  
                   ??_configure 0070            __end_of_update_disp 0603                     _INTCONbits 000B  
-             ?_get_btn_pressed 0070               ___lwmod@dividend 007A            _update_time_counter 0561  
-       is_btn_bounce@is_bounce 0076                _reset_stopwatch 050A                     _OPTION_REG 0081  
+             ?_get_btn_pressed 0070               ___lwmod@dividend 007A            _update_time_counter 054A  
+       is_btn_bounce@is_bounce 0078                _reset_stopwatch 04F1                     _OPTION_REG 0081  
               ___lwmod@divisor 0078               ??_stop_stopwatch 0070                ___lwmod@counter 007D  
          ?_update_time_counter 0070             get_btn_pressed@btn 007A         ??_set_disp_digit_value 0070  
-          _handle_btn_pressing 0545              is_btn_bounce@mask 0075               is_btn_bounce@btn 0074  
+          _handle_btn_pressing 052E              is_btn_bounce@mask 0075               is_btn_bounce@btn 0074  

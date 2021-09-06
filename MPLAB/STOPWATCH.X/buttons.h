@@ -14,6 +14,6 @@ enum Button
 } Button;
 
 enum Button get_btn_pressed(void);
-void handle_btn_pressing(enum Button btn);
+void        handle_btn_pressing(enum Button btn);
 
 #endif

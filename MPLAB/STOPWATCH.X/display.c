@@ -5,9 +5,7 @@
 
 #define DELAY_TIME 1
 
-
-extern struct Time_format formatted_time;
-
+extern struct Time_format   formatted_time;
 
 static void set_disp_digit_value(uint8_t value)
 {   
@@ -48,8 +46,7 @@ static void set_disp_digit_value(uint8_t value)
     }
 }
 
-
-void update_disp(void)
+void    update_disp(void)
 {
     format_time();
     
