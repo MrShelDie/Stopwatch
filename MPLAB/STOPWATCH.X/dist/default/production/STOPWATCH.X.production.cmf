@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcXLkiNlG.o
+$/tmp/xcXkGeBic.o
 end_init CODE 0 0 0 1 2
 config CONFIG 4 2007 2007 1 2
 $dist/default/production/STOPWATCH.X.production.o
@@ -75,88 +75,88 @@ STRING 1-4E0 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/STOPWATCH.X.production.o
-7F5 cinit CODE >514:/tmp/xcXhFABai.s
-7F5 cinit CODE >517:/tmp/xcXhFABai.s
-7F5 cinit CODE >537:/tmp/xcXhFABai.s
-7F6 cinit CODE >538:/tmp/xcXhFABai.s
-7F7 cinit CODE >539:/tmp/xcXhFABai.s
-7F8 cinit CODE >540:/tmp/xcXhFABai.s
-7F9 cinit CODE >541:/tmp/xcXhFABai.s
-7FA cinit CODE >542:/tmp/xcXhFABai.s
-7FB cinit CODE >543:/tmp/xcXhFABai.s
-7FC cinit CODE >544:/tmp/xcXhFABai.s
-7FD cinit CODE >545:/tmp/xcXhFABai.s
-7FE cinit CODE >551:/tmp/xcXhFABai.s
-7FE cinit CODE >553:/tmp/xcXhFABai.s
-7FF cinit CODE >554:/tmp/xcXhFABai.s
-4FA text16 CODE >18:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-4FA text16 CODE >20:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-4FB text16 CODE >22:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-4FF text16 CODE >24:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-503 text16 CODE >25:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-504 text16 CODE >26:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-505 text15 CODE >16:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-506 text15 CODE >18:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-506 text15 CODE >20:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-50B text15 CODE >21:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-510 text15 CODE >22:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-516 text15 CODE >23:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-51B text15 CODE >25:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-51F text15 CODE >26:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-520 text15 CODE >27:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5C9 text14 CODE >29:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5CA text14 CODE >31:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5CB text14 CODE >32:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5D0 text14 CODE >39:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5D2 text14 CODE >41:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5DF text14 CODE >42:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5E1 text14 CODE >43:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5E3 text14 CODE >43:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5EC text14 CODE >43:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5F0 text14 CODE >43:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5F4 text14 CODE >44:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5FB text14 CODE >45:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-5FD text14 CODE >45:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-601 text14 CODE >46:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-602 text14 CODE >47:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-55A text13 CODE >49:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-55A text13 CODE >51:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-55B text13 CODE >53:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-564 text13 CODE >53:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-568 text13 CODE >54:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-56B text13 CODE >55:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-574 text13 CODE >55:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-578 text13 CODE >56:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-57D text13 CODE >57:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-586 text13 CODE >57:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-58A text13 CODE >58:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-58E text13 CODE >59:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-58F text13 CODE >60:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-4EA text12 CODE >17:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4EA text12 CODE >19:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4ED text12 CODE >20:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4EF text12 CODE >21:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4F1 text12 CODE >22:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4E5 text11 CODE >29:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4E5 text11 CODE >31:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4E9 text11 CODE >32:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4E1 text10 CODE >24:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4E1 text10 CODE >26:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4E4 text10 CODE >27:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-521 text9 CODE >62:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-522 text9 CODE >64:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-523 text9 CODE >67:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-524 text9 CODE >68:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-525 text9 CODE >70:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-526 text9 CODE >71:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-527 text9 CODE >73:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-528 text9 CODE >74:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-529 text9 CODE >77:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-52E text9 CODE >77:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-533 text9 CODE >77:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-536 text9 CODE >77:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-539 text9 CODE >77:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
-53C text9 CODE >78:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+7F5 cinit CODE >514:/tmp/xcXJmgNap.s
+7F5 cinit CODE >517:/tmp/xcXJmgNap.s
+7F5 cinit CODE >537:/tmp/xcXJmgNap.s
+7F6 cinit CODE >538:/tmp/xcXJmgNap.s
+7F7 cinit CODE >539:/tmp/xcXJmgNap.s
+7F8 cinit CODE >540:/tmp/xcXJmgNap.s
+7F9 cinit CODE >541:/tmp/xcXJmgNap.s
+7FA cinit CODE >542:/tmp/xcXJmgNap.s
+7FB cinit CODE >543:/tmp/xcXJmgNap.s
+7FC cinit CODE >544:/tmp/xcXJmgNap.s
+7FD cinit CODE >545:/tmp/xcXJmgNap.s
+7FE cinit CODE >551:/tmp/xcXJmgNap.s
+7FE cinit CODE >553:/tmp/xcXJmgNap.s
+7FF cinit CODE >554:/tmp/xcXJmgNap.s
+4FA text16 CODE >33:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+4FA text16 CODE >35:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+4FB text16 CODE >37:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+4FF text16 CODE >39:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+503 text16 CODE >40:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+504 text16 CODE >41:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+505 text15 CODE >31:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+506 text15 CODE >33:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+506 text15 CODE >35:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+50B text15 CODE >36:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+510 text15 CODE >37:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+516 text15 CODE >38:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+51B text15 CODE >40:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+51F text15 CODE >41:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+520 text15 CODE >42:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5C9 text14 CODE >44:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5CA text14 CODE >46:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5CB text14 CODE >47:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5D0 text14 CODE >54:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5D2 text14 CODE >56:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5DF text14 CODE >57:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5E1 text14 CODE >58:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5E3 text14 CODE >58:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5EC text14 CODE >58:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5F0 text14 CODE >58:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5F4 text14 CODE >59:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5FB text14 CODE >60:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+5FD text14 CODE >60:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+601 text14 CODE >61:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+602 text14 CODE >62:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+55A text13 CODE >64:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+55A text13 CODE >66:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+55B text13 CODE >68:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+564 text13 CODE >68:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+568 text13 CODE >69:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+56B text13 CODE >70:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+574 text13 CODE >70:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+578 text13 CODE >71:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+57D text13 CODE >72:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+586 text13 CODE >72:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+58A text13 CODE >73:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+58E text13 CODE >74:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+58F text13 CODE >75:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+4EA text12 CODE >32:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4EA text12 CODE >34:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4ED text12 CODE >35:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4EF text12 CODE >36:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4F1 text12 CODE >37:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4E5 text11 CODE >44:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4E5 text11 CODE >46:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4E9 text11 CODE >47:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4E1 text10 CODE >39:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4E1 text10 CODE >41:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4E4 text10 CODE >42:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+521 text9 CODE >77:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+522 text9 CODE >79:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+523 text9 CODE >82:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+524 text9 CODE >83:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+525 text9 CODE >85:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+526 text9 CODE >86:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+527 text9 CODE >88:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+528 text9 CODE >89:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+529 text9 CODE >92:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+52E text9 CODE >92:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+533 text9 CODE >92:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+536 text9 CODE >92:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+539 text9 CODE >92:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+53C text9 CODE >93:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
 78E text8 CODE >5:/opt/microchip/xc8/v2.32/pic/sources/c90/common/awdiv.c
 78E text8 CODE >13:/opt/microchip/xc8/v2.32/pic/sources/c90/common/awdiv.c
 78F text8 CODE >14:/opt/microchip/xc8/v2.32/pic/sources/c90/common/awdiv.c
@@ -270,80 +270,80 @@ $dist/default/production/STOPWATCH.X.production.o
 632 text5 CODE >22:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwmod.c
 638 text5 CODE >24:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwmod.c
 63C text5 CODE >25:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwmod.c
-681 text4 CODE >35:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-681 text4 CODE >39:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-69B text4 CODE >40:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-6B3 text4 CODE >41:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-6C5 text4 CODE >42:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-6D7 text4 CODE >43:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-731 text3 CODE >12:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-732 text3 CODE >14:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-733 text3 CODE >17:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-737 text3 CODE >18:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-738 text3 CODE >20:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-73C text3 CODE >21:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-73D text3 CODE >23:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-741 text3 CODE >24:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-742 text3 CODE >26:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-746 text3 CODE >27:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-747 text3 CODE >29:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-74B text3 CODE >30:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-74C text3 CODE >32:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-750 text3 CODE >33:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-751 text3 CODE >35:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-755 text3 CODE >36:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-756 text3 CODE >38:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-75A text3 CODE >39:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-75B text3 CODE >41:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-75F text3 CODE >42:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-760 text3 CODE >44:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-764 text3 CODE >45:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-765 text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-76A text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-76F text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-772 text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-775 text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-778 text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-77B text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-77E text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-781 text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-784 text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-787 text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-78A text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-78D text3 CODE >49:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-590 text2 CODE >51:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-590 text2 CODE >53:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-591 text2 CODE >55:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-595 text2 CODE >56:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-598 text2 CODE >57:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5A1 text2 CODE >58:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5A4 text2 CODE >60:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5A6 text2 CODE >61:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5A9 text2 CODE >62:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5AA text2 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5B3 text2 CODE >64:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5B6 text2 CODE >65:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5B7 text2 CODE >67:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5B9 text2 CODE >68:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5BC text2 CODE >69:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5C5 text2 CODE >70:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-5C8 text2 CODE >71:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
-53D text1 CODE >45:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-53D text1 CODE >47:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-544 text1 CODE >49:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-547 text1 CODE >49:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-549 text1 CODE >49:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-54D text1 CODE >50:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-550 text1 CODE >50:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-553 text1 CODE >51:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-555 text1 CODE >51:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-559 text1 CODE >53:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
-4F2 maintext CODE >29:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-4F2 maintext CODE >31:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-4F3 maintext CODE >32:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-4F4 maintext CODE >36:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-4F5 maintext CODE >37:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
-4F7 maintext CODE >38:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+681 text4 CODE >50:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+681 text4 CODE >54:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+69B text4 CODE >55:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+6B3 text4 CODE >56:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+6C5 text4 CODE >57:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+6D7 text4 CODE >58:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+731 text3 CODE >27:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+732 text3 CODE >29:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+733 text3 CODE >32:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+737 text3 CODE >33:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+738 text3 CODE >35:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+73C text3 CODE >36:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+73D text3 CODE >38:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+741 text3 CODE >39:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+742 text3 CODE >41:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+746 text3 CODE >42:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+747 text3 CODE >44:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+74B text3 CODE >45:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+74C text3 CODE >47:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+750 text3 CODE >48:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+751 text3 CODE >50:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+755 text3 CODE >51:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+756 text3 CODE >53:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+75A text3 CODE >54:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+75B text3 CODE >56:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+75F text3 CODE >57:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+760 text3 CODE >59:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+764 text3 CODE >60:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+765 text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+76A text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+76F text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+772 text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+775 text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+778 text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+77B text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+77E text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+781 text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+784 text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+787 text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+78A text3 CODE >63:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+78D text3 CODE >64:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+590 text2 CODE >66:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+590 text2 CODE >68:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+591 text2 CODE >70:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+595 text2 CODE >71:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+598 text2 CODE >72:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5A1 text2 CODE >73:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5A4 text2 CODE >75:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5A6 text2 CODE >76:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5A9 text2 CODE >77:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5AA text2 CODE >78:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5B3 text2 CODE >79:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5B6 text2 CODE >80:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5B7 text2 CODE >82:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5B9 text2 CODE >83:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5BC text2 CODE >84:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5C5 text2 CODE >85:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+5C8 text2 CODE >86:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+53D text1 CODE >60:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+53D text1 CODE >62:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+544 text1 CODE >64:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+547 text1 CODE >64:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+549 text1 CODE >64:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+54D text1 CODE >65:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+550 text1 CODE >65:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+553 text1 CODE >66:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+555 text1 CODE >66:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+559 text1 CODE >68:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+4F2 maintext CODE >44:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+4F2 maintext CODE >46:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+4F3 maintext CODE >47:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+4F4 maintext CODE >51:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+4F5 maintext CODE >52:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+4F7 maintext CODE >53:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -368,10 +368,10 @@ __size_of_get_btn_pressed 0 0 ABS 0 - dist/default/production/STOPWATCH.X.produc
 _time_ms 23 0 BANK0 1 bssBANK0 dist/default/production/STOPWATCH.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack /tmp/xcXLkiNlG.o
+___sp 0 0 STACK 2 stack /tmp/xcXkGeBic.o
 _main 9E4 0 CODE 0 maintext dist/default/production/STOPWATCH.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/STOPWATCH.X.production.o
-start 0 0 CODE 0 init /tmp/xcXLkiNlG.o
+start 0 0 CODE 0 init /tmp/xcXkGeBic.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production/STOPWATCH.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production/STOPWATCH.X.production.o
 _reset_stopwatch 9D4 0 CODE 0 text12 dist/default/production/STOPWATCH.X.production.o
@@ -384,12 +384,12 @@ format_time@cashed_value 2A 0 BANK0 1 cstackBANK0 dist/default/production/STOPWA
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 76 0 COMMON 1 cstackCOMMON dist/default/production/STOPWATCH.X.production.o
 _format_time D02 0 CODE 0 text4 dist/default/production/STOPWATCH.X.production.o
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXLkiNlG.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXLkiNlG.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXLkiNlG.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXLkiNlG.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXLkiNlG.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXLkiNlG.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXkGeBic.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXkGeBic.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXkGeBic.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXkGeBic.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXkGeBic.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXkGeBic.o
 __size_of_update_time_counter 0 0 ABS 0 - dist/default/production/STOPWATCH.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production/STOPWATCH.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -410,15 +410,15 @@ __size_of_reset_stopwatch 0 0 ABS 0 - dist/default/production/STOPWATCH.X.produc
 __end_of___lwdiv D02 0 CODE 0 text6 dist/default/production/STOPWATCH.X.production.o
 __end_of___lwmod C7A 0 CODE 0 text5 dist/default/production/STOPWATCH.X.production.o
 __size_of_start_stopwatch 0 0 ABS 0 - dist/default/production/STOPWATCH.X.production.o
-___stackhi 0 0 ABS 0 - /tmp/xcXLkiNlG.o
-___stacklo 0 0 ABS 0 - /tmp/xcXLkiNlG.o
+___stackhi 0 0 ABS 0 - /tmp/xcXkGeBic.o
+___stacklo 0 0 ABS 0 - /tmp/xcXkGeBic.o
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production/STOPWATCH.X.production.o
 get_mask@mask 72 0 COMMON 1 cstackCOMMON dist/default/production/STOPWATCH.X.production.o
 ___lwmod@dividend 7A 0 COMMON 1 cstackCOMMON dist/default/production/STOPWATCH.X.production.o
 start_initialization FEA 0 CODE 0 cinit dist/default/production/STOPWATCH.X.production.o
 __pcstackBANK0 27 0 BANK0 1 cstackBANK0 dist/default/production/STOPWATCH.X.production.o
 __size_of_set_disp_digit_value 0 0 ABS 0 - dist/default/production/STOPWATCH.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXLkiNlG.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXkGeBic.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -471,7 +471,7 @@ set_disp_digit_value@value 72 0 COMMON 1 cstackCOMMON dist/default/production/ST
 get_mask@btn 71 0 COMMON 1 cstackCOMMON dist/default/production/STOPWATCH.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 __size_of_get_mask 0 0 ABS 0 - dist/default/production/STOPWATCH.X.production.o
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXLkiNlG.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXkGeBic.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 ___awmod@counter 75 0 COMMON 1 cstackCOMMON dist/default/production/STOPWATCH.X.production.o
 is_btn_bounce@is_bounce 78 0 COMMON 1 cstackCOMMON dist/default/production/STOPWATCH.X.production.o

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.32/pic/dat/en_msgs.txt -cn \
   -h+dist/default/production/STOPWATCH.X.production.sym \
   --cmf=dist/default/production/STOPWATCH.X.production.cmf -z -Q16F628A \
-  -o/tmp/xcXKFmELB --defsym=__MPLAB_BUILD=1 \
+  -o/tmp/xcXbDceKj --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/STOPWATCH.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0A0h-0EFh -pstack=STACK \
   -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
@@ -17,7 +17,7 @@ Linker command line:
   -AIDLOC=02000h-02003h -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry,init,end_init -ppowerup=CODE \
-  -pcinit=CODE -pfunctab=ENTRY -k /tmp/xcXLkiNlG.o \
+  -pcinit=CODE -pfunctab=ENTRY -k /tmp/xcXkGeBic.o \
   dist/default/production/STOPWATCH.X.production.o 
 
 Object code version is 3.11
@@ -27,7 +27,7 @@ Machine type is 16F628A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXLkiNlG.o
+/tmp/xcXkGeBic.o
                 end_init                              0        0        1        0       0
                 config                             2007     2007        1        0       4
 dist/default/production/STOPWATCH.X.production.o

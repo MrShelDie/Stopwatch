@@ -1,16 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"14 ./buttons.h
-[; ;./buttons.h: 14: } Button;
+"29 ./buttons.h
+[; ;./buttons.h: 29: } Button;
 [c E469 0 1 2 3 .. ]
 [n E469 Button NONE RESET STOP START  ]
 "166 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"13 buttons.c
-[; ;buttons.c: 13: extern _Bool is_timer_work;
+"28 buttons.c
+[; ;buttons.c: 28: extern _Bool is_timer_work;
 [v _is_timer_work `a ~T0 @X0 0 e ]
-"14
-[; ;buttons.c: 14: extern uint16_t time_ms;
+"29
+[; ;buttons.c: 29: extern uint16_t time_ms;
 [v _time_ms `ui ~T0 @X0 0 e ]
 "172 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 172:     struct {
@@ -23,14 +23,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "183
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
 [v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
-"15 ./stopwatch.h
-[; ;./stopwatch.h: 15: void reset_stopwatch(void);
+"30 ./stopwatch.h
+[; ;./stopwatch.h: 30: void reset_stopwatch(void);
 [v _reset_stopwatch `(v ~T0 @X0 0 ef ]
-"16
-[; ;./stopwatch.h: 16: void stop_stopwatch(void);
+"31
+[; ;./stopwatch.h: 31: void stop_stopwatch(void);
 [v _stop_stopwatch `(v ~T0 @X0 0 ef ]
-"17
-[; ;./stopwatch.h: 17: void start_stopwatch(void);
+"32
+[; ;./stopwatch.h: 32: void start_stopwatch(void);
 [v _start_stopwatch `(v ~T0 @X0 0 ef ]
 "54 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 54: __asm("INDF equ 00h");
@@ -143,217 +143,217 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1269
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
 [; <" VRCON equ 09Fh ;# ">
-"14 ./buttons.h
-[; ;./buttons.h: 14: } Button;
+"29 ./buttons.h
+[; ;./buttons.h: 29: } Button;
 [v _Button `E469 ~T0 @X0 1 e ]
-"16 buttons.c
-[; ;buttons.c: 16: uint8_t get_mask(enum Button btn)
+"31 buttons.c
+[; ;buttons.c: 31: uint8_t get_mask(enum Button btn)
 [v _get_mask `(uc ~T0 @X0 1 ef1`E469 ]
-"17
-[; ;buttons.c: 17: {
+"32
+[; ;buttons.c: 32: {
 {
 [e :U _get_mask ]
-"16
-[; ;buttons.c: 16: uint8_t get_mask(enum Button btn)
+"31
+[; ;buttons.c: 31: uint8_t get_mask(enum Button btn)
 [v _btn `E469 ~T0 @X0 1 r1 ]
-"17
-[; ;buttons.c: 17: {
+"32
+[; ;buttons.c: 32: {
 [f ]
-"18
-[; ;buttons.c: 18:     uint8_t mask = 0;
+"33
+[; ;buttons.c: 33:     uint8_t mask = 0;
 [v _mask `uc ~T0 @X0 1 a ]
 [e = _mask -> -> 0 `i `uc ]
-"20
-[; ;buttons.c: 20:     if (btn == RESET)
+"35
+[; ;buttons.c: 35:     if (btn == RESET)
 [e $ ! == -> _btn `ui -> . `E469 1 `ui 53  ]
-"21
-[; ;buttons.c: 21:         mask = 0b10000000;
+"36
+[; ;buttons.c: 36:         mask = 0b10000000;
 [e = _mask -> -> 128 `i `uc ]
 [e $U 54  ]
-"22
-[; ;buttons.c: 22:     else if (btn == STOP)
+"37
+[; ;buttons.c: 37:     else if (btn == STOP)
 [e :U 53 ]
 [e $ ! == -> _btn `ui -> . `E469 2 `ui 55  ]
-"23
-[; ;buttons.c: 23:         mask = 0b01000000;
+"38
+[; ;buttons.c: 38:         mask = 0b01000000;
 [e = _mask -> -> 64 `i `uc ]
 [e $U 56  ]
-"24
-[; ;buttons.c: 24:     else
+"39
+[; ;buttons.c: 39:     else
 [e :U 55 ]
-"25
-[; ;buttons.c: 25:         mask = 0b00100000;
+"40
+[; ;buttons.c: 40:         mask = 0b00100000;
 [e = _mask -> -> 32 `i `uc ]
 [e :U 56 ]
 [e :U 54 ]
-"26
-[; ;buttons.c: 26:     return (mask);
+"41
+[; ;buttons.c: 41:     return (mask);
 [e ) _mask ]
 [e $UE 52  ]
-"27
-[; ;buttons.c: 27: }
+"42
+[; ;buttons.c: 42: }
 [e :UE 52 ]
 }
-"29
-[; ;buttons.c: 29: static _Bool is_btn_bounce(enum Button btn)
+"44
+[; ;buttons.c: 44: static _Bool is_btn_bounce(enum Button btn)
 [v _is_btn_bounce `(a ~T0 @X0 1 sf1`E469 ]
-"30
-[; ;buttons.c: 30: {
+"45
+[; ;buttons.c: 45: {
 {
 [e :U _is_btn_bounce ]
-"29
-[; ;buttons.c: 29: static _Bool is_btn_bounce(enum Button btn)
+"44
+[; ;buttons.c: 44: static _Bool is_btn_bounce(enum Button btn)
 [v _btn `E469 ~T0 @X0 1 r1 ]
-"30
-[; ;buttons.c: 30: {
+"45
+[; ;buttons.c: 45: {
 [f ]
-"31
-[; ;buttons.c: 31:     _Bool is_bounce = 0;
+"46
+[; ;buttons.c: 46:     _Bool is_bounce = 0;
 [v _is_bounce `a ~T0 @X0 1 a ]
 [e = _is_bounce -> -> 0 `i `a ]
-"32
-[; ;buttons.c: 32:     uint8_t mask = get_mask(btn);
+"47
+[; ;buttons.c: 47:     uint8_t mask = get_mask(btn);
 [v _mask `uc ~T0 @X0 1 a ]
 [e = _mask ( _get_mask (1 _btn ]
-"39
-[; ;buttons.c: 39:     for (int i = 0; i < 602; i++)
+"54
+[; ;buttons.c: 54:     for (int i = 0; i < 602; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $ < _i -> 602 `i 58  ]
 [e $U 59  ]
 [e :U 58 ]
-"40
-[; ;buttons.c: 40:     {
+"55
+[; ;buttons.c: 55:     {
 {
-"41
-[; ;buttons.c: 41:         if (!is_bounce && (PORTA & mask) != 0)
+"56
+[; ;buttons.c: 56:         if (!is_bounce && (PORTA & mask) != 0)
 [e $ ! && ! != -> _is_bounce `i -> 0 `i != & -> _PORTA `i -> _mask `i -> 0 `i 61  ]
-"42
-[; ;buttons.c: 42:             is_bounce = 1;
+"57
+[; ;buttons.c: 57:             is_bounce = 1;
 [e = _is_bounce -> -> 1 `i `a ]
 [e :U 61 ]
-"43
-[; ;buttons.c: 43:     }
+"58
+[; ;buttons.c: 58:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 602 `i 58  ]
 [e :U 59 ]
 }
-"44
-[; ;buttons.c: 44:     if (is_timer_work)
+"59
+[; ;buttons.c: 59:     if (is_timer_work)
 [e $ ! != -> _is_timer_work `i -> 0 `i 62  ]
-"45
-[; ;buttons.c: 45:         time_ms += 5;
+"60
+[; ;buttons.c: 60:         time_ms += 5;
 [e =+ _time_ms -> -> 5 `i `ui ]
 [e :U 62 ]
-"46
-[; ;buttons.c: 46:     return (is_bounce);
+"61
+[; ;buttons.c: 61:     return (is_bounce);
 [e ) _is_bounce ]
 [e $UE 57  ]
-"47
-[; ;buttons.c: 47: }
+"62
+[; ;buttons.c: 62: }
 [e :UE 57 ]
 }
-"49
-[; ;buttons.c: 49: enum Button get_btn_pressed(void)
+"64
+[; ;buttons.c: 64: enum Button get_btn_pressed(void)
 [v _get_btn_pressed `(E469 ~T0 @X0 1 ef ]
-"50
-[; ;buttons.c: 50: {
+"65
+[; ;buttons.c: 65: {
 {
 [e :U _get_btn_pressed ]
 [f ]
-"51
-[; ;buttons.c: 51:     enum Button btn = NONE;
+"66
+[; ;buttons.c: 66:     enum Button btn = NONE;
 [v _btn `E469 ~T0 @X0 1 a ]
 [e = _btn . `E469 0 ]
-"53
-[; ;buttons.c: 53:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
+"68
+[; ;buttons.c: 68:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
 [e $ ! && == -> . . _PORTAbits 0 7 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 1 `i -> 0 `i 64  ]
-"54
-[; ;buttons.c: 54:         btn = RESET;
+"69
+[; ;buttons.c: 69:         btn = RESET;
 [e = _btn . `E469 1 ]
 [e $U 65  ]
-"55
-[; ;buttons.c: 55:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
+"70
+[; ;buttons.c: 70:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
 [e :U 64 ]
 [e $ ! && == -> . . _PORTAbits 0 6 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 2 `i -> 0 `i 66  ]
-"56
-[; ;buttons.c: 56:         btn = STOP;
+"71
+[; ;buttons.c: 71:         btn = STOP;
 [e = _btn . `E469 2 ]
 [e $U 67  ]
-"57
-[; ;buttons.c: 57:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
+"72
+[; ;buttons.c: 72:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
 [e :U 66 ]
 [e $ ! && == -> . . _PORTAbits 0 5 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 3 `i -> 0 `i 68  ]
-"58
-[; ;buttons.c: 58:         btn = START;
+"73
+[; ;buttons.c: 73:         btn = START;
 [e = _btn . `E469 3 ]
 [e :U 68 ]
 [e :U 67 ]
 [e :U 65 ]
-"59
-[; ;buttons.c: 59:     return (btn);
+"74
+[; ;buttons.c: 74:     return (btn);
 [e ) _btn ]
 [e $UE 63  ]
-"60
-[; ;buttons.c: 60: }
+"75
+[; ;buttons.c: 75: }
 [e :UE 63 ]
 }
-"62
-[; ;buttons.c: 62: void handle_btn_pressing(enum Button btn)
+"77
+[; ;buttons.c: 77: void handle_btn_pressing(enum Button btn)
 [v _handle_btn_pressing `(v ~T0 @X0 1 ef1`E469 ]
-"63
-[; ;buttons.c: 63: {
+"78
+[; ;buttons.c: 78: {
 {
 [e :U _handle_btn_pressing ]
-"62
-[; ;buttons.c: 62: void handle_btn_pressing(enum Button btn)
-[v _btn `E469 ~T0 @X0 1 r1 ]
-"63
-[; ;buttons.c: 63: {
-[f ]
-"64
-[; ;buttons.c: 64:     switch(btn)
-[e $U 71  ]
-"65
-[; ;buttons.c: 65:     {
-{
-"66
-[; ;buttons.c: 66:         case RESET:
-[e :U 72 ]
-"67
-[; ;buttons.c: 67:             reset_stopwatch();
-[e ( _reset_stopwatch ..  ]
-"68
-[; ;buttons.c: 68:             break;
-[e $U 70  ]
-"69
-[; ;buttons.c: 69:         case STOP:
-[e :U 73 ]
-"70
-[; ;buttons.c: 70:             stop_stopwatch();
-[e ( _stop_stopwatch ..  ]
-"71
-[; ;buttons.c: 71:             break;
-[e $U 70  ]
-"72
-[; ;buttons.c: 72:         case START:
-[e :U 74 ]
-"73
-[; ;buttons.c: 73:             start_stopwatch();
-[e ( _start_stopwatch ..  ]
-"74
-[; ;buttons.c: 74:             break;
-[e $U 70  ]
-"75
-[; ;buttons.c: 75:         default:
-[e :U 75 ]
-"76
-[; ;buttons.c: 76:             break;
-[e $U 70  ]
 "77
-[; ;buttons.c: 77:     };
+[; ;buttons.c: 77: void handle_btn_pressing(enum Button btn)
+[v _btn `E469 ~T0 @X0 1 r1 ]
+"78
+[; ;buttons.c: 78: {
+[f ]
+"79
+[; ;buttons.c: 79:     switch(btn)
+[e $U 71  ]
+"80
+[; ;buttons.c: 80:     {
+{
+"81
+[; ;buttons.c: 81:         case RESET:
+[e :U 72 ]
+"82
+[; ;buttons.c: 82:             reset_stopwatch();
+[e ( _reset_stopwatch ..  ]
+"83
+[; ;buttons.c: 83:             break;
+[e $U 70  ]
+"84
+[; ;buttons.c: 84:         case STOP:
+[e :U 73 ]
+"85
+[; ;buttons.c: 85:             stop_stopwatch();
+[e ( _stop_stopwatch ..  ]
+"86
+[; ;buttons.c: 86:             break;
+[e $U 70  ]
+"87
+[; ;buttons.c: 87:         case START:
+[e :U 74 ]
+"88
+[; ;buttons.c: 88:             start_stopwatch();
+[e ( _start_stopwatch ..  ]
+"89
+[; ;buttons.c: 89:             break;
+[e $U 70  ]
+"90
+[; ;buttons.c: 90:         default:
+[e :U 75 ]
+"91
+[; ;buttons.c: 91:             break;
+[e $U 70  ]
+"92
+[; ;buttons.c: 92:     };
 }
 [e $U 70  ]
 [e :U 71 ]
@@ -362,7 +362,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E469 3 `ui 74
  75 ]
 [e :U 70 ]
-"78
-[; ;buttons.c: 78: }
+"93
+[; ;buttons.c: 93: }
 [e :UE 69 ]
 }

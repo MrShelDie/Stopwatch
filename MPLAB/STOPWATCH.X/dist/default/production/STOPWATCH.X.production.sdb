@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F628A ]
 [d frameptr 0 ]
-"14 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.h
+"29 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.h
 [e E469 Button `uc
 NONE 0
 RESET 1
@@ -32,31 +32,31 @@ START 3
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"16 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+"31 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
 [v _get_mask get_mask `(uc  1 e 1 0 ]
-"29
+"44
 [v _is_btn_bounce is_btn_bounce `(a  1 s 1 is_btn_bounce ]
-"49
+"64
 [v _get_btn_pressed get_btn_pressed `(E469  1 e 1 0 ]
-"62
+"77
 [v _handle_btn_pressing handle_btn_pressing `(v  1 e 1 0 ]
-"12 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+"27 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
 [v _set_disp_digit_value set_disp_digit_value `(v  1 s 1 set_disp_digit_value ]
-"51
+"66
 [v _update_disp update_disp `(v  1 e 1 0 ]
-"18 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+"33 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
 [v _configure configure `(v  1 e 1 0 ]
-"29
+"44
 [v _main main `(v  1 e 1 0 ]
-"17 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+"32 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
 [v _reset_stopwatch reset_stopwatch `(v  1 e 1 0 ]
-"24
+"39
 [v _stop_stopwatch stop_stopwatch `(v  1 e 1 0 ]
-"29
+"44
 [v _start_stopwatch start_stopwatch `(v  1 e 1 0 ]
-"35
+"50
 [v _format_time format_time `(v  1 e 1 0 ]
-"45
+"60
 [v _update_time_counter update_time_counter `(v  1 e 1 0 ]
 "166 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -109,42 +109,42 @@ START 3
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "969
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"13 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+"28 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
 [v _time_ms time_ms `ui  1 e 2 0 ]
-"14
+"29
 [v _is_timer_work is_timer_work `a  1 e 1 0 ]
 [s S160 Time_format 3 `uc 1 ms 1 0 `uc 1 sec_1_digit 1 1 `uc 1 sec_2_digit 1 2 ]
-"15
+"30
 [v _formatted_time formatted_time `S160  1 e 3 0 ]
-"29 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+"44 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"41
+"56
 } 0
-"45 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+"60 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
 [v _update_time_counter update_time_counter `(v  1 e 1 0 ]
 {
-"53
+"68
 } 0
-"51 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
+"66 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c
 [v _update_disp update_disp `(v  1 e 1 0 ]
 {
-"71
+"86
 } 0
-"12
+"27
 [v _set_disp_digit_value set_disp_digit_value `(v  1 s 1 set_disp_digit_value ]
 {
 [v set_disp_digit_value@value value `uc  1 a 1 wreg ]
 [v set_disp_digit_value@value value `uc  1 a 1 wreg ]
 [v set_disp_digit_value@value value `uc  1 a 1 2 ]
-"49
+"64
 } 0
-"35 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+"50 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
 [v _format_time format_time `(v  1 e 1 0 ]
 {
-"37
+"52
 [v format_time@cashed_value cashed_value `uc  1 a 1 3 ]
-"43
+"58
 } 0
 "5 /opt/microchip/xc8/v2.32/pic/sources/c90/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -192,65 +192,65 @@ START 3
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"62 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+"77 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
 [v _handle_btn_pressing handle_btn_pressing `(v  1 e 1 0 ]
 {
 [v handle_btn_pressing@btn btn `E469  1 a 1 wreg ]
 [v handle_btn_pressing@btn btn `E469  1 a 1 wreg ]
 [v handle_btn_pressing@btn btn `E469  1 a 1 2 ]
-"78
+"93
 } 0
-"24 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
+"39 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c
 [v _stop_stopwatch stop_stopwatch `(v  1 e 1 0 ]
 {
-"27
+"42
 } 0
-"29
+"44
 [v _start_stopwatch start_stopwatch `(v  1 e 1 0 ]
 {
-"32
+"47
 } 0
-"17
+"32
 [v _reset_stopwatch reset_stopwatch `(v  1 e 1 0 ]
 {
-"22
+"37
 } 0
-"49 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
+"64 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c
 [v _get_btn_pressed get_btn_pressed `(E469  1 e 1 0 ]
 {
-"51
+"66
 [v get_btn_pressed@btn btn `E469  1 a 1 10 ]
-"60
+"75
 } 0
-"29
+"44
 [v _is_btn_bounce is_btn_bounce `(a  1 s 1 is_btn_bounce ]
 {
 [v is_btn_bounce@btn btn `E469  1 a 1 wreg ]
-"39
+"54
 [v is_btn_bounce@i i `i  1 a 2 6 ]
-"31
+"46
 [v is_btn_bounce@is_bounce is_bounce `a  1 a 1 8 ]
-"32
-[v is_btn_bounce@mask mask `uc  1 a 1 5 ]
-"29
-[v is_btn_bounce@btn btn `E469  1 a 1 wreg ]
-"31
-[v is_btn_bounce@btn btn `E469  1 a 1 4 ]
 "47
+[v is_btn_bounce@mask mask `uc  1 a 1 5 ]
+"44
+[v is_btn_bounce@btn btn `E469  1 a 1 wreg ]
+"46
+[v is_btn_bounce@btn btn `E469  1 a 1 4 ]
+"62
 } 0
-"16
+"31
 [v _get_mask get_mask `(uc  1 e 1 0 ]
 {
 [v get_mask@btn btn `E469  1 a 1 wreg ]
-"18
+"33
 [v get_mask@mask mask `uc  1 a 1 2 ]
-"16
+"31
 [v get_mask@btn btn `E469  1 a 1 wreg ]
 [v get_mask@btn btn `E469  1 a 1 1 ]
-"27
+"42
 } 0
-"18 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
+"33 /home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c
 [v _configure configure `(v  1 e 1 0 ]
 {
-"26
+"41
 } 0

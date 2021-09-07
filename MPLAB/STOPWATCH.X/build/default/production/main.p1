@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"14 ./buttons.h
-[; ;./buttons.h: 14: } Button;
+"29 ./buttons.h
+[; ;./buttons.h: 29: } Button;
 [c E469 0 1 2 3 .. ]
 [n E469 Button NONE RESET STOP START  ]
 "316 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
@@ -28,20 +28,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 969: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 [p mainexit ]
-"15 ./stopwatch.h
-[; ;./stopwatch.h: 15: void reset_stopwatch(void);
+"30 ./stopwatch.h
+[; ;./stopwatch.h: 30: void reset_stopwatch(void);
 [v _reset_stopwatch `(v ~T0 @X0 0 ef ]
-"25 ./display.h
-[; ;./display.h: 25: void update_disp(void);
+"40 ./display.h
+[; ;./display.h: 40: void update_disp(void);
 [v _update_disp `(v ~T0 @X0 0 ef ]
-"17 ./buttons.h
-[; ;./buttons.h: 17: void handle_btn_pressing(enum Button btn);
+"32 ./buttons.h
+[; ;./buttons.h: 32: void handle_btn_pressing(enum Button btn);
 [v _handle_btn_pressing `(v ~T0 @X0 0 ef1`E469 ]
-"16
-[; ;./buttons.h: 16: enum Button get_btn_pressed(void);
+"31
+[; ;./buttons.h: 31: enum Button get_btn_pressed(void);
 [v _get_btn_pressed `(E469 ~T0 @X0 0 ef ]
-"19 ./stopwatch.h
-[; ;./stopwatch.h: 19: void update_time_counter(void);
+"34 ./stopwatch.h
+[; ;./stopwatch.h: 34: void update_time_counter(void);
 [v _update_time_counter `(v ~T0 @X0 0 ef ]
 "54 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 54: __asm("INDF equ 00h");
@@ -154,83 +154,72 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1269
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
 [; <" VRCON equ 09Fh ;# ">
-"14 ./buttons.h
-[; ;./buttons.h: 14: } Button;
+"29 ./buttons.h
+[; ;./buttons.h: 29: } Button;
 [v _Button `E469 ~T0 @X0 1 e ]
-"8 main.c
-[; ;main.c: 8:     TRISB = 0x00;
+"23 main.c
+[; ;main.c: 23:     return ;
 [p x FOSC    =  INTOSCIO  ]
-"9
-[; ;main.c: 9: }
+"24
+[; ;main.c: 24: }
 [p x WDTE    =  OFF       ]
-"10
-[; ;main.c: 10: 
+"25
 [p x PWRTE  =  OFF       ]
-"11
-[; ;main.c: 11: 
+"26
 [p x MCLRE  =  OFF       ]
-"12
-[; ;main.c: 12: void main(void)
+"27
 [p x BOREN  =  OFF       ]
-"13
-[; ;main.c: 13: {
+"28
 [p x LVP      =  OFF       ]
-"14
-[; ;main.c: 14:     configure();
+"29
 [p x CPD      =  OFF       ]
-"15
-[; ;main.c: 15:     reset_stopwatch();
+"30
 [p x CP        =  OFF       ]
-"18
-[; ;main.c: 18:     {
+"33
 [v _configure `(v ~T0 @X0 1 ef ]
-"19
-[; ;main.c: 19:         update_disp();
+"34
 {
 [e :U _configure ]
 [f ]
-"20
-[; ;main.c: 20:         handle_btn_pressing(get_btn_pressed());
+"35
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"22
-[; ;main.c: 22:     }
+"37
 [e = _CMCON -> -> 7 `i `uc ]
-"24
-[; ;main.c: 24: }
+"39
 [e = _TRISA -> -> 224 `i `uc ]
-"25
+"40
 [e = _TRISB -> -> 0 `i `uc ]
-"26
+"41
 [e :UE 52 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"29
+"44
 [v _main `(v ~T0 @X0 1 ef ]
-"30
+"45
 {
 [e :U _main ]
 [f ]
-"31
+"46
 [e ( _configure ..  ]
-"32
+"47
 [e ( _reset_stopwatch ..  ]
-"34
+"49
 [e :U 55 ]
-"35
+"50
 {
-"36
+"51
 [e ( _update_disp ..  ]
-"37
+"52
 [e ( _handle_btn_pressing (1 ( _get_btn_pressed ..  ]
-"38
+"53
 [e ( _update_time_counter ..  ]
-"39
+"54
 }
 [e :U 54 ]
 [e $U 55  ]
 [e :U 56 ]
-"40
+"55
 [e $UE 53  ]
-"41
+"56
 [e :UE 53 ]
 }

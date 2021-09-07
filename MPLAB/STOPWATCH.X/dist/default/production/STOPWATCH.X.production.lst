@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Tue Sep  7 21:57:23 2021
+                                                                                               Tue Sep  7 22:54:22 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F628A
@@ -510,7 +510,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    496 ;;
    497 ;; *************** function _main *****************
    498 ;; Defined at:
-   499 ;;		line 29 in file "main.c"
+   499 ;;		line 44 in file "main.c"
    500 ;; Parameters:    Size  Location     Type
    501 ;;		None
    502 ;; Auto vars:     Size  Location     Type
@@ -566,7 +566,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    552  053D                     __ptext1:	
    553 ;; *************** function _update_time_counter *****************
    554 ;; Defined at:
-   555 ;;		line 45 in file "stopwatch.c"
+   555 ;;		line 60 in file "stopwatch.c"
    556 ;; Parameters:    Size  Location     Type
    557 ;;		None
    558 ;; Auto vars:     Size  Location     Type
@@ -601,7 +601,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    587                           ; Regs used in _update_time_counter: [wreg+status,2+status,0]
    588                           
    589                           
-   590                           ;stopwatch.c: 47:     if (is_timer_work)
+   590                           ;stopwatch.c: 62:     if (is_timer_work)
    591  053D  1283               	bcf	3,5	;RP0=0, select bank0
    592  053E  1303               	bcf	3,6	;RP1=0, select bank0
    593  053F  0825               	movf	_is_timer_work,w
@@ -613,7 +613,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    599  0544                     u740:
    600  0544                     l1290:
    601                           
-   602                           ;stopwatch.c: 48:     {;stopwatch.c: 49:         if (time_ms > 60000)
+   602                           ;stopwatch.c: 63:     {;stopwatch.c: 64:         if (time_ms > 60000)
    603  0544  30EA               	movlw	234
    604  0545  0224               	subwf	_time_ms+1,w
    605  0546  3061               	movlw	97
@@ -627,7 +627,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    613  054D                     u750:
    614  054D                     l1292:
    615                           
-   616                           ;stopwatch.c: 50:             time_ms -= 60000;
+   616                           ;stopwatch.c: 65:             time_ms -= 60000;
    617  054D  3060               	movlw	96
    618  054E  02A3               	subwf	_time_ms,f
    619  054F  30EA               	movlw	234
@@ -636,7 +636,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    622  0552  02A4               	subwf	_time_ms+1,f
    623  0553                     l102:
    624                           
-   625                           ;stopwatch.c: 51:         time_ms += 2;
+   625                           ;stopwatch.c: 66:         time_ms += 2;
    626  0553  3002               	movlw	2
    627  0554  07A3               	addwf	_time_ms,f
    628  0555  1803               	skipnc
@@ -651,7 +651,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    637  0590                     __ptext2:	
    638 ;; *************** function _update_disp *****************
    639 ;; Defined at:
-   640 ;;		line 51 in file "display.c"
+   640 ;;		line 66 in file "display.c"
    641 ;; Parameters:    Size  Location     Type
    642 ;;		None
    643 ;; Auto vars:     Size  Location     Type
@@ -688,24 +688,24 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    674                           ; Regs used in _update_disp: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    675                           
    676                           
-   677                           ;display.c: 53:     format_time();
+   677                           ;display.c: 68:     format_time();
    678  0590  2681               	fcall	_format_time
    679  0591                     l1556:
    680                           
-   681                           ;display.c: 55:     set_disp_digit_value(formatted_time.ms);
+   681                           ;display.c: 70:     set_disp_digit_value(formatted_time.ms);
    682  0591  1283               	bcf	3,5	;RP0=0, select bank0
    683  0592  1303               	bcf	3,6	;RP1=0, select bank0
    684  0593  0820               	movf	_formatted_time,w
    685  0594  2731               	fcall	_set_disp_digit_value
    686  0595                     l1558:
    687                           
-   688                           ;display.c: 56:     PORTAbits.RA0 = 1;
+   688                           ;display.c: 71:     PORTAbits.RA0 = 1;
    689  0595  1283               	bcf	3,5	;RP0=0, select bank0
    690  0596  1303               	bcf	3,6	;RP1=0, select bank0
    691  0597  1405               	bsf	5,0	;volatile
    692  0598                     l1560:
    693                           
-   694                           ;display.c: 57:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
+   694                           ;display.c: 72:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
    695  0598  30E2               	movlw	226
    696  0599  1283               	bcf	3,5	;RP0=0, select bank0
    697  059A  1303               	bcf	3,6	;RP1=0, select bank0
@@ -718,28 +718,28 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    704  05A0  2DA1               	nop2
    705  05A1                     l1562:
    706                           
-   707                           ;display.c: 58:     PORTAbits.RA0 = 0;
+   707                           ;display.c: 73:     PORTAbits.RA0 = 0;
    708  05A1  1283               	bcf	3,5	;RP0=0, select bank0
    709  05A2  1303               	bcf	3,6	;RP1=0, select bank0
    710  05A3  1005               	bcf	5,0	;volatile
    711  05A4                     l1564:
    712                           
-   713                           ;display.c: 60:     set_disp_digit_value(formatted_time.sec_1_digit);
+   713                           ;display.c: 75:     set_disp_digit_value(formatted_time.sec_1_digit);
    714  05A4  0821               	movf	_formatted_time+1,w
    715  05A5  2731               	fcall	_set_disp_digit_value
    716  05A6                     l1566:
    717                           
-   718                           ;display.c: 61:     PORTAbits.RA1 = 1;
+   718                           ;display.c: 76:     PORTAbits.RA1 = 1;
    719  05A6  1283               	bcf	3,5	;RP0=0, select bank0
    720  05A7  1303               	bcf	3,6	;RP1=0, select bank0
    721  05A8  1485               	bsf	5,1	;volatile
    722  05A9                     l1568:
    723                           
-   724                           ;display.c: 62:     PORTBbits.RB7 = 0;
+   724                           ;display.c: 77:     PORTBbits.RB7 = 0;
    725  05A9  1386               	bcf	6,7	;volatile
    726  05AA                     l1570:
    727                           
-   728                           ;display.c: 63:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
+   728                           ;display.c: 78:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
    729  05AA  30E2               	movlw	226
    730  05AB  1283               	bcf	3,5	;RP0=0, select bank0
    731  05AC  1303               	bcf	3,6	;RP1=0, select bank0
@@ -752,28 +752,28 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    738  05B2  2DB3               	nop2
    739  05B3                     l1572:
    740                           
-   741                           ;display.c: 64:     PORTAbits.RA1 = 0;
+   741                           ;display.c: 79:     PORTAbits.RA1 = 0;
    742  05B3  1283               	bcf	3,5	;RP0=0, select bank0
    743  05B4  1303               	bcf	3,6	;RP1=0, select bank0
    744  05B5  1085               	bcf	5,1	;volatile
    745  05B6                     l1574:
    746                           
-   747                           ;display.c: 65:     PORTBbits.RB7 = 1;
+   747                           ;display.c: 80:     PORTBbits.RB7 = 1;
    748  05B6  1786               	bsf	6,7	;volatile
    749  05B7                     l1576:
    750                           
-   751                           ;display.c: 67:     set_disp_digit_value(formatted_time.sec_2_digit);
+   751                           ;display.c: 82:     set_disp_digit_value(formatted_time.sec_2_digit);
    752  05B7  0822               	movf	_formatted_time+2,w
    753  05B8  2731               	fcall	_set_disp_digit_value
    754  05B9                     l1578:
    755                           
-   756                           ;display.c: 68:     PORTAbits.RA2 = 1;
+   756                           ;display.c: 83:     PORTAbits.RA2 = 1;
    757  05B9  1283               	bcf	3,5	;RP0=0, select bank0
    758  05BA  1303               	bcf	3,6	;RP1=0, select bank0
    759  05BB  1505               	bsf	5,2	;volatile
    760  05BC                     l1580:
    761                           
-   762                           ;display.c: 69:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
+   762                           ;display.c: 84:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
    763  05BC  30E2               	movlw	226
    764  05BD  1283               	bcf	3,5	;RP0=0, select bank0
    765  05BE  1303               	bcf	3,6	;RP1=0, select bank0
@@ -786,7 +786,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    772  05C4  2DC5               	nop2
    773  05C5                     l1582:
    774                           
-   775                           ;display.c: 70:     PORTAbits.RA2 = 0;
+   775                           ;display.c: 85:     PORTAbits.RA2 = 0;
    776  05C5  1283               	bcf	3,5	;RP0=0, select bank0
    777  05C6  1303               	bcf	3,6	;RP1=0, select bank0
    778  05C7  1105               	bcf	5,2	;volatile
@@ -798,7 +798,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    784  0731                     __ptext3:	
    785 ;; *************** function _set_disp_digit_value *****************
    786 ;; Defined at:
-   787 ;;		line 12 in file "display.c"
+   787 ;;		line 27 in file "display.c"
    788 ;; Parameters:    Size  Location     Type
    789 ;;  value           1    wreg     unsigned char 
    790 ;; Auto vars:     Size  Location     Type
@@ -835,108 +835,108 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    821  0731  00F2               	movwf	set_disp_digit_value@value
    822  0732                     l1194:
    823                           
-   824                           ;display.c: 12: static void set_disp_digit_value(uint8_t value);display.c: 13: {;display
-      +                          .c: 14:     switch(value)
+   824                           ;display.c: 27: static void set_disp_digit_value(uint8_t value);display.c: 28: {;display
+      +                          .c: 29:     switch(value)
    825  0732  2F65               	goto	l1218
    826  0733                     l1196:
    827                           
-   828                           ;display.c: 17:             PORTB = 0xC0;
+   828                           ;display.c: 32:             PORTB = 0xC0;
    829  0733  30C0               	movlw	192
    830  0734  1283               	bcf	3,5	;RP0=0, select bank0
    831  0735  1303               	bcf	3,6	;RP1=0, select bank0
    832  0736  0086               	movwf	6	;volatile
    833                           
-   834                           ;display.c: 18:             break;
+   834                           ;display.c: 33:             break;
    835  0737  2F8D               	goto	l131
    836  0738                     l1198:
    837                           
-   838                           ;display.c: 20:             PORTB = 0xF9;
+   838                           ;display.c: 35:             PORTB = 0xF9;
    839  0738  30F9               	movlw	249
    840  0739  1283               	bcf	3,5	;RP0=0, select bank0
    841  073A  1303               	bcf	3,6	;RP1=0, select bank0
    842  073B  0086               	movwf	6	;volatile
    843                           
-   844                           ;display.c: 21:             break;
+   844                           ;display.c: 36:             break;
    845  073C  2F8D               	goto	l131
    846  073D                     l1200:
    847                           
-   848                           ;display.c: 23:             PORTB = 0xA4;
+   848                           ;display.c: 38:             PORTB = 0xA4;
    849  073D  30A4               	movlw	164
    850  073E  1283               	bcf	3,5	;RP0=0, select bank0
    851  073F  1303               	bcf	3,6	;RP1=0, select bank0
    852  0740  0086               	movwf	6	;volatile
    853                           
-   854                           ;display.c: 24:             break;
+   854                           ;display.c: 39:             break;
    855  0741  2F8D               	goto	l131
    856  0742                     l1202:
    857                           
-   858                           ;display.c: 26:             PORTB = 0xB0;
+   858                           ;display.c: 41:             PORTB = 0xB0;
    859  0742  30B0               	movlw	176
    860  0743  1283               	bcf	3,5	;RP0=0, select bank0
    861  0744  1303               	bcf	3,6	;RP1=0, select bank0
    862  0745  0086               	movwf	6	;volatile
    863                           
-   864                           ;display.c: 27:             break;
+   864                           ;display.c: 42:             break;
    865  0746  2F8D               	goto	l131
    866  0747                     l1204:
    867                           
-   868                           ;display.c: 29:             PORTB = 0x99;
+   868                           ;display.c: 44:             PORTB = 0x99;
    869  0747  3099               	movlw	153
    870  0748  1283               	bcf	3,5	;RP0=0, select bank0
    871  0749  1303               	bcf	3,6	;RP1=0, select bank0
    872  074A  0086               	movwf	6	;volatile
    873                           
-   874                           ;display.c: 30:             break;
+   874                           ;display.c: 45:             break;
    875  074B  2F8D               	goto	l131
    876  074C                     l1206:
    877                           
-   878                           ;display.c: 32:             PORTB = 0x92;
+   878                           ;display.c: 47:             PORTB = 0x92;
    879  074C  3092               	movlw	146
    880  074D  1283               	bcf	3,5	;RP0=0, select bank0
    881  074E  1303               	bcf	3,6	;RP1=0, select bank0
    882  074F  0086               	movwf	6	;volatile
    883                           
-   884                           ;display.c: 33:             break;
+   884                           ;display.c: 48:             break;
    885  0750  2F8D               	goto	l131
    886  0751                     l1208:
    887                           
-   888                           ;display.c: 35:             PORTB = 0x82;
+   888                           ;display.c: 50:             PORTB = 0x82;
    889  0751  3082               	movlw	130
    890  0752  1283               	bcf	3,5	;RP0=0, select bank0
    891  0753  1303               	bcf	3,6	;RP1=0, select bank0
    892  0754  0086               	movwf	6	;volatile
    893                           
-   894                           ;display.c: 36:             break;
+   894                           ;display.c: 51:             break;
    895  0755  2F8D               	goto	l131
    896  0756                     l1210:
    897                           
-   898                           ;display.c: 38:             PORTB = 0xF8;
+   898                           ;display.c: 53:             PORTB = 0xF8;
    899  0756  30F8               	movlw	248
    900  0757  1283               	bcf	3,5	;RP0=0, select bank0
    901  0758  1303               	bcf	3,6	;RP1=0, select bank0
    902  0759  0086               	movwf	6	;volatile
    903                           
-   904                           ;display.c: 39:             break;
+   904                           ;display.c: 54:             break;
    905  075A  2F8D               	goto	l131
    906  075B                     l1212:
    907                           
-   908                           ;display.c: 41:             PORTB = 0x80;
+   908                           ;display.c: 56:             PORTB = 0x80;
    909  075B  3080               	movlw	128
    910  075C  1283               	bcf	3,5	;RP0=0, select bank0
    911  075D  1303               	bcf	3,6	;RP1=0, select bank0
    912  075E  0086               	movwf	6	;volatile
    913                           
-   914                           ;display.c: 42:             break;
+   914                           ;display.c: 57:             break;
    915  075F  2F8D               	goto	l131
    916  0760                     l1214:
    917                           
-   918                           ;display.c: 44:             PORTB = 0x90;
+   918                           ;display.c: 59:             PORTB = 0x90;
    919  0760  3090               	movlw	144
    920  0761  1283               	bcf	3,5	;RP0=0, select bank0
    921  0762  1303               	bcf	3,6	;RP1=0, select bank0
    922  0763  0086               	movwf	6	;volatile
    923                           
-   924                           ;display.c: 45:             break;
+   924                           ;display.c: 60:             break;
    925  0764  2F8D               	goto	l131
    926  0765                     l1218:
    927  0765  0872               	movf	set_disp_digit_value@value,w
@@ -1008,7 +1008,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    992  0681                     __ptext4:	
    993 ;; *************** function _format_time *****************
    994 ;; Defined at:
-   995 ;;		line 35 in file "stopwatch.c"
+   995 ;;		line 50 in file "stopwatch.c"
    996 ;; Parameters:    Size  Location     Type
    997 ;;		None
    998 ;; Auto vars:     Size  Location     Type
@@ -1047,7 +1047,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1031                           ; Regs used in _format_time: [wreg+status,2+status,0+pclath+cstack]
   1032                           
   1033                           
-  1034                           ;stopwatch.c: 37:     uint8_t cashed_value;;stopwatch.c: 39:     formatted_time.ms = tim
+  1034                           ;stopwatch.c: 52:     uint8_t cashed_value;;stopwatch.c: 54:     formatted_time.ms = tim
       +                          e_ms / 100 % 10;
   1035  0681  300A               	movlw	10
   1036  0682  00F8               	movwf	___lwmod@divisor
@@ -1076,7 +1076,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1059  0699  0827               	movf	??_format_time,w
   1060  069A  00A0               	movwf	_formatted_time
   1061                           
-  1062                           ;stopwatch.c: 40:     cashed_value = time_ms / 1000 % 60;
+  1062                           ;stopwatch.c: 55:     cashed_value = time_ms / 1000 % 60;
   1063  069B  303C               	movlw	60
   1064  069C  00F8               	movwf	___lwmod@divisor
   1065  069D  3000               	movlw	0
@@ -1102,7 +1102,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1085  06B1  0827               	movf	??_format_time,w
   1086  06B2  00AA               	movwf	format_time@cashed_value
   1087                           
-  1088                           ;stopwatch.c: 41:     formatted_time.sec_1_digit = cashed_value % 10;
+  1088                           ;stopwatch.c: 56:     formatted_time.sec_1_digit = cashed_value % 10;
   1089  06B3  300A               	movlw	10
   1090  06B4  00F0               	movwf	___awmod@divisor
   1091  06B5  3000               	movlw	0
@@ -1122,7 +1122,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1105  06C3  0829               	movf	??_format_time+2,w
   1106  06C4  00A1               	movwf	_formatted_time+1
   1107                           
-  1108                           ;stopwatch.c: 42:     formatted_time.sec_2_digit = (uint8_t)(cashed_value / 10);
+  1108                           ;stopwatch.c: 57:     formatted_time.sec_2_digit = (uint8_t)(cashed_value / 10);
   1109  06C5  300A               	movlw	10
   1110  06C6  00F0               	movwf	___awdiv@divisor
   1111  06C7  3000               	movlw	0
@@ -1754,7 +1754,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1737  0521                     __ptext9:	
   1738 ;; *************** function _handle_btn_pressing *****************
   1739 ;; Defined at:
-  1740 ;;		line 62 in file "buttons.c"
+  1740 ;;		line 77 in file "buttons.c"
   1741 ;; Parameters:    Size  Location     Type
   1742 ;;  btn             1    wreg     enum E469
   1743 ;; Auto vars:     Size  Location     Type
@@ -1794,29 +1794,29 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1777  0521  00F2               	movwf	handle_btn_pressing@btn
   1778  0522                     l1272:
   1779                           
-  1780                           ;buttons.c: 62: void handle_btn_pressing(enum Button btn);buttons.c: 63: {;buttons.c: 64
+  1780                           ;buttons.c: 77: void handle_btn_pressing(enum Button btn);buttons.c: 78: {;buttons.c: 79
       +                          :     switch(btn)
   1781  0522  2D29               	goto	l1282
   1782  0523                     l1274:
   1783                           
-  1784                           ;buttons.c: 67:             reset_stopwatch();
+  1784                           ;buttons.c: 82:             reset_stopwatch();
   1785  0523  24EA               	fcall	_reset_stopwatch
   1786                           
-  1787                           ;buttons.c: 68:             break;
+  1787                           ;buttons.c: 83:             break;
   1788  0524  2D3C               	goto	l78
   1789  0525                     l1276:
   1790                           
-  1791                           ;buttons.c: 70:             stop_stopwatch();
+  1791                           ;buttons.c: 85:             stop_stopwatch();
   1792  0525  24E1               	fcall	_stop_stopwatch
   1793                           
-  1794                           ;buttons.c: 71:             break;
+  1794                           ;buttons.c: 86:             break;
   1795  0526  2D3C               	goto	l78
   1796  0527                     l1278:
   1797                           
-  1798                           ;buttons.c: 73:             start_stopwatch();
+  1798                           ;buttons.c: 88:             start_stopwatch();
   1799  0527  24E5               	fcall	_start_stopwatch
   1800                           
-  1801                           ;buttons.c: 74:             break;
+  1801                           ;buttons.c: 89:             break;
   1802  0528  2D3C               	goto	l78
   1803  0529                     l1282:
   1804  0529  0872               	movf	handle_btn_pressing@btn,w
@@ -1867,7 +1867,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1848  04E1                     __ptext10:	
   1849 ;; *************** function _stop_stopwatch *****************
   1850 ;; Defined at:
-  1851 ;;		line 24 in file "stopwatch.c"
+  1851 ;;		line 39 in file "stopwatch.c"
   1852 ;; Parameters:    Size  Location     Type
   1853 ;;		None
   1854 ;; Auto vars:     Size  Location     Type
@@ -1902,7 +1902,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1883                           ; Regs used in _stop_stopwatch: [status,2]
   1884                           
   1885                           
-  1886                           ;stopwatch.c: 26:     is_timer_work = 0;
+  1886                           ;stopwatch.c: 41:     is_timer_work = 0;
   1887  04E1  1283               	bcf	3,5	;RP0=0, select bank0
   1888  04E2  1303               	bcf	3,6	;RP1=0, select bank0
   1889  04E3  01A5               	clrf	_is_timer_work
@@ -1914,7 +1914,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1895  04E5                     __ptext11:	
   1896 ;; *************** function _start_stopwatch *****************
   1897 ;; Defined at:
-  1898 ;;		line 29 in file "stopwatch.c"
+  1898 ;;		line 44 in file "stopwatch.c"
   1899 ;; Parameters:    Size  Location     Type
   1900 ;;		None
   1901 ;; Auto vars:     Size  Location     Type
@@ -1949,7 +1949,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1930                           ; Regs used in _start_stopwatch: []
   1931                           
   1932                           
-  1933                           ;stopwatch.c: 31:     is_timer_work = 1;
+  1933                           ;stopwatch.c: 46:     is_timer_work = 1;
   1934  04E5  1283               	bcf	3,5	;RP0=0, select bank0
   1935  04E6  1303               	bcf	3,6	;RP1=0, select bank0
   1936  04E7  01A5               	clrf	_is_timer_work
@@ -1962,7 +1962,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1943  04EA                     __ptext12:	
   1944 ;; *************** function _reset_stopwatch *****************
   1945 ;; Defined at:
-  1946 ;;		line 17 in file "stopwatch.c"
+  1946 ;;		line 32 in file "stopwatch.c"
   1947 ;; Parameters:    Size  Location     Type
   1948 ;;		None
   1949 ;; Auto vars:     Size  Location     Type
@@ -1998,17 +1998,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1979                           ; Regs used in _reset_stopwatch: [wreg+status,2]
   1980                           
   1981                           
-  1982                           ;stopwatch.c: 19:     is_timer_work = 0;
+  1982                           ;stopwatch.c: 34:     is_timer_work = 0;
   1983  04EA  1283               	bcf	3,5	;RP0=0, select bank0
   1984  04EB  1303               	bcf	3,6	;RP1=0, select bank0
   1985  04EC  01A5               	clrf	_is_timer_work
   1986                           
-  1987                           ;stopwatch.c: 20:     time_ms = 0;
+  1987                           ;stopwatch.c: 35:     time_ms = 0;
   1988  04ED  01A3               	clrf	_time_ms
   1989  04EE  01A4               	clrf	_time_ms+1
   1990  04EF                     l1156:
   1991                           
-  1992                           ;stopwatch.c: 21:     PORTB = 0xC0;
+  1992                           ;stopwatch.c: 36:     PORTB = 0xC0;
   1993  04EF  30C0               	movlw	192
   1994  04F0  0086               	movwf	6	;volatile
   1995  04F1                     l89:
@@ -2019,7 +2019,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2000  055A                     __ptext13:	
   2001 ;; *************** function _get_btn_pressed *****************
   2002 ;; Defined at:
-  2003 ;;		line 49 in file "buttons.c"
+  2003 ;;		line 64 in file "buttons.c"
   2004 ;; Parameters:    Size  Location     Type
   2005 ;;		None
   2006 ;; Auto vars:     Size  Location     Type
@@ -2055,11 +2055,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2036                           ; Regs used in _get_btn_pressed: [wreg+status,2+status,0+btemp+1+pclath+cstack]
   2037                           
   2038                           
-  2039                           ;buttons.c: 51:     enum Button btn = NONE;
+  2039                           ;buttons.c: 66:     enum Button btn = NONE;
   2040  055A  01FA               	clrf	get_btn_pressed@btn
   2041  055B                     l1256:
   2042                           
-  2043                           ;buttons.c: 53:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
+  2043                           ;buttons.c: 68:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
   2044  055B  1283               	bcf	3,5	;RP0=0, select bank0
   2045  055C  1303               	bcf	3,6	;RP1=0, select bank0
   2046  055D  1B85               	btfsc	5,7	;volatile
@@ -2080,12 +2080,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2061  0568                     u690:
   2062  0568                     l1260:
   2063                           
-  2064                           ;buttons.c: 54:         btn = RESET;
+  2064                           ;buttons.c: 69:         btn = RESET;
   2065  0568  01FA               	clrf	get_btn_pressed@btn
   2066  0569  0AFA               	incf	get_btn_pressed@btn,f
   2067  056A  2D8E               	goto	l65
   2068  056B                     l64:	
-  2069                           ;buttons.c: 55:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
+  2069                           ;buttons.c: 70:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
   2070                           
   2071  056B  1283               	bcf	3,5	;RP0=0, select bank0
   2072  056C  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2107,14 +2107,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2088  0578                     u710:
   2089  0578                     l1264:
   2090                           
-  2091                           ;buttons.c: 56:         btn = STOP;
+  2091                           ;buttons.c: 71:         btn = STOP;
   2092  0578  3002               	movlw	2
   2093  0579  00F9               	movwf	??_get_btn_pressed
   2094  057A  0879               	movf	??_get_btn_pressed,w
   2095  057B  00FA               	movwf	get_btn_pressed@btn
   2096  057C  2D8E               	goto	l65
   2097  057D                     l66:	
-  2098                           ;buttons.c: 57:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
+  2098                           ;buttons.c: 72:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
   2099                           
   2100  057D  1283               	bcf	3,5	;RP0=0, select bank0
   2101  057E  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2136,14 +2136,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2117  058A                     u730:
   2118  058A                     l1268:
   2119                           
-  2120                           ;buttons.c: 58:         btn = START;
+  2120                           ;buttons.c: 73:         btn = START;
   2121  058A  3003               	movlw	3
   2122  058B  00F9               	movwf	??_get_btn_pressed
   2123  058C  0879               	movf	??_get_btn_pressed,w
   2124  058D  00FA               	movwf	get_btn_pressed@btn
   2125  058E                     l65:
   2126                           
-  2127                           ;buttons.c: 59:     return (btn);
+  2127                           ;buttons.c: 74:     return (btn);
   2128  058E  087A               	movf	get_btn_pressed@btn,w
   2129  058F                     l69:
   2130  058F  0008               	return
@@ -2153,7 +2153,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2134  05C9                     __ptext14:	
   2135 ;; *************** function _is_btn_bounce *****************
   2136 ;; Defined at:
-  2137 ;;		line 29 in file "buttons.c"
+  2137 ;;		line 44 in file "buttons.c"
   2138 ;; Parameters:    Size  Location     Type
   2139 ;;  btn             1    wreg     enum E469
   2140 ;; Auto vars:     Size  Location     Type
@@ -2194,12 +2194,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2175  05C9  00F4               	movwf	is_btn_bounce@btn
   2176  05CA                     l1158:
   2177                           
-  2178                           ;buttons.c: 29: static _Bool is_btn_bounce(enum Button btn);buttons.c: 30: {;buttons.c: 
-      +                          31:     _Bool is_bounce = 0;
+  2178                           ;buttons.c: 44: static _Bool is_btn_bounce(enum Button btn);buttons.c: 45: {;buttons.c: 
+      +                          46:     _Bool is_bounce = 0;
   2179  05CA  01F8               	clrf	is_btn_bounce@is_bounce
   2180  05CB                     l1160:
   2181                           
-  2182                           ;buttons.c: 32:     uint8_t mask = get_mask(btn);
+  2182                           ;buttons.c: 47:     uint8_t mask = get_mask(btn);
   2183  05CB  0874               	movf	is_btn_bounce@btn,w
   2184  05CC  2505               	fcall	_get_mask
   2185  05CD  00F3               	movwf	??_is_btn_bounce
@@ -2207,12 +2207,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2187  05CF  00F5               	movwf	is_btn_bounce@mask
   2188  05D0                     l1162:
   2189                           
-  2190                           ;buttons.c: 39:     for (int i = 0; i < 602; i++)
+  2190                           ;buttons.c: 54:     for (int i = 0; i < 602; i++)
   2191  05D0  01F6               	clrf	is_btn_bounce@i
   2192  05D1  01F7               	clrf	is_btn_bounce@i+1
   2193  05D2                     l1168:
   2194                           
-  2195                           ;buttons.c: 40:     {;buttons.c: 41:         if (!is_bounce && (PORTA & mask) != 0)
+  2195                           ;buttons.c: 55:     {;buttons.c: 56:         if (!is_bounce && (PORTA & mask) != 0)
   2196  05D2  0878               	movf	is_btn_bounce@is_bounce,w
   2197  05D3  1D03               	btfss	3,2
   2198  05D4  2DD6               	goto	u641
@@ -2233,12 +2233,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2213  05DF                     u650:
   2214  05DF                     l1172:
   2215                           
-  2216                           ;buttons.c: 42:             is_bounce = 1;
+  2216                           ;buttons.c: 57:             is_bounce = 1;
   2217  05DF  01F8               	clrf	is_btn_bounce@is_bounce
   2218  05E0  0AF8               	incf	is_btn_bounce@is_bounce,f
   2219  05E1                     l1174:
   2220                           
-  2221                           ;buttons.c: 43:     }
+  2221                           ;buttons.c: 58:     }
   2222  05E1  3001               	movlw	1
   2223  05E2  07F6               	addwf	is_btn_bounce@i,f
   2224  05E3  1803               	skipnc
@@ -2264,7 +2264,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2244  05F4                     u660:
   2245  05F4                     l1178:
   2246                           
-  2247                           ;buttons.c: 44:     if (is_timer_work)
+  2247                           ;buttons.c: 59:     if (is_timer_work)
   2248  05F4  1283               	bcf	3,5	;RP0=0, select bank0
   2249  05F5  1303               	bcf	3,6	;RP1=0, select bank0
   2250  05F6  0825               	movf	_is_timer_work,w
@@ -2276,7 +2276,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2256  05FB                     u670:
   2257  05FB                     l1180:
   2258                           
-  2259                           ;buttons.c: 45:         time_ms += 5;
+  2259                           ;buttons.c: 60:         time_ms += 5;
   2260  05FB  3005               	movlw	5
   2261  05FC  07A3               	addwf	_time_ms,f
   2262  05FD  1803               	skipnc
@@ -2285,7 +2285,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2265  0600  07A4               	addwf	_time_ms+1,f
   2266  0601                     l60:
   2267                           
-  2268                           ;buttons.c: 46:     return (is_bounce);
+  2268                           ;buttons.c: 61:     return (is_bounce);
   2269  0601  0878               	movf	is_btn_bounce@is_bounce,w
   2270  0602                     l61:
   2271  0602  0008               	return
@@ -2295,7 +2295,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2275  0505                     __ptext15:	
   2276 ;; *************** function _get_mask *****************
   2277 ;; Defined at:
-  2278 ;;		line 16 in file "buttons.c"
+  2278 ;;		line 31 in file "buttons.c"
   2279 ;; Parameters:    Size  Location     Type
   2280 ;;  btn             1    wreg     enum E469
   2281 ;; Auto vars:     Size  Location     Type
@@ -2334,7 +2334,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2314  0506                     l1036:
   2315  0506                     l1038:
   2316                           
-  2317                           ;buttons.c: 20:     if (btn == RESET)
+  2317                           ;buttons.c: 35:     if (btn == RESET)
   2318  0506  0371               	decf	get_mask@btn,w
   2319  0507  1D03               	btfss	3,2
   2320  0508  2D0A               	goto	u371
@@ -2344,7 +2344,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2324  050B                     u370:
   2325  050B                     l1040:
   2326                           
-  2327                           ;buttons.c: 21:         mask = 0b10000000;
+  2327                           ;buttons.c: 36:         mask = 0b10000000;
   2328  050B  3080               	movlw	128
   2329  050C  00F0               	movwf	??_get_mask
   2330  050D  0870               	movf	??_get_mask,w
@@ -2361,7 +2361,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2341  0516                     u380:
   2342  0516                     l1044:
   2343                           
-  2344                           ;buttons.c: 23:         mask = 0b01000000;
+  2344                           ;buttons.c: 38:         mask = 0b01000000;
   2345  0516  3040               	movlw	64
   2346  0517  00F0               	movwf	??_get_mask
   2347  0518  0870               	movf	??_get_mask,w
@@ -2369,14 +2369,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2349  051A  2D1F               	goto	l51
   2350  051B                     l1046:
   2351                           
-  2352                           ;buttons.c: 25:         mask = 0b00100000;
+  2352                           ;buttons.c: 40:         mask = 0b00100000;
   2353  051B  3020               	movlw	32
   2354  051C  00F0               	movwf	??_get_mask
   2355  051D  0870               	movf	??_get_mask,w
   2356  051E  00F2               	movwf	get_mask@mask
   2357  051F                     l51:
   2358                           
-  2359                           ;buttons.c: 26:     return (mask);
+  2359                           ;buttons.c: 41:     return (mask);
   2360  051F  0872               	movf	get_mask@mask,w
   2361  0520                     l54:
   2362  0520  0008               	return
@@ -2386,7 +2386,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2366  04FA                     __ptext16:	
   2367 ;; *************** function _configure *****************
   2368 ;; Defined at:
-  2369 ;;		line 18 in file "main.c"
+  2369 ;;		line 33 in file "main.c"
   2370 ;; Parameters:    Size  Location     Type
   2371 ;;		None
   2372 ;; Auto vars:     Size  Location     Type
@@ -2420,53 +2420,47 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2400                           ;incstack = 0
   2401                           ; Regs used in _configure: [wreg+status,2]
   2402                           
-  2403                           
-  2404                           ;main.c: 20:         handle_btn_pressing(get_btn_pressed());
-  2405  04FA  178B               	bsf	11,7	;volatile
-  2406  04FB                     l914:
-  2407                           
-  2408                           ;main.c: 22:     }
-  2409  04FB  3007               	movlw	7
-  2410  04FC  1283               	bcf	3,5	;RP0=0, select bank0
-  2411  04FD  1303               	bcf	3,6	;RP1=0, select bank0
-  2412  04FE  009F               	movwf	31	;volatile
-  2413                           
-  2414                           ;main.c: 24: }
-  2415  04FF  30E0               	movlw	224
-  2416  0500  1683               	bsf	3,5	;RP0=1, select bank1
-  2417  0501  1303               	bcf	3,6	;RP1=0, select bank1
-  2418  0502  0085               	movwf	5	;volatile
-  2419  0503                     l916:
-  2420  0503  0186               	clrf	6	;volatile
-  2421  0504                     l23:
-  2422  0504  0008               	return
-  2423  0505                     __end_of_configure:
-  2424  007E                     btemp	set	126	;btemp
-  2425  007E                     wtemp0	set	126
-  2426                           
-  2427                           	psect	config
-  2428                           
-  2429                           ;Config register CONFIG @ 0x2007
-  2430                           ;	Oscillator Selection bits
-  2431                           ;	FOSC = INTOSCIO, INTOSC oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function 
+  2403  04FA  178B               	bsf	11,7	;volatile
+  2404  04FB                     l914:
+  2405  04FB  3007               	movlw	7
+  2406  04FC  1283               	bcf	3,5	;RP0=0, select bank0
+  2407  04FD  1303               	bcf	3,6	;RP1=0, select bank0
+  2408  04FE  009F               	movwf	31	;volatile
+  2409  04FF  30E0               	movlw	224
+  2410  0500  1683               	bsf	3,5	;RP0=1, select bank1
+  2411  0501  1303               	bcf	3,6	;RP1=0, select bank1
+  2412  0502  0085               	movwf	5	;volatile
+  2413  0503                     l916:
+  2414  0503  0186               	clrf	6	;volatile
+  2415  0504                     l23:
+  2416  0504  0008               	return
+  2417  0505                     __end_of_configure:
+  2418  007E                     btemp	set	126	;btemp
+  2419  007E                     wtemp0	set	126
+  2420                           
+  2421                           	psect	config
+  2422                           
+  2423                           ;Config register CONFIG @ 0x2007
+  2424                           ;	Oscillator Selection bits
+  2425                           ;	FOSC = INTOSCIO, INTOSC oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function 
       +                          on RA7/OSC1/CLKIN
-  2432                           ;	Watchdog Timer Enable bit
-  2433                           ;	WDTE = OFF, WDT disabled
-  2434                           ;	Power-up Timer Enable bit
-  2435                           ;	PWRTE = OFF, PWRT disabled
-  2436                           ;	RA5/MCLR/VPP Pin Function Select bit
-  2437                           ;	MCLRE = OFF, RA5/MCLR/VPP pin function is digital input, MCLR internally tied to VDD
-  2438                           ;	Brown-out Detect Enable bit
-  2439                           ;	BOREN = OFF, BOD disabled
-  2440                           ;	Low-Voltage Programming Enable bit
-  2441                           ;	LVP = OFF, RB4/PGM pin has digital I/O function, HV on MCLR must be used for programmi
+  2426                           ;	Watchdog Timer Enable bit
+  2427                           ;	WDTE = OFF, WDT disabled
+  2428                           ;	Power-up Timer Enable bit
+  2429                           ;	PWRTE = OFF, PWRT disabled
+  2430                           ;	RA5/MCLR/VPP Pin Function Select bit
+  2431                           ;	MCLRE = OFF, RA5/MCLR/VPP pin function is digital input, MCLR internally tied to VDD
+  2432                           ;	Brown-out Detect Enable bit
+  2433                           ;	BOREN = OFF, BOD disabled
+  2434                           ;	Low-Voltage Programming Enable bit
+  2435                           ;	LVP = OFF, RB4/PGM pin has digital I/O function, HV on MCLR must be used for programmi
       +                          ng
-  2442                           ;	Data EE Memory Code Protection bit
-  2443                           ;	CPD = OFF, Data memory code protection off
-  2444                           ;	Flash Program Memory Code Protection bit
-  2445                           ;	CP = OFF, Code protection off
-  2446  2007                     	org	8199
-  2447  2007  3F18               	dw	16152
+  2436                           ;	Data EE Memory Code Protection bit
+  2437                           ;	CPD = OFF, Data memory code protection off
+  2438                           ;	Flash Program Memory Code Protection bit
+  2439                           ;	CP = OFF, Code protection off
+  2440  2007                     	org	8199
+  2441  2007  3F18               	dw	16152
 
 Data Sizes:
     Strings     0
@@ -2627,7 +2621,7 @@ DATA                 0      0      1A      10        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Tue Sep  7 21:57:23 2021
+Symbol Table                                                                                   Tue Sep  7 22:54:22 2021
 
                   _update_disp 0590                             l23 0504                             l51 051F  
                            l60 0601                             l61 0602                             l54 0520  
