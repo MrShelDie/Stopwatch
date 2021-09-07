@@ -10,11 +10,11 @@
 // * File:          buttons.c                                       //
 // * Author:        Ivchenko Nikolay                                //
 // * Email:         mrsheldie@mail.ru                               //
-// * Last update:   07.09.2021, 22:51                               //
+// * Last update:   07.09.2021, 23:41                               //
 //******************************************************************//
 
 #include <xc.h>
-#include "_xtal_freq.h"
+#include "clc_freq.h"
 #include <stdbool.h>
 #include "buttons.h"
 #include "stopwatch.h"

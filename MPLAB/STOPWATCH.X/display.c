@@ -10,11 +10,11 @@
 // * File:          display.c                                       //
 // * Author:        Ivchenko Nikolay                                //
 // * Email:         mrsheldie@mail.ru                               //
-// * Last update:   07.09.2021, 22:52                               //
+// * Last update:   07.09.2021, 23:41                               //
 //******************************************************************//
 
 #include <xc.h>
-#include "_xtal_freq.h"
+#include "clc_freq.h"
 #include "display.h"
 #include "stopwatch.h"
 
