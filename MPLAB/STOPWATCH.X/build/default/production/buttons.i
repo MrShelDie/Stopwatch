@@ -1185,11 +1185,11 @@ uint8_t get_mask(enum Button btn)
     uint8_t mask = 0;
 
     if (btn == RESET)
-        mask = 0b00000001;
+        mask = 0b10000000;
     else if (btn == STOP)
-        mask = 0b00000010;
+        mask = 0b01000000;
     else
-        mask = 0b00000100;
+        mask = 0b00100000;
     return (mask);
 }
 
@@ -1203,7 +1203,7 @@ static _Bool is_btn_bounce(enum Button btn)
 
     for (int i = 0; i < 385; i++)
     {
-        if ((PORTA & mask) != 0)
+        if (!is_bounce && (PORTA & mask) != 0)
             is_bounce = 1;
     }
     return (is_bounce);
@@ -1213,11 +1213,11 @@ enum Button get_btn_pressed(void)
 {
     enum Button btn = NONE;
 
-    if (!is_btn_bounce(RESET))
+    if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
         btn = RESET;
-    else if (!is_btn_bounce(STOP))
+    else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
         btn = STOP;
-    else if (!is_btn_bounce(START))
+    else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
         btn = START;
     return (btn);
 }

@@ -23,10 +23,6 @@ void    configure(void)
     
     TRISA = 0xE0;               // RA5, RA6, RA7 - input, other - output
     TRISB = 0x00;               // All pins output
-    
-    OPTION_REGbits.T0CS = 0;    // Set internal clock signal for timer
-    OPTION_REGbits.PSA  = 0;    // Prescaler is assigned to the Timer0 module
-    OPTION_REG |= 0x07;         // Set prescaler rate 1:256
 }
 
 

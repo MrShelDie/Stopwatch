@@ -1195,10 +1195,6 @@ void configure(void)
 
     TRISA = 0xE0;
     TRISB = 0x00;
-
-    OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.PSA = 0;
-    OPTION_REG |= 0x07;
 }
 
 

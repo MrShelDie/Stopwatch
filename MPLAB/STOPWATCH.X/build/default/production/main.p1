@@ -27,24 +27,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "969
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 969: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"843
-[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 843:     struct {
-[s S32 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S32 . PS PSA T0SE T0CS INTEDG nRBPU ]
-"851
-[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 851:     struct {
-[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . PS0 PS1 PS2 ]
-"842
-[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 842: typedef union {
-[u S31 `S32 1 `S33 1 ]
-[n S31 . . . ]
-"857
-[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 857: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
-[v _OPTION_REGbits `VS31 ~T0 @X0 0 e@129 ]
-"837
-[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 837: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
 [p mainexit ]
 "15 ./stopwatch.h
 [; ;./stopwatch.h: 15: void reset_stopwatch(void);
@@ -179,85 +161,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 8:     TRISB = 0x00;
 [p x FOSC    =  INTOSCIO  ]
 "9
-[; ;main.c: 9: 
+[; ;main.c: 9: }
 [p x WDTE    =  OFF       ]
 "10
-[; ;main.c: 10:     OPTION_REGbits.T0CS = 0;
+[; ;main.c: 10: 
 [p x PWRTE  =  OFF       ]
 "11
-[; ;main.c: 11:     OPTION_REGbits.PSA = 0;
+[; ;main.c: 11: 
 [p x MCLRE  =  OFF       ]
 "12
-[; ;main.c: 12:     OPTION_REG |= 0x07;
+[; ;main.c: 12: void main(void)
 [p x BOREN  =  OFF       ]
 "13
-[; ;main.c: 13: }
+[; ;main.c: 13: {
 [p x LVP      =  OFF       ]
 "14
-[; ;main.c: 14: 
+[; ;main.c: 14:     configure();
 [p x CPD      =  OFF       ]
 "15
-[; ;main.c: 15: 
+[; ;main.c: 15:     reset_stopwatch();
 [p x CP        =  OFF       ]
 "18
-[; ;main.c: 18:     configure();
+[; ;main.c: 18:     {
 [v _configure `(v ~T0 @X0 1 ef ]
 "19
-[; ;main.c: 19:     reset_stopwatch();
+[; ;main.c: 19:         update_disp();
 {
 [e :U _configure ]
 [f ]
 "20
-[; ;main.c: 20: 
+[; ;main.c: 20:         handle_btn_pressing(get_btn_pressed());
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "22
-[; ;main.c: 22:     {
+[; ;main.c: 22:     }
 [e = _CMCON -> -> 7 `i `uc ]
 "24
-[; ;main.c: 24:         handle_btn_pressing(get_btn_pressed());
+[; ;main.c: 24: }
 [e = _TRISA -> -> 224 `i `uc ]
 "25
-[; ;main.c: 25:         update_time_counter();
 [e = _TRISB -> -> 0 `i `uc ]
-"27
-[; ;main.c: 27:     return ;
-[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-"28
-[; ;main.c: 28: }
-[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
-"29
-[e =| _OPTION_REG -> -> 7 `i `Vuc ]
-"30
+"26
 [e :UE 52 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"33
+"29
 [v _main `(v ~T0 @X0 1 ef ]
-"34
+"30
 {
 [e :U _main ]
 [f ]
-"35
+"31
 [e ( _configure ..  ]
-"36
+"32
 [e ( _reset_stopwatch ..  ]
-"38
+"34
 [e :U 55 ]
-"39
+"35
 {
-"40
+"36
 [e ( _update_disp ..  ]
-"41
+"37
 [e ( _handle_btn_pressing (1 ( _get_btn_pressed ..  ]
-"42
+"38
 [e ( _update_time_counter ..  ]
-"43
+"39
 }
 [e :U 54 ]
 [e $U 55  ]
 [e :U 56 ]
-"44
+"40
 [e $UE 53  ]
-"45
+"41
 [e :UE 53 ]
 }

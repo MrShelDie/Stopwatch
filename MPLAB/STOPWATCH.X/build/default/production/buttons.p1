@@ -6,6 +6,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "166 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"172
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 172:     struct {
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"171
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 171: typedef union {
+[u S5 `S6 1 ]
+[n S5 . . ]
+"183
+[; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
 "15 ./stopwatch.h
 [; ;./stopwatch.h: 15: void reset_stopwatch(void);
 [v _reset_stopwatch `(v ~T0 @X0 0 ef ]
@@ -150,23 +161,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;buttons.c: 17:     if (btn == RESET)
 [e $ ! == -> _btn `ui -> . `E469 1 `ui 53  ]
 "18
-[; ;buttons.c: 18:         mask = 0b00000001;
-[e = _mask -> -> 1 `i `uc ]
+[; ;buttons.c: 18:         mask = 0b10000000;
+[e = _mask -> -> 128 `i `uc ]
 [e $U 54  ]
 "19
 [; ;buttons.c: 19:     else if (btn == STOP)
 [e :U 53 ]
 [e $ ! == -> _btn `ui -> . `E469 2 `ui 55  ]
 "20
-[; ;buttons.c: 20:         mask = 0b00000010;
-[e = _mask -> -> 2 `i `uc ]
+[; ;buttons.c: 20:         mask = 0b01000000;
+[e = _mask -> -> 64 `i `uc ]
 [e $U 56  ]
 "21
 [; ;buttons.c: 21:     else
 [e :U 55 ]
 "22
-[; ;buttons.c: 22:         mask = 0b00000100;
-[e = _mask -> -> 4 `i `uc ]
+[; ;buttons.c: 22:         mask = 0b00100000;
+[e = _mask -> -> 32 `i `uc ]
 [e :U 56 ]
 [e :U 54 ]
 "23
@@ -210,8 +221,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;buttons.c: 35:     {
 {
 "36
-[; ;buttons.c: 36:         if ((PORTA & mask) != 0)
-[e $ ! != & -> _PORTA `i -> _mask `i -> 0 `i 61  ]
+[; ;buttons.c: 36:         if (!is_bounce && (PORTA & mask) != 0)
+[e $ ! && ! != -> _is_bounce `i -> 0 `i != & -> _PORTA `i -> _mask `i -> 0 `i 61  ]
 "37
 [; ;buttons.c: 37:             is_bounce = 1;
 [e = _is_bounce -> -> 1 `i `a ]
@@ -244,24 +255,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _btn `E469 ~T0 @X0 1 a ]
 [e = _btn . `E469 0 ]
 "46
-[; ;buttons.c: 46:     if (!is_btn_bounce(RESET))
-[e $ ! ! != -> ( _is_btn_bounce (1 . `E469 1 `i -> 0 `i 63  ]
+[; ;buttons.c: 46:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
+[e $ ! && == -> . . _PORTAbits 0 7 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 1 `i -> 0 `i 63  ]
 "47
 [; ;buttons.c: 47:         btn = RESET;
 [e = _btn . `E469 1 ]
 [e $U 64  ]
 "48
-[; ;buttons.c: 48:     else if (!is_btn_bounce(STOP))
+[; ;buttons.c: 48:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
 [e :U 63 ]
-[e $ ! ! != -> ( _is_btn_bounce (1 . `E469 2 `i -> 0 `i 65  ]
+[e $ ! && == -> . . _PORTAbits 0 6 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 2 `i -> 0 `i 65  ]
 "49
 [; ;buttons.c: 49:         btn = STOP;
 [e = _btn . `E469 2 ]
 [e $U 66  ]
 "50
-[; ;buttons.c: 50:     else if (!is_btn_bounce(START))
+[; ;buttons.c: 50:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
 [e :U 65 ]
-[e $ ! ! != -> ( _is_btn_bounce (1 . `E469 3 `i -> 0 `i 67  ]
+[e $ ! && == -> . . _PORTAbits 0 5 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 3 `i -> 0 `i 67  ]
 "51
 [; ;buttons.c: 51:         btn = START;
 [e = _btn . `E469 3 ]
