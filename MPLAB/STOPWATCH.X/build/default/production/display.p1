@@ -9,8 +9,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./stopwatch.h: 9: {
 [s S51 `uc 1 `uc 1 `uc 1 ]
 [n S51 Time_format ms sec_1_digit sec_2_digit ]
-"8 display.c
-[; ;display.c: 8: extern struct Time_format formatted_time;
+"10 display.c
+[; ;display.c: 10: extern struct Time_format formatted_time;
 [v _formatted_time `S51 ~T0 @X0 0 e ]
 "172 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 172:     struct {
@@ -149,123 +149,123 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1269
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
 [; <" VRCON equ 09Fh ;# ">
-"10 display.c
-[; ;display.c: 10: static void set_disp_digit_value(uint8_t value)
+"12 display.c
+[; ;display.c: 12: static void set_disp_digit_value(uint8_t value)
 [v _set_disp_digit_value `(v ~T0 @X0 1 sf1`uc ]
-"11
-[; ;display.c: 11: {
+"13
+[; ;display.c: 13: {
 {
 [e :U _set_disp_digit_value ]
-"10
-[; ;display.c: 10: static void set_disp_digit_value(uint8_t value)
-[v _value `uc ~T0 @X0 1 r1 ]
-"11
-[; ;display.c: 11: {
-[f ]
 "12
-[; ;display.c: 12:     switch(value)
-[e $U 54  ]
+[; ;display.c: 12: static void set_disp_digit_value(uint8_t value)
+[v _value `uc ~T0 @X0 1 r1 ]
 "13
-[; ;display.c: 13:     {
-{
+[; ;display.c: 13: {
+[f ]
 "14
-[; ;display.c: 14:         case 0:
-[e :U 55 ]
+[; ;display.c: 14:     switch(value)
+[e $U 54  ]
 "15
-[; ;display.c: 15:             PORTB = 0xC0;
-[e = _PORTB -> -> 192 `i `uc ]
+[; ;display.c: 15:     {
+{
 "16
-[; ;display.c: 16:             break;
-[e $U 53  ]
+[; ;display.c: 16:         case 0:
+[e :U 55 ]
 "17
-[; ;display.c: 17:         case 1:
-[e :U 56 ]
+[; ;display.c: 17:             PORTB = 0xC0;
+[e = _PORTB -> -> 192 `i `uc ]
 "18
-[; ;display.c: 18:             PORTB = 0xF9;
-[e = _PORTB -> -> 249 `i `uc ]
+[; ;display.c: 18:             break;
+[e $U 53  ]
 "19
-[; ;display.c: 19:             break;
-[e $U 53  ]
+[; ;display.c: 19:         case 1:
+[e :U 56 ]
 "20
-[; ;display.c: 20:         case 2:
-[e :U 57 ]
+[; ;display.c: 20:             PORTB = 0xF9;
+[e = _PORTB -> -> 249 `i `uc ]
 "21
-[; ;display.c: 21:             PORTB = 0xA4;
-[e = _PORTB -> -> 164 `i `uc ]
+[; ;display.c: 21:             break;
+[e $U 53  ]
 "22
-[; ;display.c: 22:             break;
-[e $U 53  ]
+[; ;display.c: 22:         case 2:
+[e :U 57 ]
 "23
-[; ;display.c: 23:         case 3:
-[e :U 58 ]
+[; ;display.c: 23:             PORTB = 0xA4;
+[e = _PORTB -> -> 164 `i `uc ]
 "24
-[; ;display.c: 24:             PORTB = 0xB0;
-[e = _PORTB -> -> 176 `i `uc ]
+[; ;display.c: 24:             break;
+[e $U 53  ]
 "25
-[; ;display.c: 25:             break;
-[e $U 53  ]
+[; ;display.c: 25:         case 3:
+[e :U 58 ]
 "26
-[; ;display.c: 26:         case 4:
-[e :U 59 ]
+[; ;display.c: 26:             PORTB = 0xB0;
+[e = _PORTB -> -> 176 `i `uc ]
 "27
-[; ;display.c: 27:             PORTB = 0x99;
-[e = _PORTB -> -> 153 `i `uc ]
+[; ;display.c: 27:             break;
+[e $U 53  ]
 "28
-[; ;display.c: 28:             break;
-[e $U 53  ]
+[; ;display.c: 28:         case 4:
+[e :U 59 ]
 "29
-[; ;display.c: 29:         case 5:
-[e :U 60 ]
+[; ;display.c: 29:             PORTB = 0x99;
+[e = _PORTB -> -> 153 `i `uc ]
 "30
-[; ;display.c: 30:             PORTB = 0x92;
-[e = _PORTB -> -> 146 `i `uc ]
+[; ;display.c: 30:             break;
+[e $U 53  ]
 "31
-[; ;display.c: 31:             break;
-[e $U 53  ]
+[; ;display.c: 31:         case 5:
+[e :U 60 ]
 "32
-[; ;display.c: 32:         case 6:
-[e :U 61 ]
+[; ;display.c: 32:             PORTB = 0x92;
+[e = _PORTB -> -> 146 `i `uc ]
 "33
-[; ;display.c: 33:             PORTB = 0x82;
-[e = _PORTB -> -> 130 `i `uc ]
+[; ;display.c: 33:             break;
+[e $U 53  ]
 "34
-[; ;display.c: 34:             break;
-[e $U 53  ]
+[; ;display.c: 34:         case 6:
+[e :U 61 ]
 "35
-[; ;display.c: 35:         case 7:
-[e :U 62 ]
+[; ;display.c: 35:             PORTB = 0x82;
+[e = _PORTB -> -> 130 `i `uc ]
 "36
-[; ;display.c: 36:             PORTB = 0xF8;
-[e = _PORTB -> -> 248 `i `uc ]
+[; ;display.c: 36:             break;
+[e $U 53  ]
 "37
-[; ;display.c: 37:             break;
-[e $U 53  ]
+[; ;display.c: 37:         case 7:
+[e :U 62 ]
 "38
-[; ;display.c: 38:         case 8:
-[e :U 63 ]
+[; ;display.c: 38:             PORTB = 0xF8;
+[e = _PORTB -> -> 248 `i `uc ]
 "39
-[; ;display.c: 39:             PORTB = 0x80;
-[e = _PORTB -> -> 128 `i `uc ]
+[; ;display.c: 39:             break;
+[e $U 53  ]
 "40
-[; ;display.c: 40:             break;
-[e $U 53  ]
+[; ;display.c: 40:         case 8:
+[e :U 63 ]
 "41
-[; ;display.c: 41:         case 9:
-[e :U 64 ]
+[; ;display.c: 41:             PORTB = 0x80;
+[e = _PORTB -> -> 128 `i `uc ]
 "42
-[; ;display.c: 42:             PORTB = 0x90;
-[e = _PORTB -> -> 144 `i `uc ]
-"43
-[; ;display.c: 43:             break;
+[; ;display.c: 42:             break;
 [e $U 53  ]
+"43
+[; ;display.c: 43:         case 9:
+[e :U 64 ]
 "44
-[; ;display.c: 44:         default:
-[e :U 65 ]
+[; ;display.c: 44:             PORTB = 0x90;
+[e = _PORTB -> -> 144 `i `uc ]
 "45
 [; ;display.c: 45:             break;
 [e $U 53  ]
 "46
-[; ;display.c: 46:     }
+[; ;display.c: 46:         default:
+[e :U 65 ]
+"47
+[; ;display.c: 47:             break;
+[e $U 53  ]
+"48
+[; ;display.c: 48:     }
 }
 [e $U 53  ]
 [e :U 54 ]
@@ -281,64 +281,64 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 9 `i 64
  65 ]
 [e :U 53 ]
-"47
-[; ;display.c: 47: }
+"49
+[; ;display.c: 49: }
 [e :UE 52 ]
 }
-"49
-[; ;display.c: 49: void update_disp(void)
+"51
+[; ;display.c: 51: void update_disp(void)
 [v _update_disp `(v ~T0 @X0 1 ef ]
-"50
-[; ;display.c: 50: {
+"52
+[; ;display.c: 52: {
 {
 [e :U _update_disp ]
 [f ]
-"51
-[; ;display.c: 51:     format_time();
-[e ( _format_time ..  ]
 "53
-[; ;display.c: 53:     set_disp_digit_value(formatted_time.ms);
-[e ( _set_disp_digit_value (1 . _formatted_time 0 ]
-"54
-[; ;display.c: 54:     PORTAbits.RA0 = 1;
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;display.c: 53:     format_time();
+[e ( _format_time ..  ]
 "55
-[; ;display.c: 55:     _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;display.c: 55:     set_disp_digit_value(formatted_time.ms);
+[e ( _set_disp_digit_value (1 . _formatted_time 0 ]
 "56
-[; ;display.c: 56:     PORTAbits.RA0 = 0;
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;display.c: 56:     PORTAbits.RA0 = 1;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+"57
+[; ;display.c: 57:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
+[e ( __delay (1 -> * .1.586 / -> -> 4000000 `l `d .4000.0 `ul ]
 "58
-[; ;display.c: 58:     set_disp_digit_value(formatted_time.sec_1_digit);
-[e ( _set_disp_digit_value (1 . _formatted_time 1 ]
-"59
-[; ;display.c: 59:     PORTAbits.RA1 = 1;
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[; ;display.c: 58:     PORTAbits.RA0 = 0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
 "60
-[; ;display.c: 60:     PORTBbits.RB7 = 0;
-[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
+[; ;display.c: 60:     set_disp_digit_value(formatted_time.sec_1_digit);
+[e ( _set_disp_digit_value (1 . _formatted_time 1 ]
 "61
-[; ;display.c: 61:     _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;display.c: 61:     PORTAbits.RA1 = 1;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
 "62
-[; ;display.c: 62:     PORTAbits.RA1 = 0;
-[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
+[; ;display.c: 62:     PORTBbits.RB7 = 0;
+[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
 "63
-[; ;display.c: 63:     PORTBbits.RB7 = 1;
-[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
+[; ;display.c: 63:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
+[e ( __delay (1 -> * .1.586 / -> -> 4000000 `l `d .4000.0 `ul ]
+"64
+[; ;display.c: 64:     PORTAbits.RA1 = 0;
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
 "65
-[; ;display.c: 65:     set_disp_digit_value(formatted_time.sec_2_digit);
-[e ( _set_disp_digit_value (1 . _formatted_time 2 ]
-"66
-[; ;display.c: 66:     PORTAbits.RA2 = 1;
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;display.c: 65:     PORTBbits.RB7 = 1;
+[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
 "67
-[; ;display.c: 67:     _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;display.c: 67:     set_disp_digit_value(formatted_time.sec_2_digit);
+[e ( _set_disp_digit_value (1 . _formatted_time 2 ]
 "68
-[; ;display.c: 68:     PORTAbits.RA2 = 0;
-[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+[; ;display.c: 68:     PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 "69
-[; ;display.c: 69: }
+[; ;display.c: 69:     _delay((unsigned long)((1.586)*(4000000/4000.0)));
+[e ( __delay (1 -> * .1.586 / -> -> 4000000 `l `d .4000.0 `ul ]
+"70
+[; ;display.c: 70:     PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+"71
+[; ;display.c: 71: }
 [e :UE 66 ]
 }

@@ -6,7 +6,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "166 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"172
+"13 buttons.c
+[; ;buttons.c: 13: extern _Bool is_timer_work;
+[v _is_timer_work `a ~T0 @X0 0 e ]
+"14
+[; ;buttons.c: 14: extern uint16_t time_ms;
+[v _time_ms `ui ~T0 @X0 0 e ]
+"172 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 172:     struct {
 [s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
@@ -140,216 +146,223 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 ./buttons.h
 [; ;./buttons.h: 14: } Button;
 [v _Button `E469 ~T0 @X0 1 e ]
-"13 buttons.c
-[; ;buttons.c: 13: uint8_t get_mask(enum Button btn)
+"16 buttons.c
+[; ;buttons.c: 16: uint8_t get_mask(enum Button btn)
 [v _get_mask `(uc ~T0 @X0 1 ef1`E469 ]
-"14
-[; ;buttons.c: 14: {
+"17
+[; ;buttons.c: 17: {
 {
 [e :U _get_mask ]
-"13
-[; ;buttons.c: 13: uint8_t get_mask(enum Button btn)
+"16
+[; ;buttons.c: 16: uint8_t get_mask(enum Button btn)
 [v _btn `E469 ~T0 @X0 1 r1 ]
-"14
-[; ;buttons.c: 14: {
+"17
+[; ;buttons.c: 17: {
 [f ]
-"15
-[; ;buttons.c: 15:     uint8_t mask = 0;
+"18
+[; ;buttons.c: 18:     uint8_t mask = 0;
 [v _mask `uc ~T0 @X0 1 a ]
 [e = _mask -> -> 0 `i `uc ]
-"17
-[; ;buttons.c: 17:     if (btn == RESET)
+"20
+[; ;buttons.c: 20:     if (btn == RESET)
 [e $ ! == -> _btn `ui -> . `E469 1 `ui 53  ]
-"18
-[; ;buttons.c: 18:         mask = 0b10000000;
+"21
+[; ;buttons.c: 21:         mask = 0b10000000;
 [e = _mask -> -> 128 `i `uc ]
 [e $U 54  ]
-"19
-[; ;buttons.c: 19:     else if (btn == STOP)
+"22
+[; ;buttons.c: 22:     else if (btn == STOP)
 [e :U 53 ]
 [e $ ! == -> _btn `ui -> . `E469 2 `ui 55  ]
-"20
-[; ;buttons.c: 20:         mask = 0b01000000;
+"23
+[; ;buttons.c: 23:         mask = 0b01000000;
 [e = _mask -> -> 64 `i `uc ]
 [e $U 56  ]
-"21
-[; ;buttons.c: 21:     else
+"24
+[; ;buttons.c: 24:     else
 [e :U 55 ]
-"22
-[; ;buttons.c: 22:         mask = 0b00100000;
+"25
+[; ;buttons.c: 25:         mask = 0b00100000;
 [e = _mask -> -> 32 `i `uc ]
 [e :U 56 ]
 [e :U 54 ]
-"23
-[; ;buttons.c: 23:     return (mask);
+"26
+[; ;buttons.c: 26:     return (mask);
 [e ) _mask ]
 [e $UE 52  ]
-"24
-[; ;buttons.c: 24: }
+"27
+[; ;buttons.c: 27: }
 [e :UE 52 ]
 }
-"26
-[; ;buttons.c: 26: static _Bool is_btn_bounce(enum Button btn)
+"29
+[; ;buttons.c: 29: static _Bool is_btn_bounce(enum Button btn)
 [v _is_btn_bounce `(a ~T0 @X0 1 sf1`E469 ]
-"27
-[; ;buttons.c: 27: {
+"30
+[; ;buttons.c: 30: {
 {
 [e :U _is_btn_bounce ]
-"26
-[; ;buttons.c: 26: static _Bool is_btn_bounce(enum Button btn)
+"29
+[; ;buttons.c: 29: static _Bool is_btn_bounce(enum Button btn)
 [v _btn `E469 ~T0 @X0 1 r1 ]
-"27
-[; ;buttons.c: 27: {
+"30
+[; ;buttons.c: 30: {
 [f ]
-"28
-[; ;buttons.c: 28:     _Bool is_bounce = 0;
+"31
+[; ;buttons.c: 31:     _Bool is_bounce = 0;
 [v _is_bounce `a ~T0 @X0 1 a ]
 [e = _is_bounce -> -> 0 `i `a ]
-"29
-[; ;buttons.c: 29:     uint8_t mask = get_mask(btn);
+"32
+[; ;buttons.c: 32:     uint8_t mask = get_mask(btn);
 [v _mask `uc ~T0 @X0 1 a ]
 [e = _mask ( _get_mask (1 _btn ]
-"34
-[; ;buttons.c: 34:     for (int i = 0; i < 385; i++)
+"39
+[; ;buttons.c: 39:     for (int i = 0; i < 602; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 385 `i 58  ]
+[e $ < _i -> 602 `i 58  ]
 [e $U 59  ]
 [e :U 58 ]
-"35
-[; ;buttons.c: 35:     {
+"40
+[; ;buttons.c: 40:     {
 {
-"36
-[; ;buttons.c: 36:         if (!is_bounce && (PORTA & mask) != 0)
+"41
+[; ;buttons.c: 41:         if (!is_bounce && (PORTA & mask) != 0)
 [e $ ! && ! != -> _is_bounce `i -> 0 `i != & -> _PORTA `i -> _mask `i -> 0 `i 61  ]
-"37
-[; ;buttons.c: 37:             is_bounce = 1;
+"42
+[; ;buttons.c: 42:             is_bounce = 1;
 [e = _is_bounce -> -> 1 `i `a ]
 [e :U 61 ]
-"38
-[; ;buttons.c: 38:     }
+"43
+[; ;buttons.c: 43:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 385 `i 58  ]
+[e $ < _i -> 602 `i 58  ]
 [e :U 59 ]
 }
-"39
-[; ;buttons.c: 39:     return (is_bounce);
+"44
+[; ;buttons.c: 44:     if (is_timer_work)
+[e $ ! != -> _is_timer_work `i -> 0 `i 62  ]
+"45
+[; ;buttons.c: 45:         time_ms += 5;
+[e =+ _time_ms -> -> 5 `i `ui ]
+[e :U 62 ]
+"46
+[; ;buttons.c: 46:     return (is_bounce);
 [e ) _is_bounce ]
 [e $UE 57  ]
-"40
-[; ;buttons.c: 40: }
+"47
+[; ;buttons.c: 47: }
 [e :UE 57 ]
 }
-"42
-[; ;buttons.c: 42: enum Button get_btn_pressed(void)
+"49
+[; ;buttons.c: 49: enum Button get_btn_pressed(void)
 [v _get_btn_pressed `(E469 ~T0 @X0 1 ef ]
-"43
-[; ;buttons.c: 43: {
+"50
+[; ;buttons.c: 50: {
 {
 [e :U _get_btn_pressed ]
 [f ]
-"44
-[; ;buttons.c: 44:     enum Button btn = NONE;
+"51
+[; ;buttons.c: 51:     enum Button btn = NONE;
 [v _btn `E469 ~T0 @X0 1 a ]
 [e = _btn . `E469 0 ]
-"46
-[; ;buttons.c: 46:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
-[e $ ! && == -> . . _PORTAbits 0 7 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 1 `i -> 0 `i 63  ]
-"47
-[; ;buttons.c: 47:         btn = RESET;
-[e = _btn . `E469 1 ]
-[e $U 64  ]
-"48
-[; ;buttons.c: 48:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
-[e :U 63 ]
-[e $ ! && == -> . . _PORTAbits 0 6 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 2 `i -> 0 `i 65  ]
-"49
-[; ;buttons.c: 49:         btn = STOP;
-[e = _btn . `E469 2 ]
-[e $U 66  ]
-"50
-[; ;buttons.c: 50:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
-[e :U 65 ]
-[e $ ! && == -> . . _PORTAbits 0 5 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 3 `i -> 0 `i 67  ]
-"51
-[; ;buttons.c: 51:         btn = START;
-[e = _btn . `E469 3 ]
-[e :U 67 ]
-[e :U 66 ]
-[e :U 64 ]
-"52
-[; ;buttons.c: 52:     return (btn);
-[e ) _btn ]
-[e $UE 62  ]
 "53
-[; ;buttons.c: 53: }
-[e :UE 62 ]
-}
+[; ;buttons.c: 53:     if (PORTAbits.RA7 == 0 && !is_btn_bounce(RESET))
+[e $ ! && == -> . . _PORTAbits 0 7 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 1 `i -> 0 `i 64  ]
+"54
+[; ;buttons.c: 54:         btn = RESET;
+[e = _btn . `E469 1 ]
+[e $U 65  ]
 "55
-[; ;buttons.c: 55: void handle_btn_pressing(enum Button btn)
-[v _handle_btn_pressing `(v ~T0 @X0 1 ef1`E469 ]
+[; ;buttons.c: 55:     else if (PORTAbits.RA6 == 0 && !is_btn_bounce(STOP))
+[e :U 64 ]
+[e $ ! && == -> . . _PORTAbits 0 6 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 2 `i -> 0 `i 66  ]
 "56
-[; ;buttons.c: 56: {
+[; ;buttons.c: 56:         btn = STOP;
+[e = _btn . `E469 2 ]
+[e $U 67  ]
+"57
+[; ;buttons.c: 57:     else if (PORTAbits.RA5 == 0 && !is_btn_bounce(START))
+[e :U 66 ]
+[e $ ! && == -> . . _PORTAbits 0 5 `i -> 0 `i ! != -> ( _is_btn_bounce (1 . `E469 3 `i -> 0 `i 68  ]
+"58
+[; ;buttons.c: 58:         btn = START;
+[e = _btn . `E469 3 ]
+[e :U 68 ]
+[e :U 67 ]
+[e :U 65 ]
+"59
+[; ;buttons.c: 59:     return (btn);
+[e ) _btn ]
+[e $UE 63  ]
+"60
+[; ;buttons.c: 60: }
+[e :UE 63 ]
+}
+"62
+[; ;buttons.c: 62: void handle_btn_pressing(enum Button btn)
+[v _handle_btn_pressing `(v ~T0 @X0 1 ef1`E469 ]
+"63
+[; ;buttons.c: 63: {
 {
 [e :U _handle_btn_pressing ]
-"55
-[; ;buttons.c: 55: void handle_btn_pressing(enum Button btn)
-[v _btn `E469 ~T0 @X0 1 r1 ]
-"56
-[; ;buttons.c: 56: {
-[f ]
-"57
-[; ;buttons.c: 57:     switch(btn)
-[e $U 70  ]
-"58
-[; ;buttons.c: 58:     {
-{
-"59
-[; ;buttons.c: 59:         case RESET:
-[e :U 71 ]
-"60
-[; ;buttons.c: 60:             reset_stopwatch();
-[e ( _reset_stopwatch ..  ]
-"61
-[; ;buttons.c: 61:             break;
-[e $U 69  ]
 "62
-[; ;buttons.c: 62:         case STOP:
-[e :U 72 ]
+[; ;buttons.c: 62: void handle_btn_pressing(enum Button btn)
+[v _btn `E469 ~T0 @X0 1 r1 ]
 "63
-[; ;buttons.c: 63:             stop_stopwatch();
-[e ( _stop_stopwatch ..  ]
+[; ;buttons.c: 63: {
+[f ]
 "64
-[; ;buttons.c: 64:             break;
-[e $U 69  ]
+[; ;buttons.c: 64:     switch(btn)
+[e $U 71  ]
 "65
-[; ;buttons.c: 65:         case START:
-[e :U 73 ]
+[; ;buttons.c: 65:     {
+{
 "66
-[; ;buttons.c: 66:             start_stopwatch();
-[e ( _start_stopwatch ..  ]
+[; ;buttons.c: 66:         case RESET:
+[e :U 72 ]
 "67
-[; ;buttons.c: 67:             break;
-[e $U 69  ]
+[; ;buttons.c: 67:             reset_stopwatch();
+[e ( _reset_stopwatch ..  ]
 "68
-[; ;buttons.c: 68:         default:
-[e :U 74 ]
+[; ;buttons.c: 68:             break;
+[e $U 70  ]
 "69
-[; ;buttons.c: 69:             break;
-[e $U 69  ]
+[; ;buttons.c: 69:         case STOP:
+[e :U 73 ]
 "70
-[; ;buttons.c: 70:     };
-}
-[e $U 69  ]
-[e :U 70 ]
-[e [\ -> _btn `ui , $ -> . `E469 1 `ui 71
- , $ -> . `E469 2 `ui 72
- , $ -> . `E469 3 `ui 73
- 74 ]
-[e :U 69 ]
+[; ;buttons.c: 70:             stop_stopwatch();
+[e ( _stop_stopwatch ..  ]
 "71
-[; ;buttons.c: 71: }
-[e :UE 68 ]
+[; ;buttons.c: 71:             break;
+[e $U 70  ]
+"72
+[; ;buttons.c: 72:         case START:
+[e :U 74 ]
+"73
+[; ;buttons.c: 73:             start_stopwatch();
+[e ( _start_stopwatch ..  ]
+"74
+[; ;buttons.c: 74:             break;
+[e $U 70  ]
+"75
+[; ;buttons.c: 75:         default:
+[e :U 75 ]
+"76
+[; ;buttons.c: 76:             break;
+[e $U 70  ]
+"77
+[; ;buttons.c: 77:     };
+}
+[e $U 70  ]
+[e :U 71 ]
+[e [\ -> _btn `ui , $ -> . `E469 1 `ui 72
+ , $ -> . `E469 2 `ui 73
+ , $ -> . `E469 3 `ui 74
+ 75 ]
+[e :U 70 ]
+"78
+[; ;buttons.c: 78: }
+[e :UE 69 ]
 }

@@ -1159,6 +1159,8 @@ void format_time(void);
 
 
 
+
+
 extern struct Time_format formatted_time;
 
 static void set_disp_digit_value(uint8_t value)
@@ -1206,18 +1208,18 @@ void update_disp(void)
 
     set_disp_digit_value(formatted_time.ms);
     PORTAbits.RA0 = 1;
-    _delay((unsigned long)((1)*(4000000/4000.0)));
+    _delay((unsigned long)((1.586)*(4000000/4000.0)));
     PORTAbits.RA0 = 0;
 
     set_disp_digit_value(formatted_time.sec_1_digit);
     PORTAbits.RA1 = 1;
     PORTBbits.RB7 = 0;
-    _delay((unsigned long)((1)*(4000000/4000.0)));
+    _delay((unsigned long)((1.586)*(4000000/4000.0)));
     PORTAbits.RA1 = 0;
     PORTBbits.RB7 = 1;
 
     set_disp_digit_value(formatted_time.sec_2_digit);
     PORTAbits.RA2 = 1;
-    _delay((unsigned long)((1)*(4000000/4000.0)));
+    _delay((unsigned long)((1.586)*(4000000/4000.0)));
     PORTAbits.RA2 = 0;
 }

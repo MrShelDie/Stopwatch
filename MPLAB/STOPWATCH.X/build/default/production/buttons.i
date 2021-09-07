@@ -1178,6 +1178,9 @@ void format_time(void);
 
 
 
+
+
+extern _Bool is_timer_work;
 extern uint16_t time_ms;
 
 uint8_t get_mask(enum Button btn)
@@ -1201,11 +1204,15 @@ static _Bool is_btn_bounce(enum Button btn)
 
 
 
-    for (int i = 0; i < 385; i++)
+
+
+    for (int i = 0; i < 602; i++)
     {
         if (!is_bounce && (PORTA & mask) != 0)
             is_bounce = 1;
     }
+    if (is_timer_work)
+        time_ms += 5;
     return (is_bounce);
 }
 

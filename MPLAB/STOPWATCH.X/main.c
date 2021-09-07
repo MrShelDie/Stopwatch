@@ -17,12 +17,12 @@
 
 void    configure(void)
 {
-    INTCONbits.GIE = 1;         // Enable global interrupts
+    INTCONbits.GIE = 1;     // Enable global interrupts
     
-    CMCON = 0x07;               // Disable comporators 
+    CMCON = 0x07;           // Disable comporators 
     
-    TRISA = 0xE0;               // RA5, RA6, RA7 - input, other - output
-    TRISB = 0x00;               // All pins output
+    TRISA = 0xE0;           // RA5, RA6, RA7 - input, other - output
+    TRISB = 0x00;           // All pins output
 }
 
 

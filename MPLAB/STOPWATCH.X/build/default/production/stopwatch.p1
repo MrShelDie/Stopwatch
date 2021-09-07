@@ -117,20 +117,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1269
 [; ;/opt/microchip/mplabx/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
 [; <" VRCON equ 09Fh ;# ">
-"11 stopwatch.c
-[; ;stopwatch.c: 11: uint16_t time_ms = 0;
+"13 stopwatch.c
+[; ;stopwatch.c: 13: uint16_t time_ms = 0;
 [v _time_ms `ui ~T0 @X0 1 e ]
 [i _time_ms
 -> -> 0 `i `ui
 ]
-"12
-[; ;stopwatch.c: 12: static _Bool is_timer_work = 0;
-[v _is_timer_work `a ~T0 @X0 1 s ]
+"14
+[; ;stopwatch.c: 14: _Bool is_timer_work = 0;
+[v _is_timer_work `a ~T0 @X0 1 e ]
 [i _is_timer_work
 -> -> 0 `i `a
 ]
-"13
-[; ;stopwatch.c: 13: struct Time_format formatted_time = {0};
+"15
+[; ;stopwatch.c: 15: struct Time_format formatted_time = {0};
 [v _formatted_time `S51 ~T0 @X0 1 e ]
 [i _formatted_time
 :U ..
@@ -139,113 +139,113 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"15
-[; ;stopwatch.c: 15: void reset_stopwatch(void)
+"17
+[; ;stopwatch.c: 17: void reset_stopwatch(void)
 [v _reset_stopwatch `(v ~T0 @X0 1 ef ]
-"16
-[; ;stopwatch.c: 16: {
+"18
+[; ;stopwatch.c: 18: {
 {
 [e :U _reset_stopwatch ]
 [f ]
-"17
-[; ;stopwatch.c: 17:     is_timer_work = 0;
-[e = _is_timer_work -> -> 0 `i `a ]
-"18
-[; ;stopwatch.c: 18:     time_ms = 0;
-[e = _time_ms -> -> 0 `i `ui ]
 "19
-[; ;stopwatch.c: 19:     PORTB = 0xC0;
-[e = _PORTB -> -> 192 `i `uc ]
+[; ;stopwatch.c: 19:     is_timer_work = 0;
+[e = _is_timer_work -> -> 0 `i `a ]
 "20
-[; ;stopwatch.c: 20: }
+[; ;stopwatch.c: 20:     time_ms = 0;
+[e = _time_ms -> -> 0 `i `ui ]
+"21
+[; ;stopwatch.c: 21:     PORTB = 0xC0;
+[e = _PORTB -> -> 192 `i `uc ]
+"22
+[; ;stopwatch.c: 22: }
 [e :UE 52 ]
 }
-"22
-[; ;stopwatch.c: 22: void stop_stopwatch(void)
+"24
+[; ;stopwatch.c: 24: void stop_stopwatch(void)
 [v _stop_stopwatch `(v ~T0 @X0 1 ef ]
-"23
-[; ;stopwatch.c: 23: {
+"25
+[; ;stopwatch.c: 25: {
 {
 [e :U _stop_stopwatch ]
 [f ]
-"24
-[; ;stopwatch.c: 24:     is_timer_work = 0;
+"26
+[; ;stopwatch.c: 26:     is_timer_work = 0;
 [e = _is_timer_work -> -> 0 `i `a ]
-"25
-[; ;stopwatch.c: 25: }
+"27
+[; ;stopwatch.c: 27: }
 [e :UE 53 ]
 }
-"27
-[; ;stopwatch.c: 27: void start_stopwatch(void)
+"29
+[; ;stopwatch.c: 29: void start_stopwatch(void)
 [v _start_stopwatch `(v ~T0 @X0 1 ef ]
-"28
-[; ;stopwatch.c: 28: {
+"30
+[; ;stopwatch.c: 30: {
 {
 [e :U _start_stopwatch ]
 [f ]
-"29
-[; ;stopwatch.c: 29:     is_timer_work = 1;
+"31
+[; ;stopwatch.c: 31:     is_timer_work = 1;
 [e = _is_timer_work -> -> 1 `i `a ]
-"30
-[; ;stopwatch.c: 30: }
+"32
+[; ;stopwatch.c: 32: }
 [e :UE 54 ]
 }
-"33
-[; ;stopwatch.c: 33: void format_time(void)
+"35
+[; ;stopwatch.c: 35: void format_time(void)
 [v _format_time `(v ~T0 @X0 1 ef ]
-"34
-[; ;stopwatch.c: 34: {
+"36
+[; ;stopwatch.c: 36: {
 {
 [e :U _format_time ]
 [f ]
-"35
-[; ;stopwatch.c: 35:     uint8_t cashed_value;
-[v _cashed_value `uc ~T0 @X0 1 a ]
 "37
-[; ;stopwatch.c: 37:     formatted_time.ms = time_ms / 100 % 10;
-[e = . _formatted_time 0 -> % / _time_ms -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
-"38
-[; ;stopwatch.c: 38:     cashed_value = time_ms / 1000 % 60;
-[e = _cashed_value -> % / _time_ms -> -> 1000 `i `ui -> -> 60 `i `ui `uc ]
+[; ;stopwatch.c: 37:     uint8_t cashed_value;
+[v _cashed_value `uc ~T0 @X0 1 a ]
 "39
-[; ;stopwatch.c: 39:     formatted_time.sec_1_digit = cashed_value % 10;
-[e = . _formatted_time 1 -> % -> _cashed_value `i -> 10 `i `uc ]
+[; ;stopwatch.c: 39:     formatted_time.ms = time_ms / 100 % 10;
+[e = . _formatted_time 0 -> % / _time_ms -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
 "40
-[; ;stopwatch.c: 40:     formatted_time.sec_2_digit = (uint8_t)(cashed_value / 10);
-[e = . _formatted_time 2 -> / -> _cashed_value `i -> 10 `i `uc ]
+[; ;stopwatch.c: 40:     cashed_value = time_ms / 1000 % 60;
+[e = _cashed_value -> % / _time_ms -> -> 1000 `i `ui -> -> 60 `i `ui `uc ]
 "41
-[; ;stopwatch.c: 41: }
+[; ;stopwatch.c: 41:     formatted_time.sec_1_digit = cashed_value % 10;
+[e = . _formatted_time 1 -> % -> _cashed_value `i -> 10 `i `uc ]
+"42
+[; ;stopwatch.c: 42:     formatted_time.sec_2_digit = (uint8_t)(cashed_value / 10);
+[e = . _formatted_time 2 -> / -> _cashed_value `i -> 10 `i `uc ]
+"43
+[; ;stopwatch.c: 43: }
 [e :UE 55 ]
 }
-"43
-[; ;stopwatch.c: 43: void update_time_counter()
+"45
+[; ;stopwatch.c: 45: void update_time_counter()
 [v _update_time_counter `(v ~T0 @X0 1 ef ]
-"44
-[; ;stopwatch.c: 44: {
+"46
+[; ;stopwatch.c: 46: {
 {
 [e :U _update_time_counter ]
 [f ]
-"45
-[; ;stopwatch.c: 45:     if (is_timer_work)
-[e $ ! != -> _is_timer_work `i -> 0 `i 57  ]
-"46
-[; ;stopwatch.c: 46:     {
-{
 "47
-[; ;stopwatch.c: 47:         if (time_ms > 60000)
-[e $ ! > -> _time_ms `l -> 60000 `l 58  ]
+[; ;stopwatch.c: 47:     if (is_timer_work)
+[e $ ! != -> _is_timer_work `i -> 0 `i 57  ]
 "48
-[; ;stopwatch.c: 48:             time_ms -= 60000;
+[; ;stopwatch.c: 48:     {
+{
+"49
+[; ;stopwatch.c: 49:         if (time_ms > 60000)
+[e $ ! > -> _time_ms `l -> 60000 `l 58  ]
+"50
+[; ;stopwatch.c: 50:             time_ms -= 60000;
 [e =- _time_ms -> -> 60000 `l `ui ]
 [e :U 58 ]
-"49
-[; ;stopwatch.c: 49:         time_ms += 16;
-[e =+ _time_ms -> -> 16 `i `ui ]
-"50
-[; ;stopwatch.c: 50:     }
+"51
+[; ;stopwatch.c: 51:         time_ms += 2;
+[e =+ _time_ms -> -> 2 `i `ui ]
+"52
+[; ;stopwatch.c: 52:     }
 }
 [e :U 57 ]
-"51
-[; ;stopwatch.c: 51: }
+"53
+[; ;stopwatch.c: 53: }
 [e :UE 56 ]
 }

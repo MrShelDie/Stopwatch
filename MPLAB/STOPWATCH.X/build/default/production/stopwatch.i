@@ -1162,8 +1162,10 @@ void update_disp(void);
 
 
 
+
+
 uint16_t time_ms = 0;
-static _Bool is_timer_work = 0;
+_Bool is_timer_work = 0;
 struct Time_format formatted_time = {0};
 
 void reset_stopwatch(void)
@@ -1200,6 +1202,6 @@ void update_time_counter()
     {
         if (time_ms > 60000)
             time_ms -= 60000;
-        time_ms += 16;
+        time_ms += 2;
     }
 }

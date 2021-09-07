@@ -3,13 +3,15 @@
 #include "stopwatch.h"
 #include "display.h"
 
-/* So many milliseconds each stopwatch cycle lasts.
- * This value was calculated at the time of writing the program and must be recalculated when changing the program code */
-#define TIME_INCREASE_PER_CYCLE_MS  16
+/* So many milliseconds each stopwatch cycle lasts
+ *  (without button debounce delay).
+ * This value was calculated at the time of writing the program
+ * and must be recalculated when changing the program code */
+#define TIME_INCREASE_PER_CYCLE_MS  2
 #define MINUTE_IN_MS                60000
 
 uint16_t            time_ms        = 0;
-static _Bool        is_timer_work  = false;
+_Bool               is_timer_work  = false;
 struct Time_format  formatted_time = {0};
 
 void reset_stopwatch(void)

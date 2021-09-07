@@ -3,7 +3,9 @@
 #include "display.h"
 #include "stopwatch.h"
 
-#define DELAY_TIME 1
+/* This value was calculated manually to adjust the running
+ * time of the function to an integer number of milliseconds */
+#define DELAY_TIME  1.586
 
 extern struct Time_format   formatted_time;
 
