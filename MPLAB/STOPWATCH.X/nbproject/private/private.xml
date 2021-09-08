@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/main.c</file>
-            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.h</file>
-            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/stopwatch.c</file>
-            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/display.h</file>
-            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/buttons.h</file>
-            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/buttons.c</file>
-            <file>file:/C:/Users/nick-/Desktop/STOPWATCH/MPLAB/STOPWATCH.X/display.c</file>
+            <file>file:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/display.c</file>
+            <file>file:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/main.c</file>
+            <file>file:/home/nick/Documents/STOPWATCH/MPLAB/STOPWATCH.X/confbits.h</file>
         </group>
     </open-files>
 </project-private>
